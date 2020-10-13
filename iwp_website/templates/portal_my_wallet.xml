@@ -6,6 +6,28 @@
     <template id="portal_menu"
         name="Portal My Wallet"
         inherit_id="portal.portal_my_home" priority="20">
+        <xpath expr="//div[@id='oe_structure_portal_my_home_1']" position="before">
+            <div t-if="success_loan"
+                 role="alert"
+                 class="alert alert-success alert-dismissible fade show">
+                <strong>Success!</strong>
+                Your loan subscription has been registered.
+                <button type="button" class="close"
+                        data-dismiss="alert" aria-label="Close">
+                    <span>×</span>
+                </button>
+            </div>
+            <div t-if="success_share"
+                 role="alert"
+                 class="alert alert-success alert-dismissible fade show">
+                <strong>Success!</strong>
+                Your share subscription has been registered.
+                <button type="button" class="close"
+                        data-dismiss="alert" aria-label="Close">
+                    <span>×</span>
+                </button>
+            </div>
+        </xpath>
         <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
             <t t-call="portal.portal_docs_entry">
                 <t t-set="title">Share Wallet</t>

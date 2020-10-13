@@ -494,6 +494,16 @@ class InvestorPortal(CustomerPortal):
 
     def _prepare_portal_layout_values(self):
         values = super()._prepare_portal_layout_values()
+        # Success loan subscription
+        if request.session.get("success_loan"):
+            values["success_loan"] = True
+            # Success message should be only visible one time
+            del request.session["success_loan"]
+        # Success share subscription
+        if request.session.get("success_share"):
+            values["success_share"] = True
+            # Success message should be only visible one time
+            del request.session["success_share"]
         # Shares
         shareline_mgr = request.env['share.line']
         share_amount = sum(
