@@ -1,4 +1,11 @@
-from odoo import fields, models
+# Copyright 2020 Coop IT Easy SCRL fs
+#   Robin Keunen <robin@coopiteasy.be>
+#   Houssine Bakkali <houssine@coopiteasy.be>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+
+
+from odoo import fields, models, _
+from odoo.exceptions import ValidationError
 
 _EMAIL_TEMPLATE_IDS = {
     "sub_req_notif": "investor_wallet_platform_base.email_template_confirmation",
@@ -10,7 +17,8 @@ _EMAIL_TEMPLATE_IDS = {
     "share_update": "investor_wallet_platform_base.email_template_share_update",
     "loan_sub_conf": "investor_wallet_platform_base.loan_subscription_confirmation",
     "loan_payment_req": "investor_wallet_platform_base.loan_issue_payment_request",
-    }
+    "loan_payment_received": "investor_wallet_platform_base.email_template_loan_confirm_paid",
+}
 
 
 class MailTemplate(models.Model):
@@ -31,4 +39,10 @@ class MailTemplate(models.Model):
         mail_template = template_obj.search([
                             ('template_key', '=', mail_template_key),
                             ('structure', '=', structure.id)])
+
+        if not mail_template:
+            raise ValidationError(
+                _("Please generate emails for your structure.")
+            )
+
         return mail_template
