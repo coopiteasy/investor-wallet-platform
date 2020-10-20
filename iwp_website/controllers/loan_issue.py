@@ -40,6 +40,7 @@ class WebsiteLoanIssue(http.Controller):
             )
             if form.is_valid():
                 self.process_loan_issue_line_form(form, context=form_context)
+                request.session["success_loan"] = True
                 return request.redirect(request.params.get("redirect", ""))
         else:
             form = self.loan_issue_line_form(context=form_context)

@@ -43,6 +43,7 @@ class WebsiteSubscriptionRequest(http.Controller):
                 self.process_subscription_request_form(
                     form, context=form_context
                 )
+                request.session["success_share"] = True
                 return request.redirect(request.params.get("redirect", ""))
         else:
             form = self.subscription_request_form(context=form_context)
