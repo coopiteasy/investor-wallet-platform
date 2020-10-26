@@ -38,7 +38,7 @@ class MailTemplate(models.Model):
         template_obj = self.env['mail.template']
         mail_template = template_obj.search([
                             ('template_key', '=', mail_template_key),
-                            ('structure', '=', structure.id)])
+                            ('structure', '=', structure.id)], limit=1)
 
         if not mail_template:
             raise ValidationError(
