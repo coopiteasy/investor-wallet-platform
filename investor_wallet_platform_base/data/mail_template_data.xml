@@ -609,7 +609,6 @@
             <field name="model_id" ref="easy_my_coop_loan.model_loan_issue_line"/>
             <field name="auto_delete" eval="True"/>
             <field name="lang">${object.partner_id.lang}</field>
-            <field name="template_key">loan_payment_received</field>
             <field name="iwp" eval="True"/>
             <field name="body_html">
 <![CDATA[
