@@ -31,15 +31,4 @@
         <field name="domain">[('iwp','=',True)]</field>
     </record>
 
-    <record model="ir.ui.view" id="email_template_loan_confirm_paid_extension">
-        <field name="name">email.template.form</field>
-        <field name="model">mail.template</field>
-        <field name="inherit_id" ref="easy_my_coop_loan.email_template_loan_confirm_paid"/>
-        <field name="arch" type="xml">
-            <field name="email_from" position="before">
-                <field name="template_key">loan_payment_req</field>
-            </field>
-        </field>
-    </record>
-
 </odoo>
