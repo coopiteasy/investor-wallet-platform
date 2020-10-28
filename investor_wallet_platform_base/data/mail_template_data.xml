@@ -33,7 +33,7 @@
     </data>
     <data noupdate="1">
         <record id="investor_wallet_platform_base.email_template_release_capital" model="mail.template">
-        	<field name="name">Request to Release Capital - Send by Email</field>
+        	<field name="name">Request to Release Capital - Send by Email - Template</field>
             <field name="email_from">${(object.structure.email or object.user_id.email)|safe}</field>
             <field name="subject">${object.structure.name} Request to Release Capital (Ref ${object.number or 'n/a'})</field>
             <field name="partner_to">${object.partner_id.id}</field>
@@ -82,7 +82,7 @@
         </record>
 
         <record id="investor_wallet_platform_base.email_template_confirmation" model="mail.template">
-            <field name="name">Confirmation Email</field>
+            <field name="name">Confirmation Email - Template</field>
             <field name="email_from">${(object.structure.email or object.user_id.email)|safe}</field>
             <field name="subject">Subscription request confirmation</field>
             <field name="email_to">${object.email}</field>
@@ -131,7 +131,7 @@
         </record>
 
         <record id="investor_wallet_platform_base.email_template_confirmation_company" model="mail.template">
-            <field name="name">Company Confirmation Email</field>
+            <field name="name">Company Confirmation Email - Template</field>
             <field name="email_from">${(object.structure.email or object.user_id.email)|safe}</field>
             <field name="subject">Subscription request confirmation</field>
             <field name="email_to">${object.email},${object.company_email}</field>
@@ -182,7 +182,7 @@
         </record>
 
         <record id="investor_wallet_platform_base.email_template_certificat" model="mail.template">
-            <field name="name"> Confirmation - Send By Email</field>
+            <field name="name"> Confirmation - Send By Email - Template</field>
             <field name="email_from">${(object.structure.email or object.user_id.email)|safe}</field>
             <field name="subject"> Confirmation</field>
             <field name="partner_to">${object.partner_id.id}</field>
@@ -233,7 +233,7 @@
         </record>
 
         <record id="investor_wallet_platform_base.email_template_certificat_increase" model="mail.template">
-            <field name="name">Share Increase -  Confirmation - Send By Email</field>
+            <field name="name">Share Increase -  Confirmation - Send By Email - Template</field>
             <field name="email_from">${(object.structure.email or object.user_id.email)|safe}</field>
             <field name="subject">Payment Received Confirmation</field>
             <field name="partner_to">${object.partner_id.id}</field>
@@ -284,7 +284,7 @@
         </record>
 
         <record id="investor_wallet_platform_base.email_template_share_transfer" model="mail.template">
-            <field name="name">Share transfer - Send By Email</field>
+            <field name="name">Share transfer - Send By Email - Template</field>
             <field name="email_from">${(object.structure.email or object.user_id.email)|safe}</field>
             <field name="subject">Share transfert</field>
             <field name="partner_to">${object.partner_id_to.id}</field>
@@ -335,7 +335,7 @@
         </record>
 
         <record id="investor_wallet_platform_base.email_template_share_update" model="mail.template">
-            <field name="name">Share update - Send By Email</field>
+            <field name="name">Share update - Send By Email - Template</field>
             <field name="email_from">${(object.structure.email or object.user_id.email)|safe}</field>
             <field name="subject">Share update</field>
             <field name="partner_to">${object.partner_id.id}</field>
@@ -386,7 +386,7 @@
         </record>
 
         <record id="investor_wallet_platform_base.loan_subscription_confirmation" model="mail.template">
-            <field name="name">Loan Subscription Confirmation Email</field>
+            <field name="name">Loan Subscription Confirmation Email - Template</field>
             <field name="email_from">${(object.structure.email or object.loan_issue_id.user_id.email)|safe}</field>
             <field name="subject">${object.structure.name} Loan subscription confirmation (Ref ${object.loan_issue_id.name or 'n/a'})</field>
             <field name="email_to">${object.partner_id.email}</field>
@@ -435,7 +435,7 @@
         </record>
 
         <record id="investor_wallet_platform_base.loan_issue_payment_request" model="mail.template">
-            <field name="name">Loan Issue Payment Request - Send by Email</field>
+            <field name="name">Loan Issue Payment Request - Send by Email - Template</field>
             <field name="email_from">${(object.structure.email or object.loan_issue_id.user_id.email)|safe}</field>
             <field name="subject">${object.structure.name} Payment request (Ref ${object.loan_issue_id.name or 'n/a'})</field>
             <field name="partner_to">${object.partner_id.id}</field>
@@ -484,7 +484,7 @@
         </record>
 
         <record id="email_template_notification" model="mail.template">
-            <field name="name">Subscription Notification Email</field>
+            <field name="name">Subscription Notification Email - Template</field>
             <field name="email_from">${object.company_id.email|safe}</field>
             <field name="subject">New subscription notification</field>
             <field name="email_to">${object.structure.email}</field>
@@ -539,7 +539,7 @@
         </record>
 
         <record id="email_template_notification_company" model="mail.template">
-            <field name="name">Company Subscription Notification Email</field>
+            <field name="name">Company Subscription Notification Email - Template</field>
             <field name="email_from">${object.company_id.email|safe}</field>
             <field name="subject">New subscription notification</field>
             <field name="email_to">${object.structure.email}</field>
