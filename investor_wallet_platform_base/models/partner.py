@@ -357,17 +357,21 @@ class ResPartner(models.Model):
     def generate_mail_templates(self):
         self.ensure_one()
         if self.mail_serveur_out:
-            mail_templ = self.env['mail.template']._get_email_template_dict()
+            mail_templates = self.env['mail.template']._get_email_template_dict()
+            generated_template_keys = self.mail_template_ids.mapped(
+                'template_key'
+            )
 
-            if not self.mail_template_ids:
-                for mt_key, mt_xml_id in mail_templ.items():
+            for mt_key, mt_xml_id in mail_templates.items():
+                if mt_key not in generated_template_keys:
                     mail_template = self.env.ref(mt_xml_id, False)
                     struct_mail_template = mail_template.copy(default={
                         'mail_server_id': self.mail_serveur_out.id,
                         'structure': self.id,
                         'template_key': mt_key
                     })
-                    struct_mail_template.name = mail_template.name
+                    name = "%s - %s" % (mail_template.name, self.name)
+                    struct_mail_template.name = name
         else:
             raise UserError(_('You need first to define a mail server out'))
 
