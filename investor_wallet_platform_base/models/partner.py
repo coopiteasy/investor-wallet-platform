@@ -5,6 +5,9 @@
 from odoo import api, fields, models, _
 
 from odoo.exceptions import UserError
+from odoo.exceptions import ValidationError
+import logging
+_logger = logging.getLogger(__name__)
 
 
 class ResPartner(models.Model):
@@ -373,7 +376,21 @@ class ResPartner(models.Model):
                     name = "%s - %s" % (mail_template.name, self.name)
                     struct_mail_template.name = name
         else:
-            raise UserError(_('You need first to define a mail server out'))
+            raise ValidationError(
+                _(
+                    'You need first to define a mail server out for %s'
+                ) % self.name
+            )
+
+    @api.model
+    def cron_generate_mail_template(self):
+        structures = self.search([("is_platform_structure", "=", True)])
+        for structure in structures:
+            try:
+                structure.generate_mail_templates()
+            except ValidationError as e:
+                _logger.error(e.name)
+
 
     @api.multi
     def validation_request(self):

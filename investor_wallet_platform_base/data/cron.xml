@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright 2020 Coop IT Easy
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <record id="ir_cron_generate_all_missing_mail_templates" model="ir.cron">
+        <field name="name">Generate all missing mail templates</field>
+        <field name="model_id" ref="model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">model.cron_generate_mail_template()</field>
+        <field name="interval_number">100</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="True"/>
+        <field name="active" eval="False"/>
+    </record>
+</odoo>
