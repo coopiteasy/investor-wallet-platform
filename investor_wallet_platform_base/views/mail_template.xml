@@ -21,8 +21,10 @@
         <field name="model">mail.template</field>
         <field name="inherit_id" ref="mail.email_template_form"/>
         <field name="arch" type="xml">
-            <field name="model_id" position="before">
+            <field name="model_id" position="after">
                 <field name="structure" groups="investor_wallet_platform_base.group_platform_wallet_user" />
+                <field name="template_key" groups="investor_wallet_platform_base.group_platform_wallet_user" />
+                <field name="iwp" groups="investor_wallet_platform_base.group_platform_wallet_user" />
             </field>
         </field>
     </record>
