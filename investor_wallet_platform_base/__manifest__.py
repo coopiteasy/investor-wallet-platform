@@ -42,8 +42,8 @@
         'report/cooperator_to_certificat.xml',
         'report/easy_my_coop_report.xml',
         'report/cooperator_invoice.xml',
-        'data/mail_template_data.xml',
         'data/cron.xml',
+        'data/mail_template_data.xml'
         ],
     'demo': [
         'demo/account.xml',
