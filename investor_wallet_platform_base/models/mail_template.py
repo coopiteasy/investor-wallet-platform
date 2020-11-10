@@ -34,13 +34,13 @@ class MailTemplate(models.Model):
                                readonly=True)
     iwp = fields.Boolean(string="IWP mail template")
 
-    def get_email_template_by_key(self, mail_template_key, structure):
+    def get_email_template_by_key(self, mail_template_key, structure, raise_=True):
         template_obj = self.env['mail.template']
         mail_template = template_obj.search([
                             ('template_key', '=', mail_template_key),
                             ('structure', '=', structure.id)], limit=1)
 
-        if not mail_template:
+        if not mail_template and raise_:
             raise ValidationError(
                 _("Please generate emails for your structure.")
             )
