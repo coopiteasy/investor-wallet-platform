@@ -132,8 +132,10 @@ class ResPartner(models.Model):
     approval = fields.Char(string="Approval", translate=True)
     activity_areas = fields.Many2many("activity.area", string="Activity areas")
     employee_number = fields.Char(string="Employee number", translate=True)
-    statute_link = fields.Char(string="Statute link")
-    annual_report_link = fields.Char(string="Last annual report link")
+    statute_link = fields.Char(string="Statute link", translate=True)
+    annual_report_link = fields.Char(
+        string="Last annual report link", translate=True
+    )
     area_char_list = fields.Char(
         compute="_return_area_char_list", string="activity areas"
     )
