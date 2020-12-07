@@ -56,8 +56,12 @@ class ProductTemplate(models.Model):
     min_target_issue = fields.Monetary(
         string="Issue minimal amount", currency_field="currency_id"
     )
-    subscription_start_date = fields.Date(string="Issue Start date")
-    subscription_end_date = fields.Date(string="Issue End date")
+    subscription_start_text = fields.Char(
+        string="Issue Start", translate=True
+    )
+    subscription_end_text = fields.Char(
+        string="Issue End", translate=True
+    )
     subscription_length = fields.Char(
         string="Subscription length", translate=True
     )
