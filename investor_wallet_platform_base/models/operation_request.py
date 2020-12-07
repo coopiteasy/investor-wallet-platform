@@ -6,25 +6,29 @@ from odoo.exceptions import ValidationError
 
 
 class OperationRequest(models.Model):
-    _inherit = 'operation.request'
+    _inherit = "operation.request"
 
     def default_structure(self):
         return self.env.user.structure
 
-    structure = fields.Many2one(comodel_name='res.partner',
-                                string="Platform Structure",
-                                domain=[('is_platform_structure', '=', True)],
-                                default=default_structure)
+    structure = fields.Many2one(
+        comodel_name="res.partner",
+        string="Platform Structure",
+        domain=[("is_platform_structure", "=", True)],
+        default=default_structure,
+    )
 
     def get_share_trans_mail_template(self):
-        templ_obj = self.env['mail.template']
-        return templ_obj.get_email_template_by_key('certificate_trans',
-                                                   self.structure)
+        templ_obj = self.env["mail.template"]
+        return templ_obj.get_email_template_by_key(
+            "certificate_trans", self.structure
+        )
 
     def get_share_update_mail_template(self):
-        templ_obj = self.env['mail.template']
-        return templ_obj.get_email_template_by_key('share_update',
-                                                   self.structure)
+        templ_obj = self.env["mail.template"]
+        return templ_obj.get_email_template_by_key(
+            "share_update", self.structure
+        )
 
     def send_share_trans_mail(self, sub_register_line):
         cert_email_template = self.get_share_trans_mail_template()
@@ -36,13 +40,15 @@ class OperationRequest(models.Model):
         cert_email_template.send_mail(sub_register_line.id, False)
 
     def get_subscription_register_vals(self, effective_date):
-        vals = super(OperationRequest, self).get_subscription_register_vals(effective_date)
-        vals['structure'] = self.structure.id
+        vals = super(OperationRequest, self).get_subscription_register_vals(
+            effective_date
+        )
+        vals["structure"] = self.structure.id
         return vals
 
     def get_total_share_dic(self, partner):
-        share_products = self.env['product.template'].search(
-            [('is_share', '=', True), ("structure", "=", self.structure.id)]
+        share_products = self.env["product.template"].search(
+            [("is_share", "=", True), ("structure", "=", self.structure.id)]
         )
         # Init total_share_dic
         total_share_dic = {}
@@ -58,12 +64,15 @@ class OperationRequest(models.Model):
             total_share_dic[line.share_product_id.id] += line.share_number
         return total_share_dic
 
-
     def hand_share_over(self, partner, share_product_id, quantity):
         membership = partner.get_membership(self.structure)
         if not membership.member:
-            raise ValidationError(_("This operation can't be executed if the"
-                                    " cooperator is not an effective member"))
+            raise ValidationError(
+                _(
+                    "This operation can't be executed if the"
+                    " cooperator is not an effective member"
+                )
+            )
 
         owned_shares = partner.share_ids.filtered(
             lambda r: (
@@ -81,7 +90,7 @@ class OperationRequest(models.Model):
                 else:
                     share_left = line.share_number - quantity
                     quantity = 0
-                    line.write({'share_number': share_left})
+                    line.write({"share_number": share_left})
             i += 1
         # if the cooperator sold all his shares he's no more
         # an effective member
@@ -89,4 +98,4 @@ class OperationRequest(models.Model):
         for share_quant in self.get_total_share_dic(partner).values():
             remaning_share_dict += share_quant
         if remaning_share_dict == 0:
-            membership.write({'member': False, 'old_member': True})
+            membership.write({"member": False, "old_member": True})

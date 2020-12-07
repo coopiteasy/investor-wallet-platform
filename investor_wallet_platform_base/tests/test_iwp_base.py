@@ -16,4 +16,5 @@ class IWPBaseCase(EMCBaseCase):
             "investor_wallet_platform_base.res_users_manager_iwp_demo"
         )
 
+
 # todo: test loan issue flow

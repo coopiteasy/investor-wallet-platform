@@ -6,12 +6,14 @@ from odoo.exceptions import ValidationError
 
 
 class SubscriptionRegister(models.Model):
-    _inherit = 'subscription.register'
+    _inherit = "subscription.register"
 
     def default_structure(self):
         return self.env.user.structure
 
-    structure = fields.Many2one(comodel_name='res.partner',
-                                string="Platform Structure",
-                                domain=[('is_platform_structure', '=', True)],
-                                default=default_structure)
+    structure = fields.Many2one(
+        comodel_name="res.partner",
+        string="Platform Structure",
+        domain=[("is_platform_structure", "=", True)],
+        default=default_structure,
+    )

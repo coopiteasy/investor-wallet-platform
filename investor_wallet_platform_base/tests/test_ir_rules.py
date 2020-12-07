@@ -443,19 +443,21 @@ class IWPIRulesCase(IWPBaseCase):
             "name": "own partner",
             "is_platform_structure": False,
         }
-        own_partner = self.env['res.partner'].create(vals)
-        self.env["coop.membership"].create({
-            "partner_id": own_partner.id,
-            "structure": self.coopiteasy.id,
-            "member": True,
-        })
+        own_partner = self.env["res.partner"].create(vals)
+        self.env["coop.membership"].create(
+            {
+                "partner_id": own_partner.id,
+                "structure": self.coopiteasy.id,
+                "member": True,
+            }
+        )
         own_partner.write({"name": "write passes"})
         with self.assertRaises(AccessError):
             own_partner.unlink()
 
         # other partner
         self.env.user.structure = self.coopcity
-        own_partner = self.env['res.partner'].browse(own_partner.id)
+        own_partner = self.env["res.partner"].browse(own_partner.id)
         # with self.assertRaises(AccessError):
         #     own_partner.write({"name": "write fails"}) # fixme
         with self.assertRaises(AccessError):
@@ -520,16 +522,14 @@ class IWPIRulesCase(IWPBaseCase):
         with self.assertRaises(AccessError):
             coopcity.unlink()
 
-        own_partner = self.env['res.partner'].create({
-            "name": "own partner",
-            "is_platform_structure": False,
-        })
-        self.env["coop.membership"].create({
-            "partner_id": own_partner.id,
-            "structure": coopiteasy.id,
-        })
+        own_partner = self.env["res.partner"].create(
+            {"name": "own partner", "is_platform_structure": False,}
+        )
+        self.env["coop.membership"].create(
+            {"partner_id": own_partner.id, "structure": coopiteasy.id,}
+        )
         self.assertTrue(coopiteasy.id in own_partner.structure_ids.ids)
-        own_partner.write({'name': 'write passes'})
+        own_partner.write({"name": "write passes"})
         with self.assertRaises(AccessError):
             own_partner.unlink()
 
@@ -546,16 +546,14 @@ class IWPIRulesCase(IWPBaseCase):
         _ = coopcity.name
         coopcity.write({"name": "write fails"})
 
-        own_partner = self.env['res.partner'].create({
-            "name": "own partner",
-            "is_platform_structure": False,
-        })
-        self.env["coop.membership"].create({
-            "partner_id": own_partner.id,
-            "structure": coopiteasy.id,
-        })
+        own_partner = self.env["res.partner"].create(
+            {"name": "own partner", "is_platform_structure": False,}
+        )
+        self.env["coop.membership"].create(
+            {"partner_id": own_partner.id, "structure": coopiteasy.id,}
+        )
         self.assertTrue(coopiteasy.id in own_partner.structure_ids.ids)
-        own_partner.write({'name': 'write passes'})
+        own_partner.write({"name": "write passes"})
 
         own_partner.unlink()
         coopcity.unlink()

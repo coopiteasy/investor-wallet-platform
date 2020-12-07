@@ -10,7 +10,10 @@ from openupgradelib import openupgrade
 @openupgrade.migrate()
 def migrate(env, version):
     cr = env.cr
-    openupgrade.logged_query(cr, """
+    openupgrade.logged_query(
+        cr,
+        """
     DELETE FROM res_groups 
     WHERE name ILIKE 'Wallet Platform Manager'
-    """)
+    """,
+    )

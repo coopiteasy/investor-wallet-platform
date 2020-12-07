@@ -27,18 +27,25 @@ class MailTemplate(models.Model):
     def _get_email_template_dict(self):
         return _EMAIL_TEMPLATE_IDS
 
-    structure = fields.Many2one(comodel_name='res.partner',
-                                string="Platform Structure",
-                                domain=[('is_platform_structure', '=', True)])
-    template_key = fields.Char(string="Mail template key",
-                               readonly=True)
+    structure = fields.Many2one(
+        comodel_name="res.partner",
+        string="Platform Structure",
+        domain=[("is_platform_structure", "=", True)],
+    )
+    template_key = fields.Char(string="Mail template key", readonly=True)
     iwp = fields.Boolean(string="IWP mail template")
 
-    def get_email_template_by_key(self, mail_template_key, structure, raise_=True):
-        template_obj = self.env['mail.template']
-        mail_template = template_obj.search([
-                            ('template_key', '=', mail_template_key),
-                            ('structure', '=', structure.id)], limit=1)
+    def get_email_template_by_key(
+        self, mail_template_key, structure, raise_=True
+    ):
+        template_obj = self.env["mail.template"]
+        mail_template = template_obj.search(
+            [
+                ("template_key", "=", mail_template_key),
+                ("structure", "=", structure.id),
+            ],
+            limit=1,
+        )
 
         if not mail_template and raise_:
             raise ValidationError(

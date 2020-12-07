@@ -7,15 +7,9 @@ from odoo.exceptions import AccessError, ValidationError
 
 
 class IWPSubscriptionCase(IWPBaseCase):
-
     def test_create_share_type_as_user_fails(self):
         self.as_emc_user()
-        structure = (
-            self.env["res.users"]
-                .browse(self.uid)
-                .partner_id
-                .structure
-        )
+        structure = self.env["res.users"].browse(self.uid).partner_id.structure
 
         # fixme Je n'y arrive pas dans les droits car il ya des règles du modules
         # product standard qui donnent accès. Je mets un filtre sur la vue
@@ -46,11 +40,13 @@ class IWPSubscriptionCase(IWPBaseCase):
         structure.account_journal = self.env["account.journal"].create(
             {"name": "test journal", "type": "sale", "code": "TEST_"}
         )
-        mail_server_out = self.env["ir.mail_server"].create({
-            "name": "Test Server OUT",
-            "smtp_host": "localhost",
-            "structure": structure.id,
-        })
+        mail_server_out = self.env["ir.mail_server"].create(
+            {
+                "name": "Test Server OUT",
+                "smtp_host": "localhost",
+                "structure": structure.id,
+            }
+        )
         structure.mail_serveur_out = mail_server_out
         structure.generate_mail_templates()
 

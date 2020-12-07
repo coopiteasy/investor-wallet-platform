@@ -19,8 +19,7 @@ class ResCompany(models.Model):
     )
 
     total_outstanding_amount = fields.Monetary(
-        string="Total Outstanding Amount",
-        currency_field="currency_id",
+        string="Total Outstanding Amount", currency_field="currency_id",
     )
 
     notification_emails = fields.Char(string="Notification emails")
