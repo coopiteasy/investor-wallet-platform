@@ -171,6 +171,10 @@
                                     <field name="validation_date"/>
                                     <field name="validated_by"/>
                                 </group>
+                                <group>
+                                    <field name="show_existing_shares"/>
+                                    <field name="show_existing_loans"/>
+                                </group>
                             </group>
                             <group>
                                 <group>

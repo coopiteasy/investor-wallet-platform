@@ -609,11 +609,13 @@
                             </a>
                         </td>
                         <td class="text-right">
-                            <a t-attf-href="/struct/{{ elem.structure.id }}/share/manual/new"
+                            <a t-att-style="'visibility: hidden;' if not elem.structure.show_existing_shares else None"
+                               t-attf-href="/struct/{{ elem.structure.id }}/share/manual/new"
                                 class="btn btn-secondary btn-sm">
                                 Existing shares
                             </a>
-                            <a t-attf-href="/struct/{{ elem.structure.id }}/loan/manual/new"
+                            <a t-att-style="'visibility: hidden;' if not elem.structure.show_existing_loans else None"
+                               t-attf-href="/struct/{{ elem.structure.id }}/loan/manual/new"
                                 class="btn btn-secondary btn-sm">
                                 Existing loans
                             </a>
