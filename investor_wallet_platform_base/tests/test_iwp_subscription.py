@@ -47,6 +47,7 @@ class IWPSubscriptionCase(IWPBaseCase):
         structure.generate_mail_templates()
 
         self.as_emc_manager()
+        self.env.user.structure = structure
         share = self.env["product.template"].create(
             {
                 "name": "Part T - Test",
@@ -59,6 +60,7 @@ class IWPSubscriptionCase(IWPBaseCase):
                 "by_company": True,
                 "list_price": 50,
                 "display_on_website": True,
+                "structure": structure.id,
             }
         )
 
