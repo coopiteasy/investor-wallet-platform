@@ -21,7 +21,10 @@
         <field name="partner_id" ref="res_partner_user_iwp_demo"/>
         <field name="login">user-iwp</field>
         <field name="password">demo</field>
-        <field name="groups_id" eval="[(4, ref('investor_wallet_platform_base.group_platform_wallet_user'))]"/>
+        <field name="groups_id" eval="[(4, ref('investor_wallet_platform_base.group_platform_wallet_user')),
+                                       (4, ref('base.group_partner_manager')),
+                                       (4, ref('partner_changeset.group_changeset_manager')),
+                                       ]"/>
         <field name="structure" ref="res_partner_structure_coopiteasy_demo"/>
     </record>
 
@@ -40,7 +43,10 @@
         <field name="partner_id" ref="res_partner_manager_iwp_demo"/>
         <field name="login">manager-iwp</field>
         <field name="password">demo</field>
-        <field name="groups_id" eval="[(4, ref('investor_wallet_platform_base.group_platform_wallet_manager'))]"/>
+        <field name="groups_id" eval="[(4, ref('investor_wallet_platform_base.group_platform_wallet_manager')),
+                                       (4, ref('base.group_partner_manager')),
+                                       (4, ref('partner_changeset.group_changeset_manager')),
+                                       ]"/>
     </record>
 
     <record id="easy_my_coop.res_partner_user_emc_demo" model="res.partner">
@@ -53,9 +59,15 @@
 
     <record id="easy_my_coop.res_partner_manager_emc_demo" model="res.partner">
         <field name="structure" ref="res_partner_structure_coopiteasy_demo"/>
+        <field name="groups_id" eval="[(4, ref('base.group_partner_manager')),
+                                       (4, ref('partner_changeset.group_changeset_manager')),
+                                      ]"/>
     </record>
 
     <record id="easy_my_coop.res_users_manager_emc_demo" model="res.users">
         <field name="structure" ref="res_partner_structure_coopiteasy_demo"/>
+        <field name="groups_id" eval="[(4, ref('base.group_partner_manager')),
+                                       (4, ref('partner_changeset.group_changeset_manager')),
+                                      ]"/>
     </record>
 </odoo>
