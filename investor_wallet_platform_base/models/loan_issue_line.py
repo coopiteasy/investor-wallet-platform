@@ -28,6 +28,8 @@ class LoanIssueLine(models.Model):
 
     @api.model
     def create(self, vals):
+        if "structure" not in vals:
+            vals["structure"] = self.env.user.structure.id
         line = super(LoanIssueLine, self).create(vals)
 
         # todo bring back to easy_my_coop_loan
