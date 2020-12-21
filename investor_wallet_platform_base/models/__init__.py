@@ -5,6 +5,7 @@ from . import coop_membership
 from . import invoice
 from . import ir_mail_server
 from . import loan_issue
+from . import loan_issue_line
 from . import mail_template
 from . import operation_request
 from . import product_template

@@ -15,6 +15,7 @@ _EMAIL_TEMPLATE_IDS = {
     "certificate_inc": "investor_wallet_platform_base.email_template_certificat_increase",
     "certificate_trans": "investor_wallet_platform_base.email_template_share_transfer",
     "share_update": "investor_wallet_platform_base.email_template_share_update",
+    "loan_subscription_received": "investor_wallet_platform_base.loan_subscription_received",
     "loan_sub_conf": "investor_wallet_platform_base.loan_subscription_confirmation",
     "loan_payment_req": "investor_wallet_platform_base.loan_issue_payment_request",
     "loan_payment_received": "investor_wallet_platform_base.email_template_loan_confirm_paid",
