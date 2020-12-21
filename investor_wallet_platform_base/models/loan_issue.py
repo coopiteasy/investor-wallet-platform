@@ -55,7 +55,7 @@ class LoanIssue(models.Model):
         string="Product transfer possibility", translate=True
     )
     refund_policy = fields.Html(string="Refund policy", translate=True)
-    info_note_url = fields.Char(string="Information note url")
+    info_note_url = fields.Char(string="Information note url", translate=True)
 
     @api.model
     def count_published_loans(self):

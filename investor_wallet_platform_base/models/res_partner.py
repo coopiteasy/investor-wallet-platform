@@ -114,7 +114,7 @@ class ResPartner(models.Model):
     solvency_ratio = fields.Html(string="Solvency ratio", translate=True)
     last_result = fields.Html(string="Last result", translate=True)
     last_dividend = fields.Html(string="Last 3 years dividend", translate=True)
-    break_even_date = fields.Date(string="Break-even date")
+    break_even_date = fields.Char(string="Break-even date", translate=True)
     liquidity_ratio = fields.Html(string="Liquidity ratio", translate=True)
     susbidies_risk = fields.Html(
         string="Risks related to subsidies", translate=True
@@ -132,8 +132,10 @@ class ResPartner(models.Model):
     approval = fields.Char(string="Approval", translate=True)
     activity_areas = fields.Many2many("activity.area", string="Activity areas")
     employee_number = fields.Char(string="Employee number", translate=True)
-    statute_link = fields.Char(string="Statute link")
-    annual_report_link = fields.Char(string="Last annual report link")
+    statute_link = fields.Char(string="Statute link", translate=True)
+    annual_report_link = fields.Char(
+        string="Last annual report link", translate=True
+    )
     area_char_list = fields.Char(
         compute="_return_area_char_list", string="activity areas"
     )

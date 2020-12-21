@@ -27,8 +27,8 @@
 	    				<group>
 	    					<field name="lst_price" readonly="True"/>
 	    					<field name="book_value" readonly="True"/>
-                            <field name="subscription_start_date" readonly="True"/>
-                            <field name="subscription_end_date" readonly="True"/>
+                            <field name="subscription_start_text" readonly="True"/>
+                            <field name="subscription_end_text" readonly="True"/>
                             <field name="subscription_length" readonly="True"/>
 	    				</group>
 	    				<group>
@@ -57,8 +57,8 @@
 		    				<field name="maximum_amount" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                             <field name="min_target_issue" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>
     						<field name="max_target_issue" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>
-    						<field name="subscription_start_date"/>
-    						<field name="subscription_end_date"/>
+    						<field name="subscription_start_text"/>
+    						<field name="subscription_end_text"/>
     						<field name="subscription_length"/>
 		    			</group>
 		    			<group name="terms" string="Terms">
