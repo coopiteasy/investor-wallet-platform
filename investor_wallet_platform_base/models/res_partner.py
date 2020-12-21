@@ -216,6 +216,13 @@ class ResPartner(models.Model):
         help="Used to restrict access in views",
     )
 
+    show_existing_shares = fields.Boolean(
+        string='Show Existing Shares',
+        default=False)
+    show_existing_loans = fields.Boolean(
+        string='Show Existing Loans',
+        default=False)
+
     @api.multi
     @api.depends("coop_membership.structure", "loan_line_ids.structure")
     def _compute_linked_structure(self):
