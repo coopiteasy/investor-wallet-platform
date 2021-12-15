@@ -24,6 +24,7 @@ class ResPartner(models.Model):
             partner.cooperator_type = "none"
 
     is_platform_structure = fields.Boolean(string="Is a Platform Structure")
+    is_delegated_to_api_client = fields.Boolean(string="Is Delegated to API client")
     cooperator_type = fields.Selection(
         selection=[("none", "None")],
         compute=_compute_cooperator_type,

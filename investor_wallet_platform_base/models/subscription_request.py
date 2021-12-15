@@ -38,26 +38,32 @@ class SubscriptionRequest(models.Model):
                 "sub_req_notif", self.structure
             )
 
+    def send_confirmation_email(self):
+        if not self.structure.is_delegated_to_api_client:
+            return super().send_confirmation_email()
+
+    def send_waiting_list_email(self):
+        if not self.structure.is_delegated_to_api_client:
+            return super().send_waiting_list_email()
+
+    def send_new_subscription_request_notification_email(self, is_company):
+        if not self.structure.is_delegated_to_api_client:
+            notification_template = self.get_structure_email_template_notif(
+                is_company=self.partner_id.is_company
+            )
+            notification_template.send_mail(self.id)
 
     @api.model
     def create(self, vals):
-        subscr_request = super(SubscriptionRequest, self).create(vals)
-        notification_template = subscr_request.get_structure_email_template_notif(
-            False
-        )
-        notification_template.send_mail(subscr_request.id)
-        return subscr_request
+        subscription_request = super(SubscriptionRequest, self).create(vals)
+        subscription_request.send_new_subscription_request_notification_email(is_company=False)
+        return subscription_request
 
     @api.model
     def create_comp_sub_req(self, vals):
-        subscr_request = super(SubscriptionRequest, self).create_comp_sub_req(
-            vals
-        )
-        notification_template = subscr_request.get_structure_email_template_notif(
-            True
-        )
-        notification_template.send_mail(subscr_request.id)
-        return subscr_request
+        subscription_request = super(SubscriptionRequest, self).create_comp_sub_req(            vals        )
+        subscription_request.send_new_subscription_request_notification_email(is_company=False)
+        return subscription_request
 
     def get_journal(self):
         if self.structure:
