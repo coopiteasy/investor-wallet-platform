@@ -38,11 +38,6 @@ class SubscriptionRequest(models.Model):
                 "sub_req_notif", self.structure
             )
 
-    def get_capital_release_mail_template(self):
-        template_obj = self.env["mail.template"]
-        return template_obj.get_email_template_by_key(
-            "rel_capital", self.structure
-        )
 
     @api.model
     def create(self, vals):

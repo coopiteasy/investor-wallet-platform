@@ -7,6 +7,7 @@
 from odoo import fields, models, _
 from odoo.exceptions import ValidationError
 
+# todo use actual template ids in code
 _EMAIL_TEMPLATE_IDS = {
     "sub_req_notif": "investor_wallet_platform_base.email_template_confirmation",
     "sub_req_comp_notif": "investor_wallet_platform_base.email_template_confirmation_company",
