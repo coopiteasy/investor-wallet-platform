@@ -26,19 +26,19 @@ class AccountInvoice(models.Model):
             "certificate", self.structure
         )
 
-    def send_certificate_email(self, certificate_email_template, sub_reg_line):
+    def _send_certificate_email(self, certificate_email_template, sub_reg_line):
         # we send the email with the certificate in attachment
         if not self.structure.is_delegated_to_api_client:
             certificate_email_template.sudo().send_mail(sub_reg_line.id, False)
 
-    def get_capital_release_mail_template(self):
+    def _get_capital_release_mail_template(self):
         return self.env["mail.template"].get_email_template_by_key(
             "rel_capital", self.structure
         )
 
-    def send_capital_release_request(self):
+    def send_capital_release_request_email(self):
         if not self.structure.is_delegated_to_api_client:
-            return super().send_capital_release_request()
+            return super().send_capital_release_request_email()
 
     def validate_capital_release_request(self):
         if self.release_capital_request and not self.structure:
