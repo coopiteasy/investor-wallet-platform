@@ -283,6 +283,7 @@ class IWPIRulesCase(IWPBaseCase):
             "face_value": 100,
             "taxes_rate": 0.03,
             "structure": self.coopiteasy.id,
+            "loan_term": 12.,
         }
         with self.assertRaises(AccessError):
             self.env["loan.issue"].create(vals)
@@ -311,6 +312,7 @@ class IWPIRulesCase(IWPBaseCase):
             "face_value": 100,
             "taxes_rate": 0.03,
             "structure": self.coopcity.id,
+            "loan_term": 12.,
         }
         with self.assertRaises(AccessError):
             self.env["loan.issue"].create(vals)
@@ -321,6 +323,7 @@ class IWPIRulesCase(IWPBaseCase):
             "face_value": 100,
             "taxes_rate": 0.03,
             "structure": self.coopcity.id,
+            "loan_term": 12.,
         }
         loan_issue = self.env["loan.issue"].create(vals)
 
@@ -348,6 +351,7 @@ class IWPIRulesCase(IWPBaseCase):
             "face_value": 100,
             "taxes_rate": 0.03,
             "structure": self.coopiteasy.id,
+            "loan_term": 12.,
         }
         loan_issue = self.env["loan.issue"].create(vals)
         _ = loan_issue.structure

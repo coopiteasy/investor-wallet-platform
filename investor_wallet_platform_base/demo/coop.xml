@@ -109,6 +109,7 @@
         <field name="taxes_rate">0.08</field>
         <field name="state">ongoing</field>
         <field name="structure" ref="res_partner_structure_coopcity_demo"/>
+        <field name="loan_term">12</field>
     </record>
 
     <record id="loan_issue_line_2_demo" model="loan.issue.line">
