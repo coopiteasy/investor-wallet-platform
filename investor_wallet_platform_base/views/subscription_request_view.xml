@@ -4,7 +4,7 @@
         <field name="model">subscription.request</field>
         <field name="inherit_id" ref="easy_my_coop.subscription_request_tree"/>
         <field name="arch" type="xml">
-        	<field name="name" position="before">
+        	<field name="firstname" position="before">
         		<field name="structure"/>
         	</field>
         </field>

@@ -69,7 +69,8 @@
     </record>
 
     <record id="subscription_request_2_demo" model="subscription.request">
-        <field name="name">Michel Brel</field>
+        <field name="firstname">Michel</field>
+        <field name="lastname">Brel</field>
         <field name="structure" ref="res_partner_structure_coopcity_demo"/>
         <field name="email">michel@demo.coop</field>
         <field name="address">stgillisstraat</field>
