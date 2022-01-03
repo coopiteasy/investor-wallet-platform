@@ -56,13 +56,16 @@ class SubscriptionRequest(models.Model):
     @api.model
     def create(self, vals):
         subscription_request = super(SubscriptionRequest, self).create(vals)
-        subscription_request.send_new_subscription_request_notification_email(is_company=False)
+        subscription_request.send_new_subscription_request_notification_email(
+            is_company=False)
         return subscription_request
 
     @api.model
     def create_comp_sub_req(self, vals):
-        subscription_request = super(SubscriptionRequest, self).create_comp_sub_req(            vals        )
-        subscription_request.send_new_subscription_request_notification_email(is_company=False)
+        subscription_request = super(SubscriptionRequest,
+                                     self).create_comp_sub_req(vals)
+        subscription_request.send_new_subscription_request_notification_email(
+            is_company=False)
         return subscription_request
 
     def get_journal(self):
