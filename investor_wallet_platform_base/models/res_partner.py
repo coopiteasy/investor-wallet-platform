@@ -496,7 +496,7 @@ class ResPartner(models.Model):
                 ("state", "!=", "refused"),
                 ("state", "!=", "cancelled"),
                 "|",
-                ("operation_type", "=", "transfert"),
+                ("operation_type", "=", "transfer"),
                 ("operation_type", "=", "sell_back"),
             ]
         )
@@ -531,7 +531,7 @@ class ResPartner(models.Model):
                 ("state", "!=", "refused"),
                 ("state", "!=", "cancelled"),
                 "|",
-                ("operation_type", "=", "transfert"),
+                ("operation_type", "=", "transfer"),
                 ("operation_type", "=", "sell_back"),
             ]
         )

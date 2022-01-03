@@ -18,7 +18,7 @@ class OperationRequest(models.Model):
         default=default_structure,
     )
 
-    def _get_share_transfert_mail_template(self):
+    def _get_share_transfer_mail_template(self):
         return self.env["mail.template"].get_email_template_by_key(
             "certificate_trans", self.structure
         )
@@ -29,7 +29,7 @@ class OperationRequest(models.Model):
             "share_update", self.structure
         )
 
-    def _send_share_transfert_email(self, sub_register_line):
+    def _send_share_transfer_email(self, sub_register_line):
         if not self.structure.is_delegated_to_api_client:
             cert_email_template = self._get_share_transfert_mail_template()
             # TODO this will need a dedicated certificate report

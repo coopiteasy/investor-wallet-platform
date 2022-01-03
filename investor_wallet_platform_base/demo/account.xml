@@ -69,7 +69,7 @@
         </record>
         <record id="transfer_account" model="account.account">
             <field name="code">X1019</field>
-            <field name="name">Internal Transfert Account - (test)</field>
+            <field name="name">Internal Transfer Account - (test)</field>
             <field name="user_type_id" ref="account.data_account_type_current_assets"/>
             <field name="reconcile">1</field>
         </record>
