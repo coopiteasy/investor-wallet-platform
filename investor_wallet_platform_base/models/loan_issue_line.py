@@ -56,7 +56,7 @@ class LoanIssueLine(models.Model):
         )
 
     @api.multi
-    def get_confirm_paid_email_template(self):
+    def get_confirm_paid_mail_template(self):
         self.ensure_one()
         return self.env["mail.template"].get_email_template_by_key(
             "loan_payment_received", self.structure

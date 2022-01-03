@@ -29,13 +29,13 @@ class OperationRequest(models.Model):
             "share_update", self.structure
         )
 
-    def _send_share_transfer_email(self, sub_register_line):
+    def _send_share_transfer_mail(self, sub_register_line):
         if not self.structure.is_delegated_to_api_client:
             cert_email_template = self._get_share_transfert_mail_template()
             # TODO this will need a dedicated certificate report
             cert_email_template.send_mail(sub_register_line.id, False)
 
-    def _send_share_update_email(self, sub_register_line):
+    def _send_share_update_mail(self, sub_register_line):
         if not self.structure.is_delegated_to_api_client:
             cert_email_template = self._get_share_update_mail_template()
             cert_email_template.send_mail(sub_register_line.id, False)

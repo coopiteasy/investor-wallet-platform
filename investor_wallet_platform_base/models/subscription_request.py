@@ -38,13 +38,13 @@ class SubscriptionRequest(models.Model):
                 "sub_req_notif", self.structure
             )
 
-    def _send_confirmation_email(self):
+    def _send_confirmation_mail(self):
         if not self.structure.is_delegated_to_api_client:
-            return super()._send_confirmation_email()
+            return super()._send_confirmation_mail()
 
-    def _send_waiting_list_email(self):
+    def _send_waiting_list_mail(self):
         if not self.structure.is_delegated_to_api_client:
-            return super()._send_waiting_list_email()
+            return super()._send_waiting_list_mail()
 
     def send_new_subscription_request_notification_email(self, is_company):
         if not self.structure.is_delegated_to_api_client:
