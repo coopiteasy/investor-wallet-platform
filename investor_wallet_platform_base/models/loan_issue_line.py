@@ -34,32 +34,29 @@ class LoanIssueLine(models.Model):
 
         # todo bring back to easy_my_coop_loan
         confirmation_mail_template = (
-            line.get_loan_loan_subscription_received_mail_template()
+            line._get_loan_loan_subscription_received_mail_template()
         )
         confirmation_mail_template.send_mail(line.id)
 
         return line
 
-    def get_loan_loan_subscription_received_mail_template(self):
-        template_obj = self.env["mail.template"]
-        return template_obj.get_email_template_by_key(
+    def _get_loan_loan_subscription_received_mail_template(self):
+        return self.env["mail.template"].get_email_template_by_key(
             "loan_subscription_received", self.structure
         )
 
-    def get_loan_sub_mail_template(self):
-        template_obj = self.env["mail.template"]
-        return template_obj.get_email_template_by_key(
+    def _get_loan_sub_mail_template(self):
+        return self.env["mail.template"].get_email_template_by_key(
             "loan_sub_conf", self.structure
         )
 
-    def get_loan_pay_req_mail_template(self):
-        template_obj = self.env["mail.template"]
-        return template_obj.get_email_template_by_key(
+    def _get_loan_pay_req_mail_template(self):
+        return self.env["mail.template"].get_email_template_by_key(
             "loan_payment_req", self.structure
         )
 
     @api.multi
-    def get_confirm_paid_email_template(self):
+    def get_confirm_paid_mail_template(self):
         self.ensure_one()
         return self.env["mail.template"].get_email_template_by_key(
             "loan_payment_received", self.structure

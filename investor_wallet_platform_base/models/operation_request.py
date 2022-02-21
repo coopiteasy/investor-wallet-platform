@@ -18,26 +18,27 @@ class OperationRequest(models.Model):
         default=default_structure,
     )
 
-    def get_share_trans_mail_template(self):
-        templ_obj = self.env["mail.template"]
-        return templ_obj.get_email_template_by_key(
+    def _get_share_transfer_mail_template(self):
+        return self.env["mail.template"].get_email_template_by_key(
             "certificate_trans", self.structure
         )
 
-    def get_share_update_mail_template(self):
+    def _get_share_update_mail_template(self):
         templ_obj = self.env["mail.template"]
         return templ_obj.get_email_template_by_key(
             "share_update", self.structure
         )
 
-    def send_share_trans_mail(self, sub_register_line):
-        cert_email_template = self.get_share_trans_mail_template()
-        # TODO this will need a dedicated certificate report
-        cert_email_template.send_mail(sub_register_line.id, False)
+    def _send_share_transfer_mail(self, sub_register_line):
+        if not self.structure.is_delegated_to_api_client:
+            cert_email_template = self._get_share_transfert_mail_template()
+            # TODO this will need a dedicated certificate report
+            cert_email_template.send_mail(sub_register_line.id, False)
 
-    def send_share_update_mail(self, sub_register_line):
-        cert_email_template = self.get_share_update_mail_template()
-        cert_email_template.send_mail(sub_register_line.id, False)
+    def _send_share_update_mail(self, sub_register_line):
+        if not self.structure.is_delegated_to_api_client:
+            cert_email_template = self._get_share_update_mail_template()
+            cert_email_template.send_mail(sub_register_line.id, False)
 
     def get_subscription_register_vals(self, effective_date):
         vals = super(OperationRequest, self).get_subscription_register_vals(

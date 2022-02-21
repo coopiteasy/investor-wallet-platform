@@ -24,6 +24,13 @@ class ResPartner(models.Model):
             partner.cooperator_type = "none"
 
     is_platform_structure = fields.Boolean(string="Is a Platform Structure")
+    is_delegated_to_api_client = fields.Boolean(
+        string="Is Delegated to API client",
+        help="This structure uses its own Odoo to manage subscription "
+             "requests. The requests are synchronised though the API. "
+             "Contact your system administrator for more information about "
+             "configuration. "
+    )
     cooperator_type = fields.Selection(
         selection=[("none", "None")],
         compute=_compute_cooperator_type,
@@ -31,7 +38,9 @@ class ResPartner(models.Model):
         store=True,
     )
     coop_membership = fields.One2many(
-        "coop.membership", "partner_id", string="Cooperative membership"
+        comodel_name="coop.membership",
+        inverse_name="partner_id",
+        string="Cooperative membership ",
     )
     state = fields.Selection(
         [
@@ -487,7 +496,7 @@ class ResPartner(models.Model):
                 ("state", "!=", "refused"),
                 ("state", "!=", "cancelled"),
                 "|",
-                ("operation_type", "=", "transfert"),
+                ("operation_type", "=", "transfer"),
                 ("operation_type", "=", "sell_back"),
             ]
         )
@@ -522,7 +531,7 @@ class ResPartner(models.Model):
                 ("state", "!=", "refused"),
                 ("state", "!=", "cancelled"),
                 "|",
-                ("operation_type", "=", "transfert"),
+                ("operation_type", "=", "transfer"),
                 ("operation_type", "=", "sell_back"),
             ]
         )

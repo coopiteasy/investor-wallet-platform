@@ -122,7 +122,7 @@
         <field name="structure" ref="res_partner_structure_coopiteasy_demo"/>
         <field name="template_key">certificate_trans</field>
         <field name="email_from">${(object.company_id.coop_email_contact or object.user_id.email)|safe}</field>
-        <field name="subject">Share transfert</field>
+        <field name="subject">Share transfer</field>
         <field name="partner_to">${object.id}</field>
         <field name="reply_to">${(object.company_id.coop_email_contact or object.user_id.email)|safe}</field>
         <field name="model_id" ref="base.model_res_partner"/>
@@ -314,7 +314,7 @@
         <field name="structure" ref="res_partner_structure_coopcity_demo"/>
         <field name="template_key">certificate_trans</field>
         <field name="email_from">${(object.company_id.coop_email_contact or object.user_id.email)|safe}</field>
-        <field name="subject">Share transfert</field>
+        <field name="subject">Share transfer</field>
         <field name="partner_to">${object.id}</field>
         <field name="reply_to">${(object.company_id.coop_email_contact or object.user_id.email)|safe}</field>
         <field name="model_id" ref="base.model_res_partner"/>
