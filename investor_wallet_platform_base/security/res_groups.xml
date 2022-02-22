@@ -3,11 +3,11 @@
         <field name="name">Wallet Platform User</field>
         <field
             name="category_id"
-            ref="easy_my_coop.module_category_cooperator_management"
+            ref="cooperator.module_category_cooperator_management"
         />
         <field
             name="implied_ids"
-            eval="[(6, 0, [ref('easy_my_coop.group_easy_my_coop_manager')])]"
+            eval="[(6, 0, [ref('cooperator.group_easy_my_coop_manager')])]"
         />
         <field name="comment">Administrateur d'une structure de la plateforme</field>
     </record>
@@ -16,7 +16,7 @@
         <field name="name">Wallet Platform Manager</field>
         <field
             name="category_id"
-            ref="easy_my_coop.module_category_cooperator_management"
+            ref="cooperator.module_category_cooperator_management"
         />
         <field name="implied_ids" eval="[(4, ref('group_platform_wallet_user'))]" />
         <field

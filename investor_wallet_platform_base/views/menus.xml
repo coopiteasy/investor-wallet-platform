@@ -5,26 +5,26 @@
 -->
 <odoo>
     <!--  sets Easy My Coop as default app, should be set in a custom module  -->
-    <record id="easy_my_coop.menu_main_easy_my_coop" model="ir.ui.menu">
+    <record id="cooperator.menu_main_easy_my_coop" model="ir.ui.menu">
         <field name="sequence">0</field>
     </record>
 
-    <record id="easy_my_coop.menu_easy_my_coop_config" model="ir.ui.menu">
+    <record id="cooperator.menu_easy_my_coop_config" model="ir.ui.menu">
         <field name="groups_id" eval="[(4, ref('group_platform_wallet_user'))]" />
     </record>
 
     <menuitem
         name="Structures"
         id="menu_wallet_platform_structure"
-        parent="easy_my_coop.menu_easy_my_coop_config"
+        parent="cooperator.menu_easy_my_coop_config"
         action="action_wallet_platform_structure_form"
-        groups="easy_my_coop.group_easy_my_coop_manager"
+        groups="cooperator.group_easy_my_coop_manager"
         sequence="401"
     />
     <menuitem
         name="Structures to validate"
         id="menu_wallet_platform_structure_to_validate"
-        parent="easy_my_coop.menu_easy_my_coop_config"
+        parent="cooperator.menu_easy_my_coop_config"
         action="action_iwp_structure_to_validate_form"
         groups="group_platform_wallet_manager"
         sequence="402"
@@ -33,7 +33,7 @@
         name="Industry"
         id="partner_industry_config"
         action="base.res_partner_industry_action"
-        parent="easy_my_coop.menu_easy_my_coop_config"
+        parent="cooperator.menu_easy_my_coop_config"
         groups="group_platform_wallet_manager"
         sequence="410"
     />
@@ -41,7 +41,7 @@
         name="Activity Area"
         id="menu_wallet_platform_activity_area"
         action="action_wallet_platform_activity_area"
-        parent="easy_my_coop.menu_easy_my_coop_config"
+        parent="cooperator.menu_easy_my_coop_config"
         groups="group_platform_wallet_manager"
         sequence="420"
     />
@@ -49,7 +49,7 @@
         name="Outgoing Mail Servers"
         id="menu_mail_servers_iwp"
         action="base.action_ir_mail_server_list"
-        parent="easy_my_coop.menu_easy_my_coop_config"
+        parent="cooperator.menu_easy_my_coop_config"
         sequence="450"
         groups="group_platform_wallet_manager"
     />

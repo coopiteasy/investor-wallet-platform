@@ -15,7 +15,7 @@
                     string="Validation request"
                     type="object"
                     attrs="{'invisible':[('validation_requested','=',True)]}"
-                    groups="easy_my_coop.group_easy_my_coop_manager"
+                    groups="cooperator.group_easy_my_coop_manager"
                 />
                 <button
                     name="validate"
