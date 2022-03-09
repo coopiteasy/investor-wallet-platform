@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-	<data noupdate="0">
+    <data noupdate="0">
 
-		<report
+        <report
             id="investor_wallet_platform_base.action_cooperator_report_certificat"
             model="subscription.register"
             string="IWP Cooperator certificat"
@@ -23,5 +23,5 @@
             multi="True"
             menu="True"
         />
-	</data>
+    </data>
 </odoo>

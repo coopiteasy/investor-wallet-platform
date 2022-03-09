@@ -45,7 +45,7 @@
         groups="group_platform_wallet_manager"
         sequence="420"
     />
-	<menuitem
+    <menuitem
         name="Outgoing Mail Servers"
         id="menu_mail_servers_iwp"
         action="base.action_ir_mail_server_list"

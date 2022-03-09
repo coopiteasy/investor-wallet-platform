@@ -1,7 +1,7 @@
 <odoo>
-	<record id="group_platform_wallet_user" model="res.groups">
+    <record id="group_platform_wallet_user" model="res.groups">
         <field name="name">Wallet Platform User</field>
-    	<field
+        <field
             name="category_id"
             ref="easy_my_coop.module_category_cooperator_management"
         />

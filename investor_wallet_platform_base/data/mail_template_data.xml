@@ -41,7 +41,9 @@
             id="investor_wallet_platform_base.email_template_release_capital"
             model="mail.template"
         >
-        	<field name="name">Request to Release Capital - Send by Email - Template</field>
+            <field
+                name="name"
+            >Request to Release Capital - Send by Email - Template</field>
             <field
                 name="email_from"
             >${(object.structure.email or object.user_id.email)|safe}</field>

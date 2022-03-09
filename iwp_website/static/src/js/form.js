@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 odoo.define("iwp_website.form", function (require) {
     "use strict";
 
@@ -150,8 +151,10 @@ odoo.define("iwp_website.form", function (require) {
             function compute_minmax_quantity() {
                 var selected_index = amount_elem.prop("selectedIndex");
                 if (selected_index >= 0) {
-                    var face_value =
-                        amount_elem[0].options[selected_index].dataset.face_value;
+                    // TODO: figure out why this was ever assigned.
+                    // var face_value =
+                    //    amount_elem[0].options[selected_index].dataset.face_value;
+                    var price = amount_elem[0].options[selected_index].dataset.price;
                     var min_amount =
                         amount_elem[0].options[selected_index].dataset.min_amount;
                     var max_amount =

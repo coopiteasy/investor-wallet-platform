@@ -336,7 +336,6 @@
             <field name="bank_account_id" ref="bank_account_usd" />
         </record>
         <record id="base.main_company" model="res.company">
-            <field name="currency_exchange_journal_id" ref="currency_diff_journal" />
         </record>
         <!--
         Product income and expense accounts, default parameters

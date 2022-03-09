@@ -11,16 +11,16 @@ from odoo.exceptions import ValidationError
 # cf https://github.com/coopiteasy/investor-wallet-platform/pull/72/files#r774950751
 _EMAIL_TEMPLATE_IDS = {
     "sub_req_notif": "investor_wallet_platform_base.email_template_confirmation",
-    "sub_req_comp_notif": "investor_wallet_platform_base.email_template_confirmation_company",
+    "sub_req_comp_notif": "investor_wallet_platform_base.email_template_confirmation_company",  # noqa: E501
     "rel_capital": "investor_wallet_platform_base.email_template_release_capital",
     "certificate": "investor_wallet_platform_base.email_template_certificat",
-    "certificate_inc": "investor_wallet_platform_base.email_template_certificat_increase",
+    "certificate_inc": "investor_wallet_platform_base.email_template_certificat_increase",  # noqa: E501
     "certificate_trans": "investor_wallet_platform_base.email_template_share_transfer",
     "share_update": "investor_wallet_platform_base.email_template_share_update",
-    "loan_subscription_received": "investor_wallet_platform_base.loan_subscription_received",
+    "loan_subscription_received": "investor_wallet_platform_base.loan_subscription_received",  # noqa: E501
     "loan_sub_conf": "investor_wallet_platform_base.loan_subscription_confirmation",
     "loan_payment_req": "investor_wallet_platform_base.loan_issue_payment_request",
-    "loan_payment_received": "investor_wallet_platform_base.email_template_loan_confirm_paid",
+    "loan_payment_received": "investor_wallet_platform_base.email_template_loan_confirm_paid",  # noqa: E501
 }
 
 
