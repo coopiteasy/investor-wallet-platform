@@ -1,0 +1,726 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* iwp_website
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_menu
+msgid "<strong>Success!</strong>\n"
+"                Your loan subscription has been registered."
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_menu
+msgid "<strong>Success!</strong>\n"
+"                Your share subscription has been registered."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/auth_signup_form.py:53
+#, python-format
+msgid "Accept Data Policy"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/user_form.py:23
+#, python-format
+msgid "Address"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.company_signup_form
+#: model_terms:ir.ui.view,arch_db:iwp_website.investor_signup_form
+msgid "Already have an account?"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.loan_wallet_content
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_loan
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_share
+#: model_terms:ir.ui.view,arch_db:iwp_website.share_wallet_content
+msgid "Amount"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/user_form.py:62
+#, python-format
+msgid "Bank Account Number"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/user_form.py:119
+#, python-format
+msgid "Birthdate"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/user_form.py:140
+#, python-format
+msgid "Bithdate must be in the past."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/auth_signup.py:163
+#, python-format
+msgid "Can not create company."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/auth_signup.py:172
+#, python-format
+msgid "Can not create user."
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.loan_wallet_content
+#: model_terms:ir.ui.view,arch_db:iwp_website.share_wallet_content
+msgid "Cancel"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/user_form.py:35
+#, python-format
+msgid "City"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.loan_wallet_content
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_menu
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_wallet_loan
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_wallet_share
+#: model_terms:ir.ui.view,arch_db:iwp_website.share_wallet_content
+msgid "Close"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.company_signup_form
+#: model_terms:ir.ui.view,arch_db:iwp_website.investor_company_details
+msgid "Company"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/user_form.py:156
+#, python-format
+msgid "Company Name"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/auth_signup_form.py:28
+#, python-format
+msgid "Confirm E-mail"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/auth_signup_form.py:42
+#, python-format
+msgid "Confirm Password"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.loan_wallet_content
+#: model_terms:ir.ui.view,arch_db:iwp_website.share_wallet_content
+msgid "Confirm suppression"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/user_form.py:41
+#, python-format
+msgid "Country"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.new_manual_loan_form
+msgid "Create new manual loan"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.new_manual_share_form
+msgid "Create new manual share"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.loan_wallet_content
+#: model_terms:ir.ui.view,arch_db:iwp_website.share_wallet_content
+msgid "Creation"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/loan_issue_form.py:42
+#: code:addons/iwp_website/controllers/subscription_request_form.py:42
+#, python-format
+msgid "Data Policy"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/investor_portal.py:97
+#: code:addons/iwp_website/controllers/investor_portal.py:199
+#: code:addons/iwp_website/controllers/manual_loan_form.py:43
+#: code:addons/iwp_website/controllers/manual_share_form.py:43
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_share
+#: model_terms:ir.ui.view,arch_db:iwp_website.share_wallet_content
+#, python-format
+msgid "Date"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.loan_wallet_content
+msgid "Delete loan"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.share_wallet_content
+msgid "Delete share"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.loan_wallet_content
+msgid "Do you realy want to delete this loan from the system?"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.share_wallet_content
+msgid "Do you realy want to delete this share from the system?"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.login
+msgid "Don't have an account ?"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/auth_signup_form.py:20
+#, python-format
+msgid "E-mail"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.investor_company_details
+#: model_terms:ir.ui.view,arch_db:iwp_website.investor_details
+#: model_terms:ir.ui.view,arch_db:iwp_website.new_manual_loan_form
+#: model_terms:ir.ui.view,arch_db:iwp_website.new_manual_share_form
+#: model_terms:ir.ui.view,arch_db:iwp_website.sell_share
+#: model_terms:ir.ui.view,arch_db:iwp_website.subscribe_to_loan_issue
+#: model_terms:ir.ui.view,arch_db:iwp_website.subscribe_to_structure
+msgid "Envoyer"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_wallet_loan
+msgid "Error when deleting a loan."
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_wallet_share
+msgid "Error when deleting a share."
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.structures
+msgid "Existing loans"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.structures
+msgid "Existing shares"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.loan_wallet_content
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_loan
+msgid "Facial Value"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/loan_issue_form.py:54
+#: code:addons/iwp_website/controllers/subscription_request_form.py:54
+#, python-format
+msgid "Financial Risks"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/user_form.py:100
+#, python-format
+msgid "Firstname"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/user_form.py:113
+#, python-format
+msgid "Gender"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.login_showcase_website
+msgid "Go to label website"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:res.partner,internal_rules_approval_text:iwp_website.res_partner_cooperator_4_demo_res_partner
+#: model_terms:res.partner,internal_rules_approval_text:iwp_website.res_user_cooperator_1_demo_res_partner
+#: model_terms:res.partner,internal_rules_approval_text:iwp_website.res_user_cooperator_3_demo_res_partner
+#: model_terms:res.users,internal_rules_approval_text:iwp_website.res_partner_cooperator_4_demo
+#: model_terms:res.users,internal_rules_approval_text:iwp_website.res_user_cooperator_1_demo
+#: model_terms:res.users,internal_rules_approval_text:iwp_website.res_user_cooperator_3_demo
+msgid "I approve internal rules."
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:res.partner,data_policy_approval_text:iwp_website.res_partner_cooperator_4_demo_res_partner
+#: model_terms:res.partner,data_policy_approval_text:iwp_website.res_user_cooperator_1_demo_res_partner
+#: model_terms:res.partner,data_policy_approval_text:iwp_website.res_user_cooperator_3_demo_res_partner
+#: model_terms:res.users,data_policy_approval_text:iwp_website.res_partner_cooperator_4_demo
+#: model_terms:res.users,data_policy_approval_text:iwp_website.res_user_cooperator_1_demo
+#: model_terms:res.users,data_policy_approval_text:iwp_website.res_user_cooperator_3_demo
+msgid "I approve the data policy."
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:res.partner,financial_risk_approval_text:iwp_website.res_partner_cooperator_4_demo_res_partner
+#: model_terms:res.partner,financial_risk_approval_text:iwp_website.res_user_cooperator_1_demo_res_partner
+#: model_terms:res.partner,financial_risk_approval_text:iwp_website.res_user_cooperator_3_demo_res_partner
+#: model_terms:res.users,financial_risk_approval_text:iwp_website.res_partner_cooperator_4_demo
+#: model_terms:res.users,financial_risk_approval_text:iwp_website.res_user_cooperator_1_demo
+#: model_terms:res.users,financial_risk_approval_text:iwp_website.res_user_cooperator_3_demo
+msgid "I aware of financial risk."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/loan_issue_form.py:48
+#: code:addons/iwp_website/controllers/subscription_request_form.py:48
+#, python-format
+msgid "Internal Rules"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.structure_menu
+#: model_terms:ir.ui.view,arch_db:iwp_website.structures
+msgid "Invest"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.investor_company_details
+#: model_terms:ir.ui.view,arch_db:iwp_website.investor_details
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_menu_breadcrumb
+msgid "Investor Details"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.menu_showcase_website
+msgid "Label website"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/user_form.py:81
+#, python-format
+msgid "Language"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/user_form.py:107
+#, python-format
+msgid "Lastname"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_menu
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_menu_breadcrumb
+msgid "Loan History"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/loan_issue_form.py:22
+#: code:addons/iwp_website/controllers/manual_loan_form.py:23
+#, python-format
+msgid "Loan Issue"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_menu
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_menu_breadcrumb
+msgid "Loan Wallet"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.loan_wallet_content
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_loan
+msgid "Loan issue"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.structures
+msgid "Loans"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/investor_portal.py:242
+#: model_terms:ir.ui.view,arch_db:iwp_website.share_wallet_content
+#: model_terms:ir.ui.view,arch_db:iwp_website.structures
+#, python-format
+msgid "Name"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.subscribe_to_structure
+msgid "New Subscription"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.subscribe_to_structure
+msgid "New Subscription to"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.new_manual_loan_form
+msgid "New manual loan for"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.new_manual_share_form
+msgid "New manual share for"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_share
+msgid "Operation"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/auth_signup_form.py:35
+#, python-format
+msgid "Password"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/auth_signup_form.py:89
+#, python-format
+msgid "Password must be at least 8 characters long."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/user_form.py:130
+#: code:addons/iwp_website/controllers/user_form.py:163
+#, python-format
+msgid "Phone"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/subscription_request_form.py:79
+#, python-format
+msgid "Please fill in your profile before continuing."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/user_form.py:73
+#, python-format
+msgid "Please give a correct IBAN number."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/loan_issue_form.py:28
+#: code:addons/iwp_website/controllers/manual_loan_form.py:29
+#: code:addons/iwp_website/controllers/manual_share_form.py:29
+#: code:addons/iwp_website/controllers/operation_request_form.py:27
+#: code:addons/iwp_website/controllers/subscription_request_form.py:28
+#: model_terms:ir.ui.view,arch_db:iwp_website.loan_wallet_content
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_loan
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_share
+#: model_terms:ir.ui.view,arch_db:iwp_website.share_wallet_content
+#, python-format
+msgid "Quantity"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.company_signup_form
+#: model_terms:ir.ui.view,arch_db:iwp_website.investor_company_details
+msgid "Representative"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.login
+msgid "Reset Password"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.share_wallet_content
+msgid "Sell Back"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_share
+msgid "Sell Back Request"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.sell_share
+msgid "Sell Share"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.sell_share
+msgid "Sell subscription of"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.loan_wallet_content
+#: model_terms:ir.ui.view,arch_db:iwp_website.share_wallet_content
+msgid "Share Actions"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_menu
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_menu_breadcrumb
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_share
+msgid "Share History"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_share
+msgid "Share Name"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/manual_share_form.py:23
+#: code:addons/iwp_website/controllers/operation_request_form.py:21
+#: code:addons/iwp_website/controllers/subscription_request_form.py:22
+#, python-format
+msgid "Share Type"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_menu
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_menu_breadcrumb
+msgid "Share Wallet"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.structures
+msgid "Shares"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.company_signup_form
+#: model_terms:ir.ui.view,arch_db:iwp_website.investor_signup_form
+msgid "Sign up"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.login
+msgid "Sign up for company"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.login
+msgid "Sign up for individual"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/investor_portal.py:200
+#: model_terms:ir.ui.view,arch_db:iwp_website.loan_wallet_content
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_loan
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_share
+#, python-format
+msgid "State"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.loan_wallet_content
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_loan
+msgid "Structure"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/investor_portal.py:96
+#: code:addons/iwp_website/controllers/investor_portal.py:201
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_share
+#, python-format
+msgid "Structure Name"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.structures
+msgid "Structure Type"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_menu_breadcrumb
+msgid "Structures"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.share_wallet_content
+msgid "Subscribe"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.loan_wallet_content
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_loan
+msgid "Subscription Date"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_share
+msgid "Subscription Request"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.subscribe_to_loan_issue
+msgid "Subscription to Loan Issue of"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/auth_signup_form.py:84
+#, python-format
+msgid "That does not seem to be an email address."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/auth_signup_form.py:68
+#, python-format
+msgid "The email and confirmation email must be the same."
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_wallet_loan
+msgid "The loan has been deleted."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/auth_signup_form.py:77
+#, python-format
+msgid "The password and confirmation password does not match."
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_wallet_share
+msgid "The share has been deleted."
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_wallet_share
+msgid "There are currently no finacial product for your account."
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_loan
+msgid "There are currently no loan for your account."
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_wallet_loan
+msgid "There are currently no loans paid for your account."
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.structures
+msgid "There are currently no structures."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/loan_issue_form.py:36
+#: code:addons/iwp_website/controllers/manual_loan_form.py:37
+#: code:addons/iwp_website/controllers/manual_share_form.py:37
+#: code:addons/iwp_website/controllers/operation_request_form.py:35
+#: code:addons/iwp_website/controllers/subscription_request_form.py:36
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_share
+#: model_terms:ir.ui.view,arch_db:iwp_website.share_wallet_content
+#, python-format
+msgid "Total Amount"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/investor_portal.py:243
+#, python-format
+msgid "Type"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.structures
+msgid "Wallet"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/subscription_request_form.py:98
+#, python-format
+msgid "You cannot buy so much shares. The maximum amount is %d."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/loan_issue_form.py:82
+#, python-format
+msgid "You cannot request so much loans. The maximum amount is %d."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/operation_request_form.py:74
+#, python-format
+msgid "You cannot sell so much shares. You must sell all your share or keep at least %d."
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_share
+msgid "You currently owns no shares."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/loan_issue_form.py:75
+#: code:addons/iwp_website/controllers/subscription_request_form.py:91
+#, python-format
+msgid "You have reached the maximum amount that can be taken for this structure."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/subscription_request_form.py:106
+#, python-format
+msgid "You have to buy more shares. Minimum amount is %d."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/loan_issue_form.py:90
+#, python-format
+msgid "You have to request more loans. Minimum amount is %d."
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.investor_company_details
+#: model_terms:ir.ui.view,arch_db:iwp_website.investor_details
+msgid "Your Investor Details"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.new_manual_loan_form
+msgid "Your manual loan has been registered."
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.new_manual_share_form
+msgid "Your subscription has been registered."
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/user_form.py:29
+#, python-format
+msgid "Zip / Postal Code"
+msgstr ""
+
+#. module: iwp_website
+#: code:addons/iwp_website/controllers/investor_portal.py:539
+#: code:addons/iwp_website/controllers/investor_portal.py:542
+#, python-format
+msgid "pending"
+msgstr ""
+
+#. module: iwp_website
+#: model_terms:ir.ui.view,arch_db:iwp_website.portal_my_history_share
+msgid "to"
+msgstr ""
+
