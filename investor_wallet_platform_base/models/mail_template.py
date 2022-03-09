@@ -4,7 +4,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 
-from odoo import fields, models, _
+from odoo import _, fields, models
 from odoo.exceptions import ValidationError
 
 # todo use actual template ids in code
@@ -38,9 +38,7 @@ class MailTemplate(models.Model):
     template_key = fields.Char(string="Mail template key", readonly=True)
     iwp = fields.Boolean(string="IWP mail template")
 
-    def get_email_template_by_key(
-        self, mail_template_key, structure, raise_=True
-    ):
+    def get_email_template_by_key(self, mail_template_key, structure, raise_=True):
         template_obj = self.env["mail.template"]
         mail_template = template_obj.search(
             [
@@ -51,8 +49,6 @@ class MailTemplate(models.Model):
         )
 
         if not mail_template and raise_:
-            raise ValidationError(
-                _("Please generate emails for your structure.")
-            )
+            raise ValidationError(_("Please generate emails for your structure."))
 
         return mail_template

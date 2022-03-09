@@ -9,7 +9,7 @@ from odoo.http import request
 from odoo.tools.translate import _
 
 from .form import Field, Form, FormValidationError
-from .user_form import InvestorPersonForm, InvestorCompanyForm
+from .user_form import InvestorCompanyForm, InvestorPersonForm
 
 
 class SignupForm(Form):
@@ -81,16 +81,12 @@ class SignupForm(Form):
     def _validate_login(self, value):
         """Validate login. Raise Error if validation doesn't succeed."""
         if not tools.single_email_re.match(value):
-            raise FormValidationError(
-                _("That does not seem to be an email address.")
-            )
+            raise FormValidationError(_("That does not seem to be an email address."))
 
     def _validate_password(self, value):
         """Validate password. Raise Error if validation doesn't succeed."""
         if len(value) < 8:
-            raise FormValidationError(
-                _("Password must be at least 8 characters long.")
-            )
+            raise FormValidationError(_("Password must be at least 8 characters long."))
 
 
 class InvestorPersonSignupForm(SignupForm, InvestorPersonForm):

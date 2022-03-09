@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2019 Coop IT Easy SCRL fs
 #   Robin Keunen <robin@coopiteasy.be>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
@@ -7,9 +6,9 @@ import logging
 
 import requests
 from lxml import html
-from odoo.tests.common import HttpCase
 
 import odoo
+from odoo.tests.common import HttpCase
 
 HOST = "127.0.0.1"
 PORT = odoo.tools.config["http_port"]

@@ -2,7 +2,6 @@
 #   Robin Keunen <robin@coopiteasy.be>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo.addons.easy_my_coop.tests.test_base import EMCBaseCase
 
 # Copyright 2019 Coop IT Easy SCRL fs
 #   Robin Keunen <robin@coopiteasy.be>
@@ -49,9 +48,7 @@ class IWPBaseCase(common.TransactionCase):
             {
                 "code": "001",
                 "name": "Expenses",
-                "user_type_id": self.env.ref(
-                    "account.data_account_type_expenses"
-                ).id,
+                "user_type_id": self.env.ref("account.data_account_type_expenses").id,
                 "chart_template_id": self.chart.id,
                 "reconcile": True,
             }
@@ -63,9 +60,7 @@ class IWPBaseCase(common.TransactionCase):
             {
                 "code": "002",
                 "name": "Product Sales",
-                "user_type_id": self.env.ref(
-                    "account.data_account_type_revenue"
-                ).id,
+                "user_type_id": self.env.ref("account.data_account_type_revenue").id,
                 "chart_template_id": self.chart.id,
                 "reconcile": True,
             }
@@ -77,9 +72,7 @@ class IWPBaseCase(common.TransactionCase):
             {
                 "code": "003",
                 "name": "Account Receivable",
-                "user_type_id": self.env.ref(
-                    "account.data_account_type_receivable"
-                ).id,
+                "user_type_id": self.env.ref("account.data_account_type_receivable").id,
                 "chart_template_id": self.chart.id,
                 "reconcile": True,
             }
@@ -91,9 +84,7 @@ class IWPBaseCase(common.TransactionCase):
             {
                 "code": "004",
                 "name": "Account Payable",
-                "user_type_id": self.env.ref(
-                    "account.data_account_type_payable"
-                ).id,
+                "user_type_id": self.env.ref("account.data_account_type_payable").id,
                 "chart_template_id": self.chart.id,
                 "reconcile": True,
             }
@@ -150,9 +141,7 @@ class IWPBaseCase(common.TransactionCase):
                 "name": "Equity",
                 "code": 100910,
                 "reconcile": True,
-                "user_type_id": self.browse_ref(
-                    "account.data_account_type_equity"
-                ).id,
+                "user_type_id": self.browse_ref("account.data_account_type_equity").id,
             }
         )
         self.cooperator_account = self.env["account.account"].create(
@@ -201,11 +190,7 @@ class IWPBaseCase(common.TransactionCase):
         self.uid = self.ref("easy_my_coop.res_users_manager_emc_demo")
 
     def as_iwp_user(self):
-        self.uid = self.ref(
-            "investor_wallet_platform_base.res_users_user_iwp_demo"
-        )
+        self.uid = self.ref("investor_wallet_platform_base.res_users_user_iwp_demo")
 
     def as_iwp_manager(self):
-        self.uid = self.ref(
-            "investor_wallet_platform_base.res_users_manager_iwp_demo"
-        )
+        self.uid = self.ref("investor_wallet_platform_base.res_users_manager_iwp_demo")

@@ -2,12 +2,12 @@
 #     - Rémy Taymans <remy@coopiteasy.be>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+import logging
+
 from werkzeug.exceptions import NotFound
 
 from odoo import http
 from odoo.http import request
-from odoo.tools.translate import _
-import logging
 
 from .loan_issue_form import LoanIssueLineForm
 
@@ -35,9 +35,7 @@ class WebsiteLoanIssue(http.Controller):
         if loan_issue:
             form_context["loan_issue"] = loan_issue
         if request.httprequest.method == "POST":
-            form = self.loan_issue_line_form(
-                data=request.params, context=form_context
-            )
+            form = self.loan_issue_line_form(data=request.params, context=form_context)
             if form.is_valid():
                 self.process_loan_issue_line_form(form, context=form_context)
                 request.session["success_loan"] = True
@@ -71,9 +69,7 @@ class WebsiteLoanIssue(http.Controller):
                     request.env["loan.issue"]
                     .sudo()
                     .get_web_issues(user.commercial_partner_id.is_company)
-                    .filtered(
-                        lambda r: r.structure == struct and r.default_issue
-                    )
+                    .filtered(lambda r: r.structure == struct and r.default_issue)
                 )
                 default_loan_issue = (
                     default_loan_issues[0] if default_loan_issues else None
@@ -83,9 +79,7 @@ class WebsiteLoanIssue(http.Controller):
                 initial["quantity"] = max(
                     1,
                     round(
-                        default_loan_issue.get_min_amount(
-                            user.commercial_partner_id
-                        )
+                        default_loan_issue.get_min_amount(user.commercial_partner_id)
                         / default_loan_issue.face_value
                     ),
                 )

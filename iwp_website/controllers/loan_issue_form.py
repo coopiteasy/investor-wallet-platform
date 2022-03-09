@@ -4,7 +4,6 @@
 
 """Subscription Request Form"""
 
-from datetime import date
 
 from odoo.http import request
 from odoo.tools.translate import _
@@ -67,9 +66,7 @@ class LoanIssueLineForm(Form):
             return cleaned_data
         user = self.context.get("user")
         loan_issue = (
-            request.env["loan.issue"]
-            .sudo()
-            .browse(int(cleaned_data["loan_issue"]))
+            request.env["loan.issue"].sudo().browse(int(cleaned_data["loan_issue"]))
         )
         amount = loan_issue.face_value * cleaned_data["quantity"]
         max_amount = loan_issue.get_max_amount(user.commercial_partner_id)
@@ -84,17 +81,13 @@ class LoanIssueLineForm(Form):
             raise FormValidationError(
                 _(
                     "You cannot request so much loans. The maximum amount"
-                    " is %d."
-                    % max_amount
+                    " is %d." % max_amount
                 )
             )
         min_amount = loan_issue.get_min_amount(user.commercial_partner_id)
         if amount < min_amount:
             raise FormValidationError(
-                _(
-                    "You have to request more loans. Minimum amount is %d."
-                    % min_amount
-                )
+                _("You have to request more loans. Minimum amount is %d." % min_amount)
             )
         return cleaned_data
 

@@ -41,14 +41,7 @@ class CoopMembership(models.Model):
                 sub_request = membership.subscription_request_ids.filtered(
                     lambda record: record.structure == membership.structure
                 )
-                if (
-                    len(
-                        sub_request.filtered(
-                            lambda record: record.state == "done"
-                        )
-                    )
-                    > 0
-                ):
+                if len(sub_request.filtered(lambda record: record.state == "done")) > 0:
                     is_candidate = True
                 else:
                     is_candidate = False
@@ -74,8 +67,7 @@ class CoopMembership(models.Model):
     )
     old_member = fields.Boolean(
         string="Old cooperator",
-        help="Check this box if this cooperator is"
-        " no more an effective member.",
+        help="Check this box if this cooperator is" " no more an effective member.",
     )
     subscription_request_ids = fields.One2many(
         related="partner_id.subscription_request_ids"

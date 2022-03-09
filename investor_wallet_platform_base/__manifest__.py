@@ -7,10 +7,15 @@
 {
     "name": "Investor Wallet Platform Base",
     "version": "12.0.1.2.5",
-    "depends": ["easy_my_coop", "easy_my_coop_loan", "easy_my_coop_api", "partner_changeset"],
+    "depends": [
+        "easy_my_coop",
+        "easy_my_coop_loan",
+        "easy_my_coop_api",
+        "partner_changeset",
+    ],
     "author": "Coop IT Easy SCRLfs",
     "category": "Cooperative management",
-    "website": "www.coopiteasy.be",
+    "website": "https://coopiteasy.be",
     "license": "AGPL-3",
     "description": """
     This module add a layer on top of easy my coop to allow handling several

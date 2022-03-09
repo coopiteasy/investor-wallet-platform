@@ -2,8 +2,9 @@
 #   - Rémy Taymans <remy@coopiteasy.be>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from werkzeug.exceptions import NotFound
 from datetime import date
+
+from werkzeug.exceptions import NotFound
 
 from odoo import http
 from odoo.http import request
@@ -27,9 +28,7 @@ class ManualShareAction(http.Controller):
             raise NotFound
         form_context = {"struct": struct, "user": request.env.user}
         if request.httprequest.method == "POST":
-            form = self.manual_share_form(
-                data=request.params, context=form_context
-            )
+            form = self.manual_share_form(data=request.params, context=form_context)
             if form.is_valid():
                 self.manual_share_form_processing(form, context=form_context)
                 return request.redirect(request.params.get("redirect", ""))
@@ -46,9 +45,7 @@ class ManualShareAction(http.Controller):
     )
     def delete_manual_share(self, share_line_id=None, **params):
         """Route for form to delete a manual share"""
-        shareline = (
-            request.env["share.line"].sudo().browse(share_line_id).exists()
-        )
+        shareline = request.env["share.line"].sudo().browse(share_line_id).exists()
         if not shareline or shareline.creation_mode != "manual":
             raise NotFound
         user = request.env.user
@@ -76,9 +73,7 @@ class ManualShareAction(http.Controller):
             default_share_types = struct.share_type_ids.filtered(
                 lambda r: r.display_on_website and r.default_share_product
             )
-            default_share_type = (
-                default_share_types[0] if default_share_types else None
-            )
+            default_share_type = default_share_types[0] if default_share_types else None
             if default_share_type:
                 initial["share_type"] = str(default_share_type.id)
         initial["quantity"] = 1
@@ -88,9 +83,7 @@ class ManualShareAction(http.Controller):
     def manual_share_form_processing(self, form, context=None):
         """Process manual share form."""
         share_line_mgr = request.env["share.line"]
-        share_line_mgr.sudo().create(
-            self.share_line_vals(form, context=context)
-        )
+        share_line_mgr.sudo().create(self.share_line_vals(form, context=context))
 
     def share_line_vals(self, form, context=None):
         """Return vals to create a share line object"""

@@ -4,7 +4,6 @@
 
 """Subscription Request Form"""
 
-from datetime import date
 
 from odoo.http import request
 from odoo.tools.translate import _
@@ -104,10 +103,7 @@ class SubscriptionRequestForm(Form):
         min_amount = share_type.can_buy_min_amount(user.commercial_partner_id)
         if min_amount > amount:
             raise FormValidationError(
-                _(
-                    "You have to buy more shares. Minimum amount is %d."
-                    % min_amount
-                )
+                _("You have to buy more shares. Minimum amount is %d." % min_amount)
             )
         return cleaned_data
 
@@ -120,15 +116,11 @@ class SubscriptionRequestForm(Form):
         struct = self.context.get("struct")
         if user.commercial_partner_id.is_company:
             share_types = struct.share_type_ids.filtered(
-                lambda r: r.display_on_website
-                and r.by_company
-                and r.state == "open"
+                lambda r: r.display_on_website and r.by_company and r.state == "open"
             )
         else:
             share_types = struct.share_type_ids.filtered(
-                lambda r: r.display_on_website
-                and r.by_individual
-                and r.state == "open"
+                lambda r: r.display_on_website and r.by_individual and r.state == "open"
             )
         choices = []
         if struct:
@@ -136,8 +128,7 @@ class SubscriptionRequestForm(Form):
                 choices.append(
                     Choice(
                         value=st.id,
-                        display="%s - %s"
-                        % (st.name, monetary_to_text(st.list_price)),
+                        display="%s - %s" % (st.name, monetary_to_text(st.list_price)),
                         att={
                             "data-price": st.list_price,
                             "data-max_amount": st.can_buy_max_amount(

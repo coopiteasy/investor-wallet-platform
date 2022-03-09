@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2019 Coop IT Easy SCRL fs
 #   Robin Keunen <robin@coopiteasy.be>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
@@ -18,20 +17,14 @@ class LoanIssue(models.Model):
         domain=[("is_platform_structure", "=", True)],
         default=default_structure,
     )
-    validation_requested = fields.Boolean(
-        string="Validation requested", readonly=True
-    )
+    validation_requested = fields.Boolean(string="Validation requested", readonly=True)
     validated = fields.Boolean(string="Validation request", readonly=True)
     validation_date = fields.Date(string="Validation date", readonly=True)
-    validated_by = fields.Many2one(
-        "res.users", string="Validated by", readonly=True
-    )
+    validated_by = fields.Many2one("res.users", string="Validated by", readonly=True)
     solidary = fields.Selection(
         [("yes", "Yes"), ("no", "No")], string="Solidary product"
     )
-    banking = fields.Selection(
-        [("yes", "Yes"), ("no", "No")], string="Banking product"
-    )
+    banking = fields.Selection([("yes", "Yes"), ("no", "No")], string="Banking product")
     book_value = fields.Html(string="Book value", translate=True)
     advantages = fields.Html(string="Other advantages", translate=True)
     tax_policy = fields.Char(string="Tax policy", translate=True)
@@ -41,16 +34,12 @@ class LoanIssue(models.Model):
     oversubscription_policy = fields.Char(
         string="Over subscription policy", translate=True
     )
-    purpose_of_issue = fields.Html(
-        string="Purpose of the issue", translate=True
-    )
+    purpose_of_issue = fields.Html(string="Purpose of the issue", translate=True)
     price_fluctuation_risk = fields.Char(
         string="Price fluctuation price", translate=True
     )
     capital_risk = fields.Html(string="Risk on equity", translate=True)
-    other_product_risk = fields.Html(
-        string="Other risk on product", translate=True
-    )
+    other_product_risk = fields.Html(string="Other risk on product", translate=True)
     transfer_allowed = fields.Html(
         string="Product transfer possibility", translate=True
     )
@@ -61,7 +50,10 @@ class LoanIssue(models.Model):
     def count_published_loans(self):
         """Count number of loan issue that investor can invest in"""
         return self.search_count(
-            [("state", "=", "ongoing"), ("display_on_website", "=", True),]
+            [
+                ("state", "=", "ongoing"),
+                ("display_on_website", "=", True),
+            ]
         )
 
     @api.multi

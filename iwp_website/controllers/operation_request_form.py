@@ -4,7 +4,6 @@
 
 """Operation Request Form"""
 
-from datetime import date
 
 from odoo.http import request
 from odoo.tools.translate import _
@@ -53,13 +52,17 @@ class OperationRequestForm(Form):
             .browse(int(cleaned_data["share_type"]))
         )
         # Pending operation for this share type
-        operation_reqs = request.env["operation.request"].sudo().search(
-            [
-                ("share_product_id", "=", share_type.product_variant_id.id),
-                ("partner_id", "=", user.commercial_partner_id.id),
-                ("state", "in", ["draft", "wainting", "approved"]),
-                ("operation_type", "!=", "subscription"),
-            ]
+        operation_reqs = (
+            request.env["operation.request"]
+            .sudo()
+            .search(
+                [
+                    ("share_product_id", "=", share_type.product_variant_id.id),
+                    ("partner_id", "=", user.commercial_partner_id.id),
+                    ("state", "in", ["draft", "wainting", "approved"]),
+                    ("operation_type", "!=", "subscription"),
+                ]
+            )
         )
         amount = share_type.list_price * cleaned_data["quantity"]
         owned_amount = user.commercial_partner_id.owned_amount(share_type)
@@ -96,8 +99,7 @@ class OperationRequestForm(Form):
                 choices.append(
                     Choice(
                         value=st.id,
-                        display="%s - %s"
-                        % (st.name, monetary_to_text(st.list_price)),
+                        display="%s - %s" % (st.name, monetary_to_text(st.list_price)),
                         att={
                             "data-price": st.list_price,
                             "data-owned_amount": (

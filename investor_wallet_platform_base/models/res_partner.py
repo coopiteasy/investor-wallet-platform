@@ -2,11 +2,10 @@
 #   Robin Keunen <robin@coopiteasy.be>
 #   Houssine Bakkali <houssine@coopiteasy.be>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
-from odoo import api, fields, models, _
-
-from odoo.exceptions import UserError
-from odoo.exceptions import ValidationError
 import logging
+
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError, ValidationError
 
 _logger = logging.getLogger(__name__)
 
@@ -27,9 +26,9 @@ class ResPartner(models.Model):
     is_delegated_to_api_client = fields.Boolean(
         string="Is Delegated to API client",
         help="This structure uses its own Odoo to manage subscription "
-             "requests. The requests are synchronised though the API. "
-             "Contact your system administrator for more information about "
-             "configuration. "
+        "requests. The requests are synchronised though the API. "
+        "Contact your system administrator for more information about "
+        "configuration. ",
     )
     cooperator_type = fields.Selection(
         selection=[("none", "None")],
@@ -53,9 +52,7 @@ class ResPartner(models.Model):
         default="draft",
     )
     validation_date = fields.Date(string="Validation date", readonly=True)
-    validated_by = fields.Many2one(
-        "res.users", string="Validated by", readonly=True
-    )
+    validated_by = fields.Many2one("res.users", string="Validated by", readonly=True)
     initialized = fields.Boolean(string="Sequence initialized")
     structure_type = fields.Selection(
         [
@@ -86,9 +83,7 @@ class ResPartner(models.Model):
     share_type_ids = fields.One2many(
         "product.template", "structure", string="Share type"
     )
-    loan_issue_ids = fields.One2many(
-        "loan.issue", "structure", string="Loan issues"
-    )
+    loan_issue_ids = fields.One2many("loan.issue", "structure", string="Loan issues")
     mail_template_ids = fields.One2many(
         "mail.template", "structure", string="Mail templates"
     )
@@ -125,9 +120,7 @@ class ResPartner(models.Model):
     last_dividend = fields.Html(string="Last 3 years dividend", translate=True)
     break_even_date = fields.Char(string="Break-even date", translate=True)
     liquidity_ratio = fields.Html(string="Liquidity ratio", translate=True)
-    susbidies_risk = fields.Html(
-        string="Risks related to subsidies", translate=True
-    )
+    susbidies_risk = fields.Html(string="Risks related to subsidies", translate=True)
     subscription_maximum_amount = fields.Monetary(
         string="Maximum authorised subscription amount",
         currency_field="company_currency_id",
@@ -142,22 +135,16 @@ class ResPartner(models.Model):
     activity_areas = fields.Many2many("activity.area", string="Activity areas")
     employee_number = fields.Char(string="Employee number", translate=True)
     statute_link = fields.Char(string="Statute link", translate=True)
-    annual_report_link = fields.Char(
-        string="Last annual report link", translate=True
-    )
+    annual_report_link = fields.Char(string="Last annual report link", translate=True)
     area_char_list = fields.Char(
         compute="_return_area_char_list", string="activity areas"
     )
-    mail_serveur_out = fields.Many2one(
-        "ir.mail_server", string="Mail serveur out"
-    )
+    mail_serveur_out = fields.Many2one("ir.mail_server", string="Mail serveur out")
     industry_char_list = fields.Char(compute="_return_industry_char_list")
     can_subscribe = fields.Boolean(
         string="Can be subscribed ?", compute="_can_subscribe_products"
     )
-    total_outstanding_amount = fields.Monetary(
-        string="Total Outsanding Amount"
-    )
+    total_outstanding_amount = fields.Monetary(string="Total Outsanding Amount")
     data_policy_approval_text = fields.Html(
         translate=True,
         default="I approve the data policy.",
@@ -225,20 +212,14 @@ class ResPartner(models.Model):
         help="Used to restrict access in views",
     )
 
-    show_existing_shares = fields.Boolean(
-        string='Show Existing Shares',
-        default=False)
-    show_existing_loans = fields.Boolean(
-        string='Show Existing Loans',
-        default=False)
+    show_existing_shares = fields.Boolean(string="Show Existing Shares", default=False)
+    show_existing_loans = fields.Boolean(string="Show Existing Loans", default=False)
 
     @api.multi
     @api.depends("coop_membership.structure", "loan_line_ids.structure")
     def _compute_linked_structure(self):
         for partner in self:
-            coop_structure_ids = partner.coop_membership.mapped(
-                "structure"
-            ).ids
+            coop_structure_ids = partner.coop_membership.mapped("structure").ids
             loan_structure_ids = partner.loan_line_ids.mapped("structure").ids
             partner.structure_ids = coop_structure_ids + loan_structure_ids
 
@@ -288,9 +269,7 @@ class ResPartner(models.Model):
         desc = self.env["res.partner"].sudo().fields_get(["structure_type"])
         field_desc = desc["structure_type"]["selection"]
         for partner in self:
-            value = self._get_structure_type_value(
-                field_desc, partner.structure_type
-            )
+            value = self._get_structure_type_value(field_desc, partner.structure_type)
             partner.structure_type_value = value
 
     @api.multi
@@ -301,9 +280,7 @@ class ResPartner(models.Model):
     @api.multi
     def _return_industry_char_list(self):
         for partner in self:
-            partner.industry_char_list = partner.industry_id.mapped(
-                "full_name"
-            )
+            partner.industry_char_list = partner.industry_id.mapped("full_name")
 
     @api.multi
     def _can_subscribe_products(self):
@@ -371,12 +348,8 @@ class ResPartner(models.Model):
     def generate_mail_templates(self):
         self.ensure_one()
         if self.mail_serveur_out:
-            mail_templates = self.env[
-                "mail.template"
-            ]._get_email_template_dict()
-            generated_template_keys = self.mail_template_ids.mapped(
-                "template_key"
-            )
+            mail_templates = self.env["mail.template"]._get_email_template_dict()
+            generated_template_keys = self.mail_template_ids.mapped("template_key")
 
             for mt_key, mt_xml_id in mail_templates.items():
                 if mt_key not in generated_template_keys:
@@ -392,8 +365,7 @@ class ResPartner(models.Model):
                     struct_mail_template.name = name
         else:
             raise ValidationError(
-                _("You need first to define a mail server out for %s")
-                % self.name
+                _("You need first to define a mail server out for %s") % self.name
             )
 
     @api.model
@@ -438,9 +410,9 @@ class ResPartner(models.Model):
     @api.multi
     def write(self, vals):
         if not self:  # empty recordset
-            result = super(
-                ResPartner, self.with_context(__no_changeset=True)
-            ).write(vals)
+            result = super(ResPartner, self.with_context(__no_changeset=True)).write(
+                vals
+            )
 
         for partner in self:
             if partner.is_platform_structure:

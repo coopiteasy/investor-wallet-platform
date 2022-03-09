@@ -8,10 +8,9 @@
 
 """Form factory for Odoo website"""
 
-import logging
 
 from collections import OrderedDict
-from datetime import date, datetime
+from datetime import datetime
 from inspect import signature
 
 
@@ -66,9 +65,7 @@ class Field:
             try:
                 return int(value)  # TODO: protect this by try except
             except ValueError as err:
-                raise FormError(
-                    "Error when converting '%s' to int - %s" % (value, err)
-                )
+                raise FormError("Error when converting '%s' to int - %s" % (value, err))
         if self.input_type == "date" and value:
             try:
                 return datetime.strptime(value, "%Y-%m-%d").date()
@@ -92,13 +89,9 @@ class Field:
             raise FormValidationError("This field is required.")
         # Choices fields
         if self.choices is not None:
-            choices_ids = [
-                choice.value for choice in self.choices()
-            ]
+            choices_ids = [choice.value for choice in self.choices()]
             if value not in choices_ids:
-                raise FormValidationError(
-                    "The selected item is not valid choice."
-                )
+                raise FormValidationError("The selected item is not valid choice.")
 
     def run_validators(self, value):
         """

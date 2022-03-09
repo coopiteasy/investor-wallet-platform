@@ -6,10 +6,11 @@
 
 from datetime import date
 
-from odoo.addons.base_iban.models import res_partner_bank
 from odoo.exceptions import ValidationError
 from odoo.http import request
 from odoo.tools.translate import _
+
+from odoo.addons.base_iban.models import res_partner_bank
 
 from .form import Choice, Field, Form, FormValidationError
 
@@ -48,9 +49,7 @@ class AddressForm(Form):
         choices = []
         for country in countries:
             choices.append(
-                Choice(
-                    value=str(country.id), display=country.name, obj=country
-                )
+                Choice(value=str(country.id), display=country.name, obj=country)
             )
         return choices
 
@@ -89,9 +88,7 @@ class LanguageForm(Form):
         langs = request.env["res.lang"].sudo().search([])
         choices = []
         for lang in langs:
-            choices.append(
-                Choice(value=str(lang.code), display=lang.name, obj=lang)
-            )
+            choices.append(Choice(value=str(lang.code), display=lang.name, obj=lang))
         return choices
 
 
@@ -147,9 +144,7 @@ class PersonForm(Form):
         gender_field = sub_req_mgr.sudo().fields_get(["gender"])["gender"]
         choices = []
         for gender in gender_field["selection"]:
-            choices.append(
-                Choice(value=str(gender[0]), display=gender[1], obj=gender)
-            )
+            choices.append(Choice(value=str(gender[0]), display=gender[1], obj=gender))
         return choices
 
 
@@ -172,9 +167,7 @@ class CompanyForm(Form):
         )
 
 
-class InvestorPersonForm(
-    PersonForm, BankAccountForm, LanguageForm, AddressForm
-):
+class InvestorPersonForm(PersonForm, BankAccountForm, LanguageForm, AddressForm):
     """Form to edit informations about a investor."""
 
     def __init__(self, add_fields=True, **kwargs):
