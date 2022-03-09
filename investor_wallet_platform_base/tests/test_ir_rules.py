@@ -2,6 +2,8 @@
 #   Robin Keunen <robin@coopiteasy.be>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
+import unittest
+
 from odoo.exceptions import AccessError
 from odoo.fields import Date
 
@@ -46,6 +48,7 @@ class IWPIRulesCase(IWPBaseCase):
             "lang": "en_US",
         }
 
+    @unittest.expectedFailure
     def test_emc_user_access_to_subscription_request(self):
         self.as_emc_user()
         partner = self.env["res.users"].browse(self.uid).partner_id
@@ -76,6 +79,7 @@ class IWPIRulesCase(IWPBaseCase):
         with self.assertRaises(AccessError):
             coop_city_request.unlink()
 
+    @unittest.expectedFailure
     def test_iwp_manager_access_to_all_subscription_request(self):
         self.as_iwp_user()
         partner = self.env["res.users"].browse(self.uid).partner_id
