@@ -1,5 +1,4 @@
-from odoo import fields, models, _
-from odoo.exceptions import UserError, ValidationError
+from odoo import fields, models
 
 
 class ResUsers(models.Model):

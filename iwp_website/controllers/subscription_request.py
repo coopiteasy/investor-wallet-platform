@@ -6,21 +6,19 @@ from werkzeug.exceptions import NotFound
 
 from odoo import http
 from odoo.http import request
-from odoo.tools.translate import _
 
 from .subscription_request_form import SubscriptionRequestForm
 
 
 class WebsiteSubscriptionRequest(http.Controller):
-
     @http.route(
         [
-            '/struct/<int:struct_id>/subscription',
-            '/struct/<int:struct_id>/share/subscription',
-            '/struct/<int:struct_id>/share/<int:finprod_id>/subscription'
+            "/struct/<int:struct_id>/subscription",
+            "/struct/<int:struct_id>/share/subscription",
+            "/struct/<int:struct_id>/share/<int:finprod_id>/subscription",
         ],
-        type='http',
-        auth='user',
+        type="http",
+        auth="user",
         website=True,
     )
     def subscribe_to_structure(self, struct_id=None, finprod_id=None, **post):
@@ -29,9 +27,7 @@ class WebsiteSubscriptionRequest(http.Controller):
         struct = request.env["res.partner"].sudo().browse(struct_id)
         if not struct or not struct.is_platform_structure:
             raise NotFound
-        share_type = struct.share_type_ids.filtered(
-            lambda r: r.id == finprod_id
-        )
+        share_type = struct.share_type_ids.filtered(lambda r: r.id == finprod_id)
         form_context = {"struct": struct, "user": request.env.user}
         if share_type:
             form_context["share_type"] = share_type
@@ -40,9 +36,7 @@ class WebsiteSubscriptionRequest(http.Controller):
                 data=request.params, context=form_context
             )
             if form.is_valid():
-                self.process_subscription_request_form(
-                    form, context=form_context
-                )
+                self.process_subscription_request_form(form, context=form_context)
                 request.session["success_share"] = True
                 return request.redirect(request.params.get("redirect", ""))
         else:
@@ -79,15 +73,12 @@ class WebsiteSubscriptionRequest(http.Controller):
                 )
             if default_share_type:
                 initial["share_type"] = str(default_share_type.id)
-                initial["quantity"] = (
-                    max(
-                        1,
-                        round(
-                            default_share_type.can_buy_min_amount(
-                                user.partner_id
-                            ) / default_share_type.list_price
-                        )
-                    )
+                initial["quantity"] = max(
+                    1,
+                    round(
+                        default_share_type.can_buy_min_amount(user.partner_id)
+                        / default_share_type.list_price
+                    ),
                 )
                 initial["total_amount"] = (
                     default_share_type.list_price * initial["quantity"]
@@ -106,20 +97,18 @@ class WebsiteSubscriptionRequest(http.Controller):
         # subscription request, insert data into it and then write it to
         # the database.
         if user.parent_id.is_company:
-            (
-                request.env['subscription.request']
-                .sudo()
-                .create_comp_sub_req(vals)
-            )
+            (request.env["subscription.request"].sudo().create_comp_sub_req(vals))
         else:
-            request.env['subscription.request'].sudo().create(vals)
+            request.env["subscription.request"].sudo().create(vals)
 
     def subscription_request_vals(self, form, context=None):
         """Reutrn vals to create a new subscription request."""
         user = context.get("user")
         struct = context.get("struct")
-        share_type = request.env["product.template"].sudo().browse(
-            int(form.cleaned_data["share_type"])
+        share_type = (
+            request.env["product.template"]
+            .sudo()
+            .browse(int(form.cleaned_data["share_type"]))
         )
         vals = {
             "source": "website",
@@ -142,7 +131,7 @@ class WebsiteSubscriptionRequest(http.Controller):
             "structure": struct.id,
         }
         if user.commercial_partner_id.bank_ids:
-            vals["iban"] = user.commercial_partner_id.bank_ids[0].acc_number,
+            vals["iban"] = (user.commercial_partner_id.bank_ids[0].acc_number,)
         if user.member:
             vals["type"] = "increase"
         if user.commercial_partner_id.is_company:

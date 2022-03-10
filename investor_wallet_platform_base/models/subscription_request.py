@@ -1,7 +1,7 @@
 # Copyright 2020 Coop IT Easy SCRL fs
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models, _
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -20,11 +20,11 @@ class SubscriptionRequest(models.Model):
 
     def get_structure_email_template_notif(self, is_company=False):
         if is_company:
-            mail_template = "investor_wallet_platform_base.email_template_notification_company"
-        else:
             mail_template = (
-                "investor_wallet_platform_base.email_template_notification"
+                "investor_wallet_platform_base.email_template_notification_company"
             )
+        else:
+            mail_template = "investor_wallet_platform_base.email_template_notification"
         return self.env.ref(mail_template, False)
 
     def get_mail_template_notif(self, is_company=False):
@@ -34,9 +34,7 @@ class SubscriptionRequest(models.Model):
                 "sub_req_comp_notif", self.structure
             )
         else:
-            return templ_obj.get_email_template_by_key(
-                "sub_req_notif", self.structure
-            )
+            return templ_obj.get_email_template_by_key("sub_req_notif", self.structure)
 
     def _send_confirmation_mail(self):
         if not self.structure.is_delegated_to_api_client:
@@ -57,15 +55,18 @@ class SubscriptionRequest(models.Model):
     def create(self, vals):
         subscription_request = super(SubscriptionRequest, self).create(vals)
         subscription_request.send_new_subscription_request_notification_email(
-            is_company=False)
+            is_company=False
+        )
         return subscription_request
 
     @api.model
     def create_comp_sub_req(self, vals):
-        subscription_request = super(SubscriptionRequest,
-                                     self).create_comp_sub_req(vals)
+        subscription_request = super(SubscriptionRequest, self).create_comp_sub_req(
+            vals
+        )
         subscription_request.send_new_subscription_request_notification_email(
-            is_company=False)
+            is_company=False
+        )
         return subscription_request
 
     def get_journal(self):
@@ -78,10 +79,7 @@ class SubscriptionRequest(models.Model):
                 )
         else:
             raise ValidationError(
-                _(
-                    "There is no structure defined on this "
-                    "subscription request."
-                )
+                _("There is no structure defined on this " "subscription request.")
             )
 
     def get_invoice_vals(self, partner):

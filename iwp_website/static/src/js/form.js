@@ -1,4 +1,5 @@
-odoo.define('iwp_website.form', function (require) {
+/* eslint-disable no-unused-vars */
+odoo.define("iwp_website.form", function (require) {
     "use strict";
 
     $(document).ready(function () {
@@ -10,12 +11,9 @@ odoo.define('iwp_website.form', function (require) {
             var total_amount_elem = manual_share_form.find("#total_amount");
 
             function compute_total_amount() {
-                var selected_index = amount_elem.prop("selectedIndex")
+                var selected_index = amount_elem.prop("selectedIndex");
                 if (selected_index >= 0) {
-                    var amount = amount_elem[0]
-                        .options[selected_index]
-                        .dataset
-                        .amount;
+                    var amount = amount_elem[0].options[selected_index].dataset.amount;
                     var quantity = qty_elem[0].value;
                     total_amount_elem[0].value = quantity * amount;
                 }
@@ -34,10 +32,9 @@ odoo.define('iwp_website.form', function (require) {
             var total_amount_elem = manual_loan_form.find("#total_amount");
 
             function compute_total_amount() {
-                var amount = amount_elem[0]
-                    .options[amount_elem.prop("selectedIndex")]
-                    .dataset
-                    .face_value;
+                var amount =
+                    amount_elem[0].options[amount_elem.prop("selectedIndex")].dataset
+                        .face_value;
                 var quantity = qty_elem[0].value;
                 total_amount_elem[0].value = quantity * amount;
             }
@@ -52,36 +49,25 @@ odoo.define('iwp_website.form', function (require) {
         subscription_request_form.each(function () {
             var amount_elem = subscription_request_form.find("#share_type");
             var qty_elem = subscription_request_form.find("#quantity");
-            var total_amount_elem = subscription_request_form
-                .find("#total_amount");
+            var total_amount_elem = subscription_request_form.find("#total_amount");
 
             function compute_total_amount() {
-                var selected_index = amount_elem.prop("selectedIndex")
+                var selected_index = amount_elem.prop("selectedIndex");
                 if (selected_index >= 0) {
-                    var price = amount_elem[0]
-                        .options[selected_index]
-                        .dataset
-                        .price;
+                    var price = amount_elem[0].options[selected_index].dataset.price;
                     var quantity = qty_elem[0].value;
                     total_amount_elem[0].value = quantity * price;
                 }
             }
 
             function compute_minmax_quantity() {
-                var selected_index = amount_elem.prop("selectedIndex")
+                var selected_index = amount_elem.prop("selectedIndex");
                 if (selected_index >= 0) {
-                    var price = amount_elem[0]
-                        .options[selected_index]
-                        .dataset
-                        .price;
-                    var min_amount = amount_elem[0]
-                        .options[selected_index]
-                        .dataset
-                        .min_amount;
-                    var max_amount = amount_elem[0]
-                        .options[selected_index]
-                        .dataset
-                        .max_amount;
+                    var price = amount_elem[0].options[selected_index].dataset.price;
+                    var min_amount =
+                        amount_elem[0].options[selected_index].dataset.min_amount;
+                    var max_amount =
+                        amount_elem[0].options[selected_index].dataset.max_amount;
                     if (min_amount) {
                         var min_qty = Math.ceil(min_amount / price);
                         qty_elem.attr("min", min_qty);
@@ -97,7 +83,7 @@ odoo.define('iwp_website.form', function (require) {
                 }
             }
 
-            amount_elem.change(function() {
+            amount_elem.change(function () {
                 compute_total_amount();
                 compute_minmax_quantity();
             });
@@ -111,27 +97,23 @@ odoo.define('iwp_website.form', function (require) {
         operation_request_form.each(function () {
             var amount_elem = operation_request_form.find("#share_type");
             var qty_elem = operation_request_form.find("#quantity");
-            var total_amount_elem = operation_request_form
-                .find("#total_amount");
+            var total_amount_elem = operation_request_form.find("#total_amount");
 
             function compute_total_amount() {
-                var price = amount_elem[0]
-                    .options[amount_elem.prop("selectedIndex")]
-                    .dataset
-                    .price;
+                var price =
+                    amount_elem[0].options[amount_elem.prop("selectedIndex")].dataset
+                        .price;
                 var quantity = qty_elem[0].value;
                 total_amount_elem[0].value = quantity * price;
             }
 
             function compute_max_quantity() {
-                var price = amount_elem[0]
-                    .options[amount_elem.prop("selectedIndex")]
-                    .dataset
-                    .price;
-                var owned_amount = amount_elem[0]
-                    .options[amount_elem.prop("selectedIndex")]
-                    .dataset
-                    .owned_amount;
+                var price =
+                    amount_elem[0].options[amount_elem.prop("selectedIndex")].dataset
+                        .price;
+                var owned_amount =
+                    amount_elem[0].options[amount_elem.prop("selectedIndex")].dataset
+                        .owned_amount;
                 if (owned_amount >= 0) {
                     var max_qty = Math.floor(owned_amount / price);
                     qty_elem.attr("max", max_qty);
@@ -140,7 +122,7 @@ odoo.define('iwp_website.form', function (require) {
                 }
             }
 
-            amount_elem.change(function() {
+            amount_elem.change(function () {
                 compute_total_amount();
                 compute_max_quantity();
             });
@@ -154,36 +136,29 @@ odoo.define('iwp_website.form', function (require) {
         loan_issue_form.each(function () {
             var amount_elem = loan_issue_form.find("#loan_issue");
             var qty_elem = loan_issue_form.find("#quantity");
-            var total_amount_elem = loan_issue_form
-                .find("#total_amount");
+            var total_amount_elem = loan_issue_form.find("#total_amount");
 
             function compute_total_amount() {
-                var selected_index = amount_elem.prop("selectedIndex")
+                var selected_index = amount_elem.prop("selectedIndex");
                 if (selected_index >= 0) {
-                    var face_value = amount_elem[0]
-                        .options[selected_index]
-                        .dataset
-                        .face_value;
+                    var face_value =
+                        amount_elem[0].options[selected_index].dataset.face_value;
                     var quantity = qty_elem[0].value;
                     total_amount_elem[0].value = quantity * face_value;
                 }
             }
 
             function compute_minmax_quantity() {
-                var selected_index = amount_elem.prop("selectedIndex")
+                var selected_index = amount_elem.prop("selectedIndex");
                 if (selected_index >= 0) {
-                    var face_value = amount_elem[0]
-                        .options[selected_index]
-                        .dataset
-                        .face_value;
-                    var min_amount = amount_elem[0]
-                        .options[selected_index]
-                        .dataset
-                        .min_amount;
-                    var max_amount = amount_elem[0]
-                        .options[selected_index]
-                        .dataset
-                        .max_amount;
+                    // TODO: figure out why this was ever assigned.
+                    // var face_value =
+                    //    amount_elem[0].options[selected_index].dataset.face_value;
+                    var price = amount_elem[0].options[selected_index].dataset.price;
+                    var min_amount =
+                        amount_elem[0].options[selected_index].dataset.min_amount;
+                    var max_amount =
+                        amount_elem[0].options[selected_index].dataset.max_amount;
                     if (min_amount) {
                         var min_qty = Math.ceil(min_amount / price);
                         qty_elem.attr("min", min_qty);
@@ -199,7 +174,7 @@ odoo.define('iwp_website.form', function (require) {
                 }
             }
 
-            amount_elem.change(function() {
+            amount_elem.change(function () {
                 compute_total_amount();
                 compute_minmax_quantity();
             });
@@ -208,5 +183,4 @@ odoo.define('iwp_website.form', function (require) {
             compute_minmax_quantity();
         });
     });
-
 });

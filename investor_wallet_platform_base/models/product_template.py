@@ -13,14 +13,10 @@ class ProductTemplate(models.Model):
         domain=[("is_platform_structure", "=", True)],
         default=default_structure,
     )
-    validation_requested = fields.Boolean(
-        string="Validation requested", readonly=True
-    )
+    validation_requested = fields.Boolean(string="Validation requested", readonly=True)
     validated = fields.Boolean(string="Validation request", readonly=True)
     validation_date = fields.Date(string="Validation date", readonly=True)
-    validated_by = fields.Many2one(
-        "res.users", string="Validated by", readonly=True
-    )
+    validated_by = fields.Many2one("res.users", string="Validated by", readonly=True)
     state = fields.Selection(
         [("open", "Open"), ("close", "Close"), ("waiting", "Waiting list")],
         string="State",
@@ -29,9 +25,7 @@ class ProductTemplate(models.Model):
     solidary = fields.Selection(
         [("yes", "Yes"), ("no", "No")], string="Solidary product"
     )
-    banking = fields.Selection(
-        [("yes", "Yes"), ("no", "No")], string="Banking product"
-    )
+    banking = fields.Selection([("yes", "Yes"), ("no", "No")], string="Banking product")
     book_value = fields.Float(string="Book value", translate=True)
     dividend_policy = fields.Html(string="Dividend policy", translate=True)
     voting_rights = fields.Html(
@@ -56,28 +50,18 @@ class ProductTemplate(models.Model):
     min_target_issue = fields.Monetary(
         string="Issue minimal amount", currency_field="currency_id"
     )
-    subscription_start_text = fields.Char(
-        string="Issue Start", translate=True
-    )
-    subscription_end_text = fields.Char(
-        string="Issue End", translate=True
-    )
-    subscription_length = fields.Char(
-        string="Subscription length", translate=True
-    )
+    subscription_start_text = fields.Char(string="Issue Start", translate=True)
+    subscription_end_text = fields.Char(string="Issue End", translate=True)
+    subscription_length = fields.Char(string="Subscription length", translate=True)
     oversubscription_policy = fields.Char(
         string="Over subscription policy", translate=True
     )
-    purpose_of_issue = fields.Html(
-        string="Purpose of the issue", translate=True
-    )
+    purpose_of_issue = fields.Html(string="Purpose of the issue", translate=True)
     price_fluctuation_risk = fields.Char(
         string="Price fluctuation risk", translate=True
     )
     capital_risk = fields.Html(string="Risk on equity", translate=True)
-    other_product_risk = fields.Html(
-        string="Other risk on product", translate=True
-    )
+    other_product_risk = fields.Html(string="Other risk on product", translate=True)
     transfer_allowed = fields.Html(
         string="Product transfer possibility", translate=True
     )
@@ -140,7 +124,8 @@ class ProductTemplate(models.Model):
         if max_subscription > 0:
             # Set actual structure max if there is a general maximum
             actual_struct_max = max(
-                0, max_subscription - amount_owned_structure,
+                0,
+                max_subscription - amount_owned_structure,
             )
         # Actual amount for this type of share
         actual_share_max = None
@@ -162,6 +147,4 @@ class ProductTemplate(models.Model):
         Return the minimum amount that a partner have to subscribe.
         """
         self.ensure_one()
-        return max(
-            0, self.minimum_amount - partner_id.owned_amount(self, manual=True)
-        )
+        return max(0, self.minimum_amount - partner_id.owned_amount(self, manual=True))

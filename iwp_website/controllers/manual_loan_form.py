@@ -7,7 +7,6 @@
 from collections import OrderedDict
 from datetime import date
 
-from odoo.http import request
 from odoo.tools.translate import _
 
 from .form import Choice, Field, Form, FormValidationError

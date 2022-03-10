@@ -1,7 +1,7 @@
 # Copyright 2020 Coop IT Easy SCRL fs
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models, _
+from odoo import _, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -25,9 +25,7 @@ class OperationRequest(models.Model):
 
     def _get_share_update_mail_template(self):
         templ_obj = self.env["mail.template"]
-        return templ_obj.get_email_template_by_key(
-            "share_update", self.structure
-        )
+        return templ_obj.get_email_template_by_key("share_update", self.structure)
 
     def _send_share_transfer_mail(self, sub_register_line):
         if not self.structure.is_delegated_to_api_client:
@@ -57,9 +55,7 @@ class OperationRequest(models.Model):
             total_share_dic[share_product.id] = 0
 
         shares = partner.share_ids.filtered(
-            lambda r: (
-                r.structure == self.structure and r.creation_mode == "auto"
-            )
+            lambda r: (r.structure == self.structure and r.creation_mode == "auto")
         )
         for line in shares:
             total_share_dic[line.share_product_id.id] += line.share_number
@@ -76,9 +72,7 @@ class OperationRequest(models.Model):
             )
 
         owned_shares = partner.share_ids.filtered(
-            lambda r: (
-                r.structure == self.structure and r.creation_mode == "auto"
-            )
+            lambda r: (r.structure == self.structure and r.creation_mode == "auto")
         )
         share_ind = len(owned_shares)
         i = 1

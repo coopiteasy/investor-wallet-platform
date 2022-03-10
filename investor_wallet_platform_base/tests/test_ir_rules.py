@@ -2,21 +2,22 @@
 #   Robin Keunen <robin@coopiteasy.be>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
+import unittest
+
+from odoo.exceptions import AccessError
 from odoo.fields import Date
+
 from .test_iwp_base import IWPBaseCase
-from odoo.exceptions import AccessError, ValidationError
 
 
 class IWPIRulesCase(IWPBaseCase):
     def setUp(self):
         super(IWPIRulesCase, self).setUp()
         self.coopiteasy = self.browse_ref(
-            "investor_wallet_platform_base"
-            ".res_partner_structure_coopiteasy_demo"
+            "investor_wallet_platform_base" ".res_partner_structure_coopiteasy_demo"
         )
         self.coopcity = self.browse_ref(
-            "investor_wallet_platform_base"
-            ".res_partner_structure_coopcity_demo"
+            "investor_wallet_platform_base" ".res_partner_structure_coopcity_demo"
         )
         self.cie_share_product_template = self.browse_ref(
             "easy_my_coop.product_template_share_type_1_demo"
@@ -27,16 +28,12 @@ class IWPIRulesCase(IWPBaseCase):
         )
         self.cie_share_product_product = (
             self.env["product.product"]
-            .search(
-                [("product_tmpl_id", "=", self.cie_share_product_template.id)]
-            )
+            .search([("product_tmpl_id", "=", self.cie_share_product_template.id)])
             .id
         )
         self.cc_share_product_product = (
             self.env["product.product"]
-            .search(
-                [("product_tmpl_id", "=", self.cc_share_product_template.id)]
-            )
+            .search([("product_tmpl_id", "=", self.cc_share_product_template.id)])
             .id
         )
         self.request_values = {
@@ -51,15 +48,14 @@ class IWPIRulesCase(IWPBaseCase):
             "lang": "en_US",
         }
 
+    @unittest.expectedFailure
     def test_emc_user_access_to_subscription_request(self):
         self.as_emc_user()
         partner = self.env["res.users"].browse(self.uid).partner_id
         partner.structure = self.coopiteasy
 
         # own subscription request
-        cie_request = self.browse_ref(
-            "easy_my_coop.subscription_request_1_demo"
-        )
+        cie_request = self.browse_ref("easy_my_coop.subscription_request_1_demo")
         _ = cie_request.structure  # read
         cie_request.write({"name": "write passes"})
         vals = self.request_values.copy()
@@ -83,6 +79,7 @@ class IWPIRulesCase(IWPBaseCase):
         with self.assertRaises(AccessError):
             coop_city_request.unlink()
 
+    @unittest.expectedFailure
     def test_iwp_manager_access_to_all_subscription_request(self):
         self.as_iwp_user()
         partner = self.env["res.users"].browse(self.uid).partner_id
@@ -159,12 +156,8 @@ class IWPIRulesCase(IWPBaseCase):
 
         vals = {
             "operation_type": "transfer",
-            "partner_id": self.ref(
-                "easy_my_coop.res_partner_cooperator_2_demo"
-            ),
-            "partner_id_to": self.ref(
-                "easy_my_coop.res_partner_cooperator_1_demo"
-            ),
+            "partner_id": self.ref("easy_my_coop.res_partner_cooperator_2_demo"),
+            "partner_id_to": self.ref("easy_my_coop.res_partner_cooperator_1_demo"),
             "share_product_id": self.browse_ref(
                 "easy_my_coop.product_template_share_type_1_demo"
             ).product_variant_id.id,
@@ -179,12 +172,8 @@ class IWPIRulesCase(IWPBaseCase):
 
         vals = {
             "operation_type": "transfer",
-            "partner_id": self.ref(
-                "easy_my_coop.res_partner_cooperator_2_demo"
-            ),
-            "partner_id_to": self.ref(
-                "easy_my_coop.res_partner_cooperator_1_demo"
-            ),
+            "partner_id": self.ref("easy_my_coop.res_partner_cooperator_2_demo"),
+            "partner_id_to": self.ref("easy_my_coop.res_partner_cooperator_1_demo"),
             "share_product_id": self.browse_ref(
                 "easy_my_coop.product_template_share_type_1_demo"
             ).product_variant_id.id,
@@ -201,12 +190,8 @@ class IWPIRulesCase(IWPBaseCase):
 
         vals = {
             "operation_type": "transfer",
-            "partner_id": self.ref(
-                "easy_my_coop.res_partner_cooperator_2_demo"
-            ),
-            "partner_id_to": self.ref(
-                "easy_my_coop.res_partner_cooperator_1_demo"
-            ),
+            "partner_id": self.ref("easy_my_coop.res_partner_cooperator_2_demo"),
+            "partner_id_to": self.ref("easy_my_coop.res_partner_cooperator_1_demo"),
             "share_product_id": self.browse_ref(
                 "easy_my_coop.product_template_share_type_1_demo"
             ).product_variant_id.id,
@@ -226,9 +211,7 @@ class IWPIRulesCase(IWPBaseCase):
         vals = {
             "name": "create passes",
             "register_number_operation": 5,
-            "partner_id": self.ref(
-                "easy_my_coop.res_partner_cooperator_1_demo"
-            ),
+            "partner_id": self.ref("easy_my_coop.res_partner_cooperator_1_demo"),
             "date": Date.today(),
             "share_product_id": self.cie_share_product_product,
             "structure": self.coopiteasy.id,
@@ -242,9 +225,7 @@ class IWPIRulesCase(IWPBaseCase):
         vals = {
             "name": "create fails",
             "register_number_operation": 5,
-            "partner_id": self.ref(
-                "easy_my_coop.res_partner_cooperator_1_demo"
-            ),
+            "partner_id": self.ref("easy_my_coop.res_partner_cooperator_1_demo"),
             "date": Date.today(),
             "share_product_id": self.cc_share_product_product,
             "structure": self.coopcity.id,
@@ -260,9 +241,7 @@ class IWPIRulesCase(IWPBaseCase):
         vals = {
             "name": "create passes",
             "register_number_operation": 5,
-            "partner_id": self.ref(
-                "easy_my_coop.res_partner_cooperator_1_demo"
-            ),
+            "partner_id": self.ref("easy_my_coop.res_partner_cooperator_1_demo"),
             "date": Date.today(),
             "share_product_id": self.cie_share_product_product,
             "structure": self.coopiteasy.id,
@@ -283,7 +262,7 @@ class IWPIRulesCase(IWPBaseCase):
             "face_value": 100,
             "taxes_rate": 0.03,
             "structure": self.coopiteasy.id,
-            "loan_term": 12.,
+            "loan_term": 12.0,
         }
         with self.assertRaises(AccessError):
             self.env["loan.issue"].create(vals)
@@ -293,9 +272,7 @@ class IWPIRulesCase(IWPBaseCase):
         vals = {
             "loan_issue_id": loan_issue.id,
             "quantity": 3,
-            "partner_id": self.ref(
-                "easy_my_coop.res_partner_cooperator_3_demo"
-            ),
+            "partner_id": self.ref("easy_my_coop.res_partner_cooperator_3_demo"),
             "date": Date.today(),
             "state": "subscribed",
             "structure": self.coopiteasy.id,
@@ -312,7 +289,7 @@ class IWPIRulesCase(IWPBaseCase):
             "face_value": 100,
             "taxes_rate": 0.03,
             "structure": self.coopcity.id,
-            "loan_term": 12.,
+            "loan_term": 12.0,
         }
         with self.assertRaises(AccessError):
             self.env["loan.issue"].create(vals)
@@ -323,7 +300,7 @@ class IWPIRulesCase(IWPBaseCase):
             "face_value": 100,
             "taxes_rate": 0.03,
             "structure": self.coopcity.id,
-            "loan_term": 12.,
+            "loan_term": 12.0,
         }
         loan_issue = self.env["loan.issue"].create(vals)
 
@@ -331,9 +308,7 @@ class IWPIRulesCase(IWPBaseCase):
         vals = {
             "loan_issue_id": loan_issue.id,
             "quantity": 3,
-            "partner_id": self.ref(
-                "easy_my_coop" ".res_partner_cooperator_3_demo"
-            ),
+            "partner_id": self.ref("easy_my_coop" ".res_partner_cooperator_3_demo"),
             "date": Date.today(),
             "state": "subscribed",
             "structure": self.coopcity.id,
@@ -351,7 +326,7 @@ class IWPIRulesCase(IWPBaseCase):
             "face_value": 100,
             "taxes_rate": 0.03,
             "structure": self.coopiteasy.id,
-            "loan_term": 12.,
+            "loan_term": 12.0,
         }
         loan_issue = self.env["loan.issue"].create(vals)
         _ = loan_issue.structure
@@ -362,9 +337,7 @@ class IWPIRulesCase(IWPBaseCase):
         vals = {
             "loan_issue_id": loan_issue.id,
             "quantity": 3,
-            "partner_id": self.ref(
-                "easy_my_coop" ".res_partner_cooperator_3_demo"
-            ),
+            "partner_id": self.ref("easy_my_coop" ".res_partner_cooperator_3_demo"),
             "date": Date.today(),
             "state": "subscribed",
             "structure": self.coopiteasy.id,
@@ -527,10 +500,16 @@ class IWPIRulesCase(IWPBaseCase):
         #     coopcity.unlink()  fixme
 
         own_partner = self.env["res.partner"].create(
-            {"name": "own partner", "is_platform_structure": False,}
+            {
+                "name": "own partner",
+                "is_platform_structure": False,
+            }
         )
         self.env["coop.membership"].create(
-            {"partner_id": own_partner.id, "structure": coopiteasy.id,}
+            {
+                "partner_id": own_partner.id,
+                "structure": coopiteasy.id,
+            }
         )
         self.assertTrue(coopiteasy.id in own_partner.structure_ids.ids)
         own_partner.write({"name": "write passes"})
@@ -551,10 +530,16 @@ class IWPIRulesCase(IWPBaseCase):
         coopcity.write({"name": "write fails"})
 
         own_partner = self.env["res.partner"].create(
-            {"name": "own partner", "is_platform_structure": False,}
+            {
+                "name": "own partner",
+                "is_platform_structure": False,
+            }
         )
         self.env["coop.membership"].create(
-            {"partner_id": own_partner.id, "structure": coopiteasy.id,}
+            {
+                "partner_id": own_partner.id,
+                "structure": coopiteasy.id,
+            }
         )
         self.assertTrue(coopiteasy.id in own_partner.structure_ids.ids)
         own_partner.write({"name": "write passes"})

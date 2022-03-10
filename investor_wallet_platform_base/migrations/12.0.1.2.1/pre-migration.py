@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2019 Coop IT Easy SCRL fs
 #   Robin Keunen <robin@coopiteasy.be>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
@@ -13,7 +12,7 @@ def migrate(env, version):
     openupgrade.logged_query(
         cr,
         """
-    DELETE FROM res_groups 
+    DELETE FROM res_groups
     WHERE name ILIKE 'Wallet Platform Manager'
     """,
     )

@@ -1,12 +1,12 @@
-from odoo.fields import Html
-from odoo.tools import html_sanitize
-
 """
 For an integration matter we override these two methods from
 the Html field class in order to return None in case of the field is empty.
 Cause Odoo fill those empty field with <p><br></p> instead of leaving it
 None or empty.
 """
+
+from odoo.fields import Html
+from odoo.tools import html_sanitize
 
 
 def convert_to_column(self, value, record, values=None, validate=True):

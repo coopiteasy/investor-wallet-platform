@@ -4,23 +4,22 @@
 
 import logging
 
-from odoo import http, tools
-from odoo.addons.auth_signup.controllers.main import AuthSignupHome
-from odoo.addons.auth_signup.models.res_partner import SignupError
+from odoo import http
 from odoo.exceptions import UserError, ValidationError
 from odoo.http import request
 from odoo.tools.translate import _
 
+from odoo.addons.auth_signup.controllers.main import AuthSignupHome
+from odoo.addons.auth_signup.models.res_partner import SignupError
+
+from .auth_signup_form import InvestorCompanySignupForm, InvestorPersonSignupForm
 from .form import FormError
-from .auth_signup_form import (InvestorCompanySignupForm,
-                               InvestorPersonSignupForm)
 
 _logger = logging.getLogger(__name__)
 
 
 class AuthSignupInvestor(AuthSignupHome):
-
-    @http.route(['/web/signup', '/web/investor/signup'])
+    @http.route(["/web/signup", "/web/investor/signup"])
     def web_auth_signup(self, *args, **kw):
         """Signup for a investor (individual)"""
         qcontext = self.get_auth_signup_qcontext()
@@ -37,9 +36,7 @@ class AuthSignupInvestor(AuthSignupHome):
             if form.is_valid():
                 form_context["token"] = qcontext.get("token")
                 try:
-                    self.process_investor_signup_form(
-                        form, context=form_context
-                    )
+                    self.process_investor_signup_form(form, context=form_context)
                 except (UserError, SignupError, ValidationError) as err:
                     form.add_error("__all__", err)
                     _logger.error(err)
@@ -64,17 +61,15 @@ class AuthSignupInvestor(AuthSignupHome):
         context = {} if context is None else context
         initial = {}
         initial["country"] = str(
-            request.env['res.company']._company_default_get().country_id.id
+            request.env["res.company"]._company_default_get().country_id.id
         )
-        initial["gender"] = 'other'
+        initial["gender"] = "other"
         initial["lang"] = request.lang
         return initial
 
     def process_investor_signup_form(self, form, context=None):
         """Process the signup with creation of the new user and partner"""
-        self._signup_with_values(
-            context.get('token'), self.investor_vals(form)
-        )
+        self._signup_with_values(context.get("token"), self.investor_vals(form))
         request.env.cr.commit()
 
     def investor_vals(self, form, context=None):
@@ -96,18 +91,16 @@ class AuthSignupInvestor(AuthSignupHome):
             "zip": form.cleaned_data["zip_code"],
             "country_id": form.cleaned_data["country"],
             "lang": form.cleaned_data["lang"],
-            "bank_ids": [
-                (0, None, {"acc_number": form.cleaned_data["bank_account"]})
-            ],
+            "bank_ids": [(0, None, {"acc_number": form.cleaned_data["bank_account"]})],
         }
         return vals
 
     @http.route(
-        '/web/investor/company/signup',
-        type='http',
-        auth='public',
+        "/web/investor/company/signup",
+        type="http",
+        auth="public",
         website=True,
-        sitemap=False
+        sitemap=False,
     )
     def web_auth_signup_investor_company(self, *args, **kw):
         """Signup for an investor company"""
@@ -125,9 +118,7 @@ class AuthSignupInvestor(AuthSignupHome):
             if form.is_valid():
                 form_context["token"] = qcontext.get("token")
                 try:
-                    self.process_company_signup_form(
-                        form, context=form_context
-                    )
+                    self.process_company_signup_form(form, context=form_context)
                 except (UserError, SignupError, ValidationError) as err:
                     form.add_error("__all__", err)
                     _logger.error(err)
@@ -152,18 +143,20 @@ class AuthSignupInvestor(AuthSignupHome):
         context = {} if context is None else context
         initial = {}
         initial["country"] = str(
-            request.env['res.company']._company_default_get().country_id.id
+            request.env["res.company"]._company_default_get().country_id.id
         )
         initial["rep_country"] = initial["country"]
-        initial["rep_gender"] = 'other'
+        initial["rep_gender"] = "other"
         initial["lang"] = request.lang
         return initial
 
     def process_company_signup_form(self, form, context=None):
         """Process the signup with creation of the new user and partner"""
         try:
-            company = request.env["res.partner"].sudo().create(
-                self.company_vals(form, context=context)
+            company = (
+                request.env["res.partner"]
+                .sudo()
+                .create(self.company_vals(form, context=context))
             )
         except Exception as err:
             _logger.error(err)
@@ -171,8 +164,7 @@ class AuthSignupInvestor(AuthSignupHome):
         context["company"] = company
         try:
             self._signup_with_values(
-                context.get("token"),
-                self.representative_vals(form, context=context)
+                context.get("token"), self.representative_vals(form, context=context)
             )
         except Exception as err:
             _logger.error(err)
@@ -190,9 +182,7 @@ class AuthSignupInvestor(AuthSignupHome):
             "city": form.cleaned_data["city"],
             "zip": form.cleaned_data["zip_code"],
             "country_id": form.cleaned_data["country"],
-            "bank_ids": [
-                (0, 0, {"acc_number": form.cleaned_data["bank_account"]})
-            ],
+            "bank_ids": [(0, 0, {"acc_number": form.cleaned_data["bank_account"]})],
         }
         return vals
 
@@ -202,7 +192,7 @@ class AuthSignupInvestor(AuthSignupHome):
         """
         context = {} if context is None else context
         vals = {
-            "type": 'representative',
+            "type": "representative",
             "company_type": "person",
             "representative": True,
             "login": form.cleaned_data["login"],
@@ -231,9 +221,7 @@ class AuthSignupInvestor(AuthSignupHome):
         """Add data policy approval"""
         qcontext = super().get_auth_signup_qcontext()
         qcontext["data_policy_text"] = (
-            request.env["res.company"]
-            ._company_default_get()
-            .data_policy_approval_text
+            request.env["res.company"]._company_default_get().data_policy_approval_text
         )
         return qcontext
 
@@ -244,9 +232,9 @@ class AuthSignupInvestor(AuthSignupHome):
         authentication.
         """
         conf = super().get_auth_signup_config()
-        get_param = request.env['ir.config_parameter'].sudo().get_param
-        conf['signup_enabled'] = (
-            get_param('investor_wallet_platform.investor_signup_enabled', True)
-            and conf['signup_enabled']
+        get_param = request.env["ir.config_parameter"].sudo().get_param
+        conf["signup_enabled"] = (
+            get_param("investor_wallet_platform.investor_signup_enabled", True)
+            and conf["signup_enabled"]
         )
         return conf
