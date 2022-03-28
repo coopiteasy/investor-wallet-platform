@@ -10,7 +10,7 @@
     "depends": [
         "cooperator",
         "easy_my_coop_loan",
-        "easy_my_coop_api",
+        "cooperator_api",
         "partner_changeset",
     ],
     "author": "Coop IT Easy SCRLfs",
