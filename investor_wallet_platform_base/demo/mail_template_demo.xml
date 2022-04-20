@@ -4,6 +4,10 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 -->
 <odoo>
+    <!-- pylint:disable=duplicate-xml-record-id -->
+    <!-- need to add a field to res_partner_structure_coopcity_demo
+         and res_partner_structure_coopiteasy_demo which are already defined
+         in structure.xml -->
 
     <record id="mail_server_out_coopiteasy_demo" model="ir.mail_server">
         <field name="name">Coop IT Easy OUT</field>
@@ -552,12 +556,6 @@
         <field
             name="subject"
         >Loan subscription received (Ref ${object.loan_issue_id.name or 'n/a'})</field>
-        <field
-            name="email_from"
-        >${(object.structure.email or object.loan_issue_id.user_id.email)|safe}</field>
-        <field
-            name="email_from"
-        >${(object.structure.email or object.loan_issue_id.user_id.email)|safe}</field>
         <field name="model_id" ref="easy_my_coop_loan.model_loan_issue_line" />
         <field name="auto_delete" eval="True" />
         <field name="lang">${object.partner_id.lang}</field>
@@ -584,12 +582,6 @@
         <field
             name="subject"
         >Loan subscription received (Ref ${object.loan_issue_id.name or 'n/a'})</field>
-        <field
-            name="email_from"
-        >${(object.structure.email or object.loan_issue_id.user_id.email)|safe}</field>
-        <field
-            name="email_from"
-        >${(object.structure.email or object.loan_issue_id.user_id.email)|safe}</field>
         <field name="model_id" ref="easy_my_coop_loan.model_loan_issue_line" />
         <field name="auto_delete" eval="True" />
         <field name="lang">${object.partner_id.lang}</field>
