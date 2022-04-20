@@ -1,9 +1,6 @@
 <odoo>
     <data>
-        <record
-            id="investor_wallet_platform_base.email_template_structure_updated"
-            model="mail.template"
-        >
+        <record id="email_template_structure_updated" model="mail.template">
             <field name="name">Structure update notification</field>
             <field name="email_from">${object.company_id.email|safe}</field>
             <field name="subject">${object.name} has updated its information</field>
@@ -37,10 +34,7 @@
         </record>
     </data>
     <data noupdate="1">
-        <record
-            id="investor_wallet_platform_base.email_template_release_capital"
-            model="mail.template"
-        >
+        <record id="email_template_release_capital" model="mail.template">
             <field
                 name="name"
             >Request to Release Capital - Send by Email - Template</field>
@@ -104,10 +98,7 @@
             ]]></field>
         </record>
 
-        <record
-            id="investor_wallet_platform_base.email_template_confirmation"
-            model="mail.template"
-        >
+        <record id="email_template_confirmation" model="mail.template">
             <field name="name">Confirmation Email - Template</field>
             <field
                 name="email_from"
@@ -162,10 +153,7 @@
             ]]></field>
         </record>
 
-        <record
-            id="investor_wallet_platform_base.email_template_confirmation_company"
-            model="mail.template"
-        >
+        <record id="email_template_confirmation_company" model="mail.template">
             <field name="name">Company Confirmation Email - Template</field>
             <field
                 name="email_from"
@@ -222,10 +210,7 @@
             ]]></field>
         </record>
 
-        <record
-            id="investor_wallet_platform_base.email_template_certificat"
-            model="mail.template"
-        >
+        <record id="email_template_certificat" model="mail.template">
             <field name="name"> Confirmation - Send By Email - Template</field>
             <field
                 name="email_from"
@@ -237,10 +222,7 @@
             >${(object.structure.email or object.user_id.email)|safe}</field>
             <field name="model_id" ref="model_subscription_register" />
             <field name="auto_delete" eval="True" />
-            <field
-                name="report_template"
-                ref="investor_wallet_platform_base.action_cooperator_report_certificat"
-            />
+            <field name="report_template" ref="action_cooperator_report_certificat" />
             <field
                 name="report_name"
             >Certificat ${(object.cooperator_register_number or '')}</field>
@@ -287,10 +269,7 @@
             ]]></field>
         </record>
 
-        <record
-            id="investor_wallet_platform_base.email_template_certificat_increase"
-            model="mail.template"
-        >
+        <record id="email_template_certificat_increase" model="mail.template">
             <field
                 name="name"
             >Share Increase -  Confirmation - Send By Email - Template</field>
@@ -304,10 +283,7 @@
             >${(object.structure.email or object.user_id.email)|safe}</field>
             <field name="model_id" ref="model_subscription_register" />
             <field name="auto_delete" eval="True" />
-            <field
-                name="report_template"
-                ref="investor_wallet_platform_base.action_cooperator_report_certificat"
-            />
+            <field name="report_template" ref="action_cooperator_report_certificat" />
             <field
                 name="report_name"
             >Certificat ${(object.cooperator_register_number or '')}</field>
@@ -354,10 +330,7 @@
             ]]></field>
         </record>
 
-        <record
-            id="investor_wallet_platform_base.email_template_share_transfer"
-            model="mail.template"
-        >
+        <record id="email_template_share_transfer" model="mail.template">
             <field name="name">Share transfer - Send By Email - Template</field>
             <field
                 name="email_from"
@@ -371,7 +344,7 @@
             <field name="auto_delete" eval="True" />
             <field
                 name="report_template"
-                ref="investor_wallet_platform_base.action_cooperator_to_report_certificat"
+                ref="action_cooperator_to_report_certificat"
             />
             <field
                 name="report_name"
@@ -419,10 +392,7 @@
             ]]></field>
         </record>
 
-        <record
-            id="investor_wallet_platform_base.email_template_share_update"
-            model="mail.template"
-        >
+        <record id="email_template_share_update" model="mail.template">
             <field name="name">Share update - Send By Email - Template</field>
             <field
                 name="email_from"
@@ -434,10 +404,7 @@
             >${(object.structure.email or object.user_id.email)|safe}</field>
             <field name="model_id" ref="model_subscription_register" />
             <field name="auto_delete" eval="True" />
-            <field
-                name="report_template"
-                ref="investor_wallet_platform_base.action_cooperator_report_certificat"
-            />
+            <field name="report_template" ref="action_cooperator_report_certificat" />
             <field
                 name="report_name"
             >Certificat ${(object.cooperator_register_number or '')}</field>
@@ -484,10 +451,7 @@
             ]]></field>
         </record>
 
-        <record
-            id="investor_wallet_platform_base.loan_subscription_received"
-            model="mail.template"
-        >
+        <record id="loan_subscription_received" model="mail.template">
             <field name="name">Loan Subscription Request Received - Template</field>
             <field
                 name="email_from"
@@ -495,12 +459,6 @@
             <field
                 name="subject"
             >Loan subscription received (Ref ${object.loan_issue_id.name or 'n/a'})</field>
-            <field
-                name="email_from"
-            >${(object.structure.email or object.loan_issue_id.user_id.email)|safe}</field>
-            <field
-                name="email_from"
-            >${(object.structure.email or object.loan_issue_id.user_id.email)|safe}</field>
             <field name="model_id" ref="easy_my_coop_loan.model_loan_issue_line" />
             <field name="auto_delete" eval="True" />
             <field name="lang">${object.partner_id.lang}</field>
@@ -516,10 +474,7 @@
             ]]></field>
         </record>
 
-        <record
-            id="investor_wallet_platform_base.loan_subscription_confirmation"
-            model="mail.template"
-        >
+        <record id="loan_subscription_confirmation" model="mail.template">
             <field name="name">Loan Subscription Confirmation Email - Template</field>
             <field
                 name="email_from"
@@ -576,10 +531,7 @@
             ]]></field>
         </record>
 
-        <record
-            id="investor_wallet_platform_base.loan_issue_payment_request"
-            model="mail.template"
-        >
+        <record id="loan_issue_payment_request" model="mail.template">
             <field
                 name="name"
             >Loan Issue Payment Request - Send by Email - Template</field>
@@ -761,10 +713,7 @@
         </record>
 
 
-        <record
-            id="investor_wallet_platform_base.email_template_loan_confirm_paid"
-            model="mail.template"
-        >
+        <record id="email_template_loan_confirm_paid" model="mail.template">
             <field
                 name="name"
             >Loan Issue Confirm Payment Received - Send by Email - Template</field>

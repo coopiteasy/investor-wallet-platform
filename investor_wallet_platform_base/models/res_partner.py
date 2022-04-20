@@ -63,7 +63,7 @@ class ResPartner(models.Model):
         string="Structure type",
     )
     structure_type_value = fields.Char(
-        compute="_return_structure_type_value", string="Structure type"
+        compute="_compute_structure_type_value", string="Structure type"
     )
     structure = fields.Many2one(
         comodel_name="res.partner",
@@ -137,12 +137,12 @@ class ResPartner(models.Model):
     statute_link = fields.Char(string="Statute link", translate=True)
     annual_report_link = fields.Char(string="Last annual report link", translate=True)
     area_char_list = fields.Char(
-        compute="_return_area_char_list", string="activity areas"
+        compute="_compute_area_char_list", string="activity areas"
     )
     mail_serveur_out = fields.Many2one("ir.mail_server", string="Mail serveur out")
-    industry_char_list = fields.Char(compute="_return_industry_char_list")
+    industry_char_list = fields.Char(compute="_compute_industry_char_list")
     can_subscribe = fields.Boolean(
-        string="Can be subscribed ?", compute="_can_subscribe_products"
+        string="Can be subscribed ?", compute="_compute_can_subscribe_products"
     )
     total_outstanding_amount = fields.Monetary(string="Total Outsanding Amount")
     data_policy_approval_text = fields.Html(
@@ -265,7 +265,7 @@ class ResPartner(models.Model):
         return False
 
     @api.multi
-    def _return_structure_type_value(self):
+    def _compute_structure_type_value(self):
         desc = self.env["res.partner"].sudo().fields_get(["structure_type"])
         field_desc = desc["structure_type"]["selection"]
         for partner in self:
@@ -273,17 +273,17 @@ class ResPartner(models.Model):
             partner.structure_type_value = value
 
     @api.multi
-    def _return_area_char_list(self):
+    def _compute_area_char_list(self):
         for partner in self:
             partner.area_char_list = partner.activity_areas.mapped("name")
 
     @api.multi
-    def _return_industry_char_list(self):
+    def _compute_industry_char_list(self):
         for partner in self:
             partner.industry_char_list = partner.industry_id.mapped("full_name")
 
     @api.multi
-    def _can_subscribe_products(self):
+    def _compute_can_subscribe_products(self):
         for partner in self:
             if partner.share_type_ids.filtered(
                 lambda r: r.display_on_website and r.state != "close"
