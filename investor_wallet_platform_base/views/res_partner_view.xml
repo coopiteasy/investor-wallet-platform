@@ -196,6 +196,7 @@
                                 name="renewable_energy"
                                 attrs="{'invisible': [('is_renewable_energy', '=', False)]}"
                             />
+                                    <field name="rationale_gender" />
                                     <field name="purpose_service" />
                                     <field name="sustainable_development" />
                                 </group>
