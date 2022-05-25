@@ -43,6 +43,29 @@
             </field>
         </record>
 
+        <record
+            id="res_partner_emc_user_read_structures_with_shares_rule"
+            model="ir.rule"
+        >
+            <field
+                name="name"
+            >res_partner_emc_user_read_structures_with_shares_rule</field>
+            <field name="model_id" ref="base.model_res_partner" />
+            <field
+                name="groups"
+                eval="[(4, ref('cooperator.cooperator_group_user'))]"
+            />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="0" />
+            <field name="perm_create" eval="0" />
+            <field name="perm_unlink" eval="0" />
+            <field name="domain_force">[
+                ('is_platform_structure', '=', True),
+                ('share_ids.structure', '=', user.structure.id)
+            ]
+            </field>
+        </record>
+
         <!-- cooperator_group_manager -->
         <record
             id="res_partner_emc_manager_read_write_own_structure_rule_1"
