@@ -7,7 +7,7 @@
         />
         <field
             name="implied_ids"
-            eval="[(6, 0, [ref('cooperator.group_easy_my_coop_manager')])]"
+            eval="[(6, 0, [ref('cooperator.cooperator_group_manager')])]"
         />
         <field name="comment">Administrateur d'une structure de la plateforme</field>
     </record>
