@@ -13,7 +13,7 @@
     <record id="view_partner_form_wallet_platform" model="ir.ui.view">
         <field name="name">res.partner.form.iwp</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="easy_my_coop.view_partner_form_easy_my_coop" />
+        <field name="inherit_id" ref="cooperator.view_partner_form" />
         <field name="arch" type="xml">
             <button id="action_view_update_partner_info" position="attributes">
                 <attribute name="invisible">True</attribute>
@@ -24,7 +24,7 @@
                     type="object"
                     string="Request validation"
                     attrs="{'invisible':['|',('state','not in',['draft','refused']),('is_platform_structure','=',False)]}"
-                    groups="easy_my_coop.group_easy_my_coop_manager"
+                    groups="cooperator.cooperator_group_manager"
                 />
                 <button
                     name="validate"
@@ -372,10 +372,10 @@
         >[('is_platform_structure','=',True),('state','=','to_validate')]</field>
     </record>
 
-    <record id="view_res_partner_filter_coop" model="ir.ui.view">
+    <record id="view_res_partner_filter" model="ir.ui.view">
         <field name="name">res.partner.select</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="easy_my_coop.view_res_partner_filter_coop" />
+        <field name="inherit_id" ref="cooperator.view_res_partner_filter" />
         <field name="arch" type="xml">
             <filter name="cooperators" position="attributes">
                 <attribute
@@ -399,7 +399,7 @@
     </record>
 
     <record
-        id="easy_my_coop.action_partner_cooperator_form"
+        id="cooperator.action_partner_cooperator_form"
         model="ir.actions.act_window"
     >
         <field name="domain">[]</field>
