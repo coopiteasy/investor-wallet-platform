@@ -1,5 +1,5 @@
 <odoo>
-    <template id="easy_my_coop.theme_invoice_G002_document">
+    <template id="cooperator.theme_invoice_G002_document">
         <t t-call="investor_wallet_platform_base.iwp_external_layout">
             <t t-set="address">
                 <address

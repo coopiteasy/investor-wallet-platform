@@ -5,21 +5,21 @@
 -->
 <odoo>
     <record id="res_user_cooperator_1_demo" model="res.users">
-            <field name="partner_id" ref="easy_my_coop.res_partner_cooperator_1_demo" />
+            <field name="partner_id" ref="cooperator.res_partner_cooperator_1_demo" />
             <field name="login">virginie</field>
             <field name="password">demo</field>
             <field name="signature" type="xml"><span>-- <br />+Ms Leloup</span></field>
     </record>
 
     <record id="res_user_cooperator_3_demo" model="res.users">
-            <field name="partner_id" ref="easy_my_coop.res_partner_cooperator_3_demo" />
+            <field name="partner_id" ref="cooperator.res_partner_cooperator_3_demo" />
             <field name="login">vincent</field>
             <field name="password">demo</field>
             <field name="signature" type="xml"><span>-- <br />+Mr Bixolon</span></field>
     </record>
 
     <record id="res_partner_cooperator_4_demo" model="res.users">
-            <field name="partner_id" ref="easy_my_coop.res_partner_cooperator_4_demo" />
+            <field name="partner_id" ref="cooperator.res_partner_cooperator_4_demo" />
             <field name="login">remy</field>
             <field name="password">demo</field>
             <field name="signature" type="xml"><span>-- <br />+Mr Commit</span></field>
