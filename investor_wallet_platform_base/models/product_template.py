@@ -26,7 +26,8 @@ class ProductTemplate(models.Model):
         [("yes", "Yes"), ("no", "No")], string="Solidary product"
     )
     banking = fields.Selection([("yes", "Yes"), ("no", "No")], string="Banking product")
-    book_value = fields.Float(string="Book value", translate=True)
+    # txt_suffix in case we need Float in the future
+    book_value_txt = fields.Char(string="Book value", translate=True)
     dividend_policy = fields.Html(string="Dividend policy", translate=True)
     voting_rights = fields.Html(
         string="Voting rights",
