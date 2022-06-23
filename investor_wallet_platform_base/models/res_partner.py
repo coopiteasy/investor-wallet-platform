@@ -94,6 +94,7 @@ class ResPartner(models.Model):
     # Move to another module ?
     is_renewable_energy = fields.Boolean(string="is renewable energy")
     renewable_energy = fields.Html(string="Renewable energy", translate=True)
+    rationale_gender = fields.Html(string="Rationale gender", translate=True)
     description = fields.Html(string="Description", translate=True)
     about_us = fields.Html(string="About us", translate=True)
     governance = fields.Html(string="Governance", translate=True)
