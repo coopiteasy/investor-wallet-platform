@@ -7,13 +7,13 @@
             <field name="active" eval="False" />
         </record>
 
-        <!-- group_easy_my_coop_user -->
+        <!-- cooperator_group_user -->
         <record id="res_partner_emc_user_read_own_structure_rule_1" model="ir.rule">
             <field name="name">res_partner_emc_user_read_own_structure_rule_1</field>
             <field name="model_id" ref="base.model_res_partner" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_user'))]"
+                eval="[(4, ref('cooperator.cooperator_group_user'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="0" />
@@ -29,7 +29,7 @@
             <field name="model_id" ref="base.model_res_partner" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_user'))]"
+                eval="[(4, ref('cooperator.cooperator_group_user'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -43,7 +43,7 @@
             </field>
         </record>
 
-        <!-- group_easy_my_coop_manager -->
+        <!-- cooperator_group_manager -->
         <record
             id="res_partner_emc_manager_read_write_own_structure_rule_1"
             model="ir.rule"
@@ -54,7 +54,7 @@
             <field name="model_id" ref="base.model_res_partner" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_manager'))]"
+                eval="[(4, ref('cooperator.cooperator_group_manager'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -70,7 +70,7 @@
             <field name="model_id" ref="base.model_res_partner" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_manager'))]"
+                eval="[(4, ref('cooperator.cooperator_group_manager'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -106,10 +106,10 @@
             <field
                 name="name"
             >subscription_request_emc_user_own_subscription_request_rule</field>
-            <field name="model_id" ref="easy_my_coop.model_subscription_request" />
+            <field name="model_id" ref="cooperator.model_subscription_request" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_user'))]"
+                eval="[(4, ref('cooperator.cooperator_group_user'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -125,7 +125,7 @@
             <field
                 name="name"
             >subscription_request_iwp_user_all_subscription_request_rule</field>
-            <field name="model_id" ref="easy_my_coop.model_subscription_request" />
+            <field name="model_id" ref="cooperator.model_subscription_request" />
             <field name="groups" eval="[(4, ref('group_platform_wallet_user'))]" />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -143,10 +143,10 @@
             <field
                 name="name"
             >operation_request_emc_user_own_operation_request_rule</field>
-            <field name="model_id" ref="easy_my_coop.model_operation_request" />
+            <field name="model_id" ref="cooperator.model_operation_request" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_user'))]"
+                eval="[(4, ref('cooperator.cooperator_group_user'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -162,7 +162,7 @@
             <field
                 name="name"
             >operation_request_iwp_user_all_operation_request_rule</field>
-            <field name="model_id" ref="easy_my_coop.model_operation_request" />
+            <field name="model_id" ref="cooperator.model_operation_request" />
             <field name="groups" eval="[(4, ref('group_platform_wallet_user'))]" />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -175,10 +175,10 @@
 
         <record id="share_line_emc_user_own_share_line_rule" model="ir.rule">
             <field name="name">share_line_emc_user_own_share_line_rule</field>
-            <field name="model_id" ref="easy_my_coop.model_share_line" />
+            <field name="model_id" ref="cooperator.model_share_line" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_user'))]"
+                eval="[(4, ref('cooperator.cooperator_group_user'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -189,7 +189,7 @@
 
         <record id="share_line_iwp_user_all_share_line_rule" model="ir.rule">
             <field name="name">share_line_iwp_user_all_share_line_rule</field>
-            <field name="model_id" ref="easy_my_coop.model_share_line" />
+            <field name="model_id" ref="cooperator.model_share_line" />
             <field name="groups" eval="[(4, ref('group_platform_wallet_user'))]" />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -207,10 +207,10 @@
             <field
                 name="name"
             >subscription_register_emc_user_own_subscription_register_rule</field>
-            <field name="model_id" ref="easy_my_coop.model_subscription_register" />
+            <field name="model_id" ref="cooperator.model_subscription_register" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_user'))]"
+                eval="[(4, ref('cooperator.cooperator_group_user'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -226,7 +226,7 @@
             <field
                 name="name"
             >subscription_register_iwp_user_all_subscription_register_rule</field>
-            <field name="model_id" ref="easy_my_coop.model_subscription_register" />
+            <field name="model_id" ref="cooperator.model_subscription_register" />
             <field name="groups" eval="[(4, ref('group_platform_wallet_user'))]" />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -242,7 +242,7 @@
             <field name="model_id" ref="product.model_product_template" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_manager'))]"
+                eval="[(4, ref('cooperator.cooperator_group_manager'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -269,7 +269,7 @@
             <field name="model_id" ref="product.model_product_product" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_user'))]"
+                eval="[(4, ref('cooperator.cooperator_group_user'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -283,7 +283,7 @@
             <field name="model_id" ref="product.model_product_product" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_manager'))]"
+                eval="[(4, ref('cooperator.cooperator_group_manager'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -310,7 +310,7 @@
             <field name="model_id" ref="account.model_account_invoice" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_user'))]"
+                eval="[(4, ref('cooperator.cooperator_group_user'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -337,7 +337,7 @@
             <field name="model_id" ref="easy_my_coop_loan.model_loan_issue" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_user'))]"
+                eval="[(4, ref('cooperator.cooperator_group_user'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -364,7 +364,7 @@
             <field name="model_id" ref="easy_my_coop_loan.model_loan_issue_line" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_user'))]"
+                eval="[(4, ref('cooperator.cooperator_group_user'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />
@@ -391,7 +391,7 @@
             <field name="model_id" ref="mail.model_mail_template" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_user'))]"
+                eval="[(4, ref('cooperator.cooperator_group_user'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="0" />
@@ -409,7 +409,7 @@
             <field name="model_id" ref="mail.model_mail_template" />
             <field
                 name="groups"
-                eval="[(4, ref('easy_my_coop.group_easy_my_coop_manager'))]"
+                eval="[(4, ref('cooperator.cooperator_group_manager'))]"
             />
             <field name="perm_read" eval="1" />
             <field name="perm_write" eval="1" />

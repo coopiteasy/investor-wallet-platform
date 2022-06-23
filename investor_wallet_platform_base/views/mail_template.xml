@@ -41,10 +41,7 @@
         </field>
     </record>
 
-    <record
-        id="easy_my_coop.action_easy_my_coop_email_templates"
-        model="ir.actions.act_window"
-    >
+    <record id="cooperator.mail_template_action" model="ir.actions.act_window">
         <field name="domain">[('iwp','=',True)]</field>
     </record>
 

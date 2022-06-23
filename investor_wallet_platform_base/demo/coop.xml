@@ -4,29 +4,23 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 -->
 <odoo>
-    <record
-        id="easy_my_coop.product_template_share_type_1_demo"
-        model="product.template"
-    >
+    <record id="cooperator.product_template_share_type_1_demo" model="product.template">
         <field name="structure" ref="res_partner_structure_coopiteasy_demo" />
     </record>
 
-    <record
-        id="easy_my_coop.product_template_share_type_2_demo"
-        model="product.template"
-    >
+    <record id="cooperator.product_template_share_type_2_demo" model="product.template">
         <field name="structure" ref="res_partner_structure_coopiteasy_demo" />
     </record>
 
-    <record id="easy_my_coop.subscription_request_1_demo" model="subscription.request">
+    <record id="cooperator.subscription_request_1_demo" model="subscription.request">
         <field name="structure" ref="res_partner_structure_coopiteasy_demo" />
     </record>
 
-    <record id="easy_my_coop.share_line_1_demo" model="share.line">
+    <record id="cooperator.share_line_1_demo" model="share.line">
         <field name="structure" ref="res_partner_structure_coopiteasy_demo" />
     </record>
 
-    <record id="easy_my_coop.share_line_2_demo" model="share.line">
+    <record id="cooperator.share_line_2_demo" model="share.line">
         <field name="structure" ref="res_partner_structure_coopiteasy_demo" />
     </record>
 
@@ -52,27 +46,27 @@
         />
         <field name="share_number">4</field>
         <field name="share_unit_price">50</field>
-        <field name="partner_id" ref="easy_my_coop.res_partner_cooperator_3_demo" />
+        <field name="partner_id" ref="cooperator.res_partner_cooperator_3_demo" />
         <field name="effective_date" eval="datetime.now() - timedelta(days=120)" />
         <field name="structure" ref="res_partner_structure_coopcity_demo" />
     </record>
 
     <record id="coop_membership_share_line_1_demo" model="coop.membership">
-        <field name="partner_id" ref="easy_my_coop.res_partner_cooperator_1_demo" />
+        <field name="partner_id" ref="cooperator.res_partner_cooperator_1_demo" />
         <field name="structure" ref="res_partner_structure_coopiteasy_demo" />
         <field name="cooperator_number">1</field>
         <field name="member" eval="True" />
     </record>
 
     <record id="coop_membership_share_line_2_demo" model="coop.membership">
-        <field name="partner_id" ref="easy_my_coop.res_partner_cooperator_2_demo" />
+        <field name="partner_id" ref="cooperator.res_partner_cooperator_2_demo" />
         <field name="structure" ref="res_partner_structure_coopiteasy_demo" />
         <field name="cooperator_number">2</field>
         <field name="member" eval="True" />
     </record>
 
     <record id="coop_membership_share_line_3_demo" model="coop.membership">
-        <field name="partner_id" ref="easy_my_coop.res_partner_cooperator_3_demo" />
+        <field name="partner_id" ref="cooperator.res_partner_cooperator_3_demo" />
         <field name="structure" ref="res_partner_structure_coopcity_demo" />
         <field name="cooperator_number">1</field>
         <field name="member" eval="True" />
@@ -118,7 +112,7 @@
             eval="datetime.today() + timedelta(days=70)"
         />
         <field name="term_date" eval="datetime.today() + timedelta(days=600)" />
-        <field name="user_id" ref="easy_my_coop.res_users_manager_emc_demo" />
+        <field name="user_id" ref="cooperator.res_users_manager_emc_demo" />
         <field name="rate">0.06</field>
         <field name="face_value">10</field>
         <field name="minimum_amount">2000</field>
@@ -136,7 +130,7 @@
     <record id="loan_issue_line_2_demo" model="loan.issue.line">
         <field name="loan_issue_id" ref="loan_issue_2_demo" />
         <field name="quantity">4</field>
-        <field name="partner_id" ref="easy_my_coop.res_partner_cooperator_2_demo" />
+        <field name="partner_id" ref="cooperator.res_partner_cooperator_2_demo" />
         <field name="structure" ref="res_partner_structure_coopcity_demo" />
     </record>
 
