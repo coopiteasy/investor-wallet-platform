@@ -1486,6 +1486,12 @@ msgid "Quantity"
 msgstr ""
 
 #. module: investor_wallet_platform_base
+#: model:ir.model.fields,field_description:investor_wallet_platform_base.field_res_partner__rationale_gender
+#: model:ir.model.fields,field_description:investor_wallet_platform_base.field_res_users__rationale_gender
+msgid "Rationale gender"
+msgstr ""
+
+#. module: investor_wallet_platform_base
 #: model:ir.model.fields,field_description:investor_wallet_platform_base.field_loan_issue__refund_policy
 #: model:ir.model.fields,field_description:investor_wallet_platform_base.field_product_product__refund_policy
 #: model:ir.model.fields,field_description:investor_wallet_platform_base.field_product_template__refund_policy
@@ -1916,13 +1922,13 @@ msgid "Yes"
 msgstr ""
 
 #. module: investor_wallet_platform_base
-#: code:addons/investor_wallet_platform_base/models/res_partner.py:338
+#: code:addons/investor_wallet_platform_base/models/res_partner.py:339
 #, python-format
 msgid "You cannot initialize an already initialized structure"
 msgstr ""
 
 #. module: investor_wallet_platform_base
-#: code:addons/investor_wallet_platform_base/models/res_partner.py:368
+#: code:addons/investor_wallet_platform_base/models/res_partner.py:369
 #, python-format
 msgid "You need first to define a mail server out for %s"
 msgstr ""
