@@ -1,9 +1,13 @@
-me: tests
+name: tests
+
 on:
   pull_request:
+    branches:
+      - "12.0*"
   push:
     branches:
       - "12.0"
+      - "12.0-ocabot-*"
 
 jobs:
   test:
