@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[investor_wallet_platform_base](investor_wallet_platform_base/) | 12.0.1.2.5 |  | This module add a layer on top of easy my coop to allow handling several structures to rise capital through the easy my coop flow.
+[investor_wallet_platform_base](investor_wallet_platform_base/) | 12.0.1.3.0 |  | This module add a layer on top of easy my coop to allow handling several structures to rise capital through the easy my coop flow.
 [iwp_website](iwp_website/) | 12.0.0.12.2 |  | Website element for Investor Wallet Platform
 
 [//]: # (end addons)
