@@ -721,8 +721,8 @@ msgstr ""
 
 #. module: investor_wallet_platform_base
 #: model:ir.model.fields,field_description:investor_wallet_platform_base.field_loan_issue__book_value
-#: model:ir.model.fields,field_description:investor_wallet_platform_base.field_product_product__book_value
-#: model:ir.model.fields,field_description:investor_wallet_platform_base.field_product_template__book_value
+#: model:ir.model.fields,field_description:investor_wallet_platform_base.field_product_product__book_value_txt
+#: model:ir.model.fields,field_description:investor_wallet_platform_base.field_product_template__book_value_txt
 msgid "Book value"
 msgstr ""
 
