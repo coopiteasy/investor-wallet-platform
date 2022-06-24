@@ -163,7 +163,7 @@ class IWPBaseCase(common.TransactionCase):
                 "code": "SUBJ",
                 "type": "sale",
                 "sequence_id": self.browse_ref(
-                    "easy_my_coop.sequence_subscription_journal"
+                    "cooperator.sequence_subscription_journal"
                 ).id,
                 "default_debit_account_id": self.equity_account.id,
                 "default_credit_account_id": self.equity_account.id,
@@ -184,10 +184,10 @@ class IWPBaseCase(common.TransactionCase):
         self.uid = self.ref("base.user_demo")
 
     def as_emc_user(self):
-        self.uid = self.ref("easy_my_coop.res_users_user_emc_demo")
+        self.uid = self.ref("cooperator.res_users_user_emc_demo")
 
     def as_emc_manager(self):
-        self.uid = self.ref("easy_my_coop.res_users_manager_emc_demo")
+        self.uid = self.ref("cooperator.res_users_manager_emc_demo")
 
     def as_iwp_user(self):
         self.uid = self.ref("investor_wallet_platform_base.res_users_user_iwp_demo")

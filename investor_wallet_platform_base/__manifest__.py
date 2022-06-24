@@ -8,9 +8,9 @@
     "name": "Investor Wallet Platform Base",
     "version": "12.0.1.2.5",
     "depends": [
-        "easy_my_coop",
+        "cooperator",
         "easy_my_coop_loan",
-        "easy_my_coop_api",
+        "cooperator_api",
         "partner_changeset",
     ],
     "author": "Coop IT Easy SCRLfs",

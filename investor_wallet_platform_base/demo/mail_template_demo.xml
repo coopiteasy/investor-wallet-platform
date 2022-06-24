@@ -32,7 +32,7 @@
         <field
             name="reply_to"
         >${(object.company_id.coop_email_contact or object.user_id.email)|safe}</field>
-        <field name="model_id" ref="easy_my_coop.model_subscription_request" />
+        <field name="model_id" ref="cooperator.model_subscription_request" />
         <field name="auto_delete" eval="True" />
         <field name="lang">${object.lang}</field>
         <field name="iwp" eval="True" />
@@ -60,7 +60,7 @@
         <field
             name="reply_to"
         >${(object.company_id.coop_email_contact or object.user_id.email)|safe}</field>
-        <field name="model_id" ref="easy_my_coop.model_subscription_request" />
+        <field name="model_id" ref="cooperator.model_subscription_request" />
         <field name="auto_delete" eval="True" />
         <field name="lang">${object.lang}</field>
         <field name="iwp" eval="True" />
@@ -89,7 +89,7 @@
         >${(object.company_id.coop_email_contact or object.user_id.email)|safe}</field>
         <field name="model_id" ref="account.model_account_invoice" />
         <field name="auto_delete" eval="True" />
-        <field name="report_template" ref="easy_my_coop.action_cooperator_invoices" />
+        <field name="report_template" ref="cooperator.action_cooperator_invoices" />
         <field
             name="report_name"
         >${(object.number or '').replace('/','_')}_${object.state == 'draft' and 'draft' or ''}</field>
@@ -302,7 +302,7 @@
         <field
             name="reply_to"
         >${(object.company_id.coop_email_contact or object.user_id.email)|safe}</field>
-        <field name="model_id" ref="easy_my_coop.model_subscription_request" />
+        <field name="model_id" ref="cooperator.model_subscription_request" />
         <field name="auto_delete" eval="True" />
         <field name="lang">${object.lang}</field>
         <field name="iwp" eval="True" />
@@ -330,7 +330,7 @@
         <field
             name="reply_to"
         >${(object.company_id.coop_email_contact or object.user_id.email)|safe}</field>
-        <field name="model_id" ref="easy_my_coop.model_subscription_request" />
+        <field name="model_id" ref="cooperator.model_subscription_request" />
         <field name="auto_delete" eval="True" />
         <field name="lang">${object.lang}</field>
         <field name="iwp" eval="True" />
@@ -359,7 +359,7 @@
         >${(object.company_id.coop_email_contact or object.user_id.email)|safe}</field>
         <field name="model_id" ref="account.model_account_invoice" />
         <field name="auto_delete" eval="True" />
-        <field name="report_template" ref="easy_my_coop.action_cooperator_invoices" />
+        <field name="report_template" ref="cooperator.action_cooperator_invoices" />
         <field
             name="report_name"
         >${(object.number or '').replace('/','_')}_${object.state == 'draft' and 'draft' or ''}</field>

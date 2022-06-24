@@ -55,15 +55,15 @@
         />
     </record>
 
-    <record id="easy_my_coop.res_partner_user_emc_demo" model="res.partner">
+    <record id="cooperator.res_partner_user_emc_demo" model="res.partner">
         <field name="structure" ref="res_partner_structure_coopiteasy_demo" />
     </record>
 
-    <record id="easy_my_coop.res_users_user_emc_demo" model="res.users">
+    <record id="cooperator.res_users_user_emc_demo" model="res.users">
         <field name="structure" ref="res_partner_structure_coopiteasy_demo" />
     </record>
 
-    <record id="easy_my_coop.res_partner_manager_emc_demo" model="res.partner">
+    <record id="cooperator.res_partner_manager_emc_demo" model="res.partner">
         <field name="structure" ref="res_partner_structure_coopiteasy_demo" />
         <field
             name="groups_id"
@@ -73,7 +73,7 @@
         />
     </record>
 
-    <record id="easy_my_coop.res_users_manager_emc_demo" model="res.users">
+    <record id="cooperator.res_users_manager_emc_demo" model="res.users">
         <field name="structure" ref="res_partner_structure_coopiteasy_demo" />
         <field
             name="groups_id"

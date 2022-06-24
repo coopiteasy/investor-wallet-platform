@@ -16,7 +16,7 @@ class TestIWPSubscribe(TestIWPBase):
         structure = self.env.ref(
             "investor_wallet_platform_base" ".res_partner_structure_coopiteasy_demo"
         )
-        product = self.env.ref("easy_my_coop.product_template_share_type_2_demo")
+        product = self.env.ref("cooperator.product_template_share_type_2_demo")
 
         self.login("vincent", "demo")
 
@@ -67,7 +67,7 @@ class TestIWPSubscribe(TestIWPBase):
         structure = self.env.ref(
             "investor_wallet_platform_base" ".res_partner_structure_coopiteasy_demo"
         )
-        product = self.env.ref("easy_my_coop.product_template_share_type_2_demo")
+        product = self.env.ref("cooperator.product_template_share_type_2_demo")
 
         res = self.login("remy", "demo")
         self.assertEquals(res.status_code, 200)
