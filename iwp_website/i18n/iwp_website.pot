@@ -265,36 +265,6 @@ msgid "Go to label website"
 msgstr ""
 
 #. module: iwp_website
-#: model_terms:res.partner,internal_rules_approval_text:iwp_website.res_partner_cooperator_4_demo_res_partner
-#: model_terms:res.partner,internal_rules_approval_text:iwp_website.res_user_cooperator_1_demo_res_partner
-#: model_terms:res.partner,internal_rules_approval_text:iwp_website.res_user_cooperator_3_demo_res_partner
-#: model_terms:res.users,internal_rules_approval_text:iwp_website.res_partner_cooperator_4_demo
-#: model_terms:res.users,internal_rules_approval_text:iwp_website.res_user_cooperator_1_demo
-#: model_terms:res.users,internal_rules_approval_text:iwp_website.res_user_cooperator_3_demo
-msgid "I approve internal rules."
-msgstr ""
-
-#. module: iwp_website
-#: model_terms:res.partner,data_policy_approval_text:iwp_website.res_partner_cooperator_4_demo_res_partner
-#: model_terms:res.partner,data_policy_approval_text:iwp_website.res_user_cooperator_1_demo_res_partner
-#: model_terms:res.partner,data_policy_approval_text:iwp_website.res_user_cooperator_3_demo_res_partner
-#: model_terms:res.users,data_policy_approval_text:iwp_website.res_partner_cooperator_4_demo
-#: model_terms:res.users,data_policy_approval_text:iwp_website.res_user_cooperator_1_demo
-#: model_terms:res.users,data_policy_approval_text:iwp_website.res_user_cooperator_3_demo
-msgid "I approve the data policy."
-msgstr ""
-
-#. module: iwp_website
-#: model_terms:res.partner,financial_risk_approval_text:iwp_website.res_partner_cooperator_4_demo_res_partner
-#: model_terms:res.partner,financial_risk_approval_text:iwp_website.res_user_cooperator_1_demo_res_partner
-#: model_terms:res.partner,financial_risk_approval_text:iwp_website.res_user_cooperator_3_demo_res_partner
-#: model_terms:res.users,financial_risk_approval_text:iwp_website.res_partner_cooperator_4_demo
-#: model_terms:res.users,financial_risk_approval_text:iwp_website.res_user_cooperator_1_demo
-#: model_terms:res.users,financial_risk_approval_text:iwp_website.res_user_cooperator_3_demo
-msgid "I aware of financial risk."
-msgstr ""
-
-#. module: iwp_website
 #: code:addons/iwp_website/controllers/loan_issue_form.py:48
 #: code:addons/iwp_website/controllers/subscription_request_form.py:48
 #, python-format
