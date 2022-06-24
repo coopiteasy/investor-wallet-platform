@@ -1,8 +1,8 @@
-git+https://github.com/coopiteasy/vertical-cooperative@12.0-komunigi#subdirectory=setup/cooperator
-git+https://github.com/coopiteasy/vertical-cooperative@12.0-komunigi#subdirectory=setup/easy_my_coop_loan
-git+https://github.com/coopiteasy/vertical-cooperative@12.0-komunigi#subdirectory=setup/easy_my_coop_api
-git+https://github.com/coopiteasy/vertical-cooperative@12.0-komunigi#subdirectory=setup/easy_my_coop_api_logs
-git+https://github.com/coopiteasy/vertical-cooperative@12.0-komunigi#subdirectory=setup/partner_age
+git+https://github.com/coopiteasy/vertical-cooperative@12.0#subdirectory=setup/cooperator
+git+https://github.com/coopiteasy/vertical-cooperative@12.0#subdirectory=setup/easy_my_coop_loan
+git+https://github.com/coopiteasy/vertical-cooperative@12.0#subdirectory=setup/easy_my_coop_api
+git+https://github.com/coopiteasy/vertical-cooperative@12.0#subdirectory=setup/easy_my_coop_api_logs
+git+https://github.com/coopiteasy/vertical-cooperative@12.0#subdirectory=setup/partner_age
 git+https://github.com/coopiteasy/partner-contact@12.0-mig-partner-changeset#subdirectory=setup/partner_changeset
 
 # EMC dependencies
