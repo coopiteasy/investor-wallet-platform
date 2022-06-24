@@ -55,87 +55,6 @@ msgid "\n"
 msgstr ""
 
 #. module: investor_wallet_platform_base
-#: model:mail.template,body_html:investor_wallet_platform_base.email_template_confirmation_company_coopcity_demo
-#: model:mail.template,body_html:investor_wallet_platform_base.email_template_confirmation_company_coopiteasy_demo
-msgid "\n"
-"        <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
-"            <p>Hello ${object.name}, Company Confirmation</p>\n"
-"        "
-msgstr ""
-
-#. module: investor_wallet_platform_base
-#: model:mail.template,body_html:investor_wallet_platform_base.email_template_confirmation_coopcity_demo
-#: model:mail.template,body_html:investor_wallet_platform_base.email_template_confirmation_coopiteasy_demo
-msgid "\n"
-"        <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
-"            <p>Hello ${object.name}, Confirmation</p>\n"
-"        "
-msgstr ""
-
-#. module: investor_wallet_platform_base
-#: model:mail.template,body_html:investor_wallet_platform_base.loan_issue_payment_request_coopcity_demo
-#: model:mail.template,body_html:investor_wallet_platform_base.loan_issue_payment_request_coopiteasy_demo
-msgid "\n"
-"        <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
-"            <p>Hello ${object.name}, Loan Issue Payment Request</p>\n"
-"        "
-msgstr ""
-
-#. module: investor_wallet_platform_base
-#: model:mail.template,body_html:investor_wallet_platform_base.loan_subscription_confirmation_coopcity_demo
-#: model:mail.template,body_html:investor_wallet_platform_base.loan_subscription_confirmation_coopiteasy_demo
-msgid "\n"
-"        <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
-"            <p>Hello ${object.name}, Loan Subscription Confirmation Email</p>\n"
-"        "
-msgstr ""
-
-#. module: investor_wallet_platform_base
-#: model:mail.template,body_html:investor_wallet_platform_base.email_template_certificat_coopcity_demo
-#: model:mail.template,body_html:investor_wallet_platform_base.email_template_certificat_coopiteasy_demo
-msgid "\n"
-"        <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
-"            <p>Hello ${object.name}, Payment Received Confirmation</p>\n"
-"        "
-msgstr ""
-
-#. module: investor_wallet_platform_base
-#: model:mail.template,body_html:investor_wallet_platform_base.email_template_release_capital_coopcity_demo
-#: model:mail.template,body_html:investor_wallet_platform_base.email_template_release_capital_coopiteasy_demo
-msgid "\n"
-"        <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
-"            <p>Hello ${object.name}, Request to Release Capital</p>\n"
-"        "
-msgstr ""
-
-#. module: investor_wallet_platform_base
-#: model:mail.template,body_html:investor_wallet_platform_base.email_template_certificat_increase_coopcity_demo
-#: model:mail.template,body_html:investor_wallet_platform_base.email_template_certificat_increase_coopiteasy_demo
-msgid "\n"
-"        <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
-"            <p>Hello ${object.name}, Share Increase</p>\n"
-"        "
-msgstr ""
-
-#. module: investor_wallet_platform_base
-#: model:mail.template,body_html:investor_wallet_platform_base.email_template_share_transfer_coopcity_demo
-#: model:mail.template,body_html:investor_wallet_platform_base.email_template_share_transfer_coopiteasy_demo
-msgid "\n"
-"        <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
-"            <p>Hello ${object.name}, Share transfer</p>\n"
-"        "
-msgstr ""
-
-#. module: investor_wallet_platform_base
-#: model:mail.template,body_html:investor_wallet_platform_base.email_template_share_update_coopcity_demo
-#: model:mail.template,body_html:investor_wallet_platform_base.email_template_share_update_coopiteasy_demo
-msgid "\n"
-"        <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
-"            <p>Hello ${object.name}, Share update</p>\n"
-"        "
-msgstr ""
-
-#. module: investor_wallet_platform_base
 #: model:mail.template,body_html:investor_wallet_platform_base.loan_subscription_received
 msgid "\n"
 "<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
@@ -639,45 +558,13 @@ msgid "\n"
 msgstr ""
 
 #. module: investor_wallet_platform_base
-#: model:mail.template,body_html:investor_wallet_platform_base.mail_loan_subscription_received_coopcity_demo
-#: model:mail.template,body_html:investor_wallet_platform_base.mail_loan_subscription_received_coopiteasy_demo
-msgid "\n"
-"<div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
-"\n"
-"<p>A new loan subscription  was received: ${object.loan_issue_id.name} - ${object.partner_id.name}</p>\n"
-"\n"
-"</div>\n"
-"        "
-msgstr ""
-
-#. module: investor_wallet_platform_base
 #: model:mail.template,subject:investor_wallet_platform_base.email_template_certificat
 msgid " Confirmation"
 msgstr ""
 
 #. module: investor_wallet_platform_base
 #: model:mail.template,report_name:investor_wallet_platform_base.email_template_release_capital
-#: model:mail.template,report_name:investor_wallet_platform_base.email_template_release_capital_coopcity_demo
-#: model:mail.template,report_name:investor_wallet_platform_base.email_template_release_capital_coopiteasy_demo
 msgid "${(object.number or '').replace('/','_')}_${object.state == 'draft' and 'draft' or ''}"
-msgstr ""
-
-#. module: investor_wallet_platform_base
-#: model:mail.template,subject:investor_wallet_platform_base.loan_subscription_confirmation_coopcity_demo
-#: model:mail.template,subject:investor_wallet_platform_base.loan_subscription_confirmation_coopiteasy_demo
-msgid "${object.company_id.name} Loan subscription confirmation (Ref ${object.loan_issue_id.name or 'n/a'})"
-msgstr ""
-
-#. module: investor_wallet_platform_base
-#: model:mail.template,subject:investor_wallet_platform_base.loan_issue_payment_request_coopcity_demo
-#: model:mail.template,subject:investor_wallet_platform_base.loan_issue_payment_request_coopiteasy_demo
-msgid "${object.company_id.name} Payment request (Ref ${object.loan_issue_id.name or 'n/a'})"
-msgstr ""
-
-#. module: investor_wallet_platform_base
-#: model:mail.template,subject:investor_wallet_platform_base.email_template_release_capital_coopcity_demo
-#: model:mail.template,subject:investor_wallet_platform_base.email_template_release_capital_coopiteasy_demo
-msgid "${object.company_id.name} Request to Release Capital (Ref ${object.number or 'n/a'})"
 msgstr ""
 
 #. module: investor_wallet_platform_base
@@ -859,17 +746,9 @@ msgstr ""
 
 #. module: investor_wallet_platform_base
 #: model:mail.template,report_name:investor_wallet_platform_base.email_template_certificat
-#: model:mail.template,report_name:investor_wallet_platform_base.email_template_certificat_coopcity_demo
-#: model:mail.template,report_name:investor_wallet_platform_base.email_template_certificat_coopiteasy_demo
 #: model:mail.template,report_name:investor_wallet_platform_base.email_template_certificat_increase
-#: model:mail.template,report_name:investor_wallet_platform_base.email_template_certificat_increase_coopcity_demo
-#: model:mail.template,report_name:investor_wallet_platform_base.email_template_certificat_increase_coopiteasy_demo
 #: model:mail.template,report_name:investor_wallet_platform_base.email_template_share_transfer
-#: model:mail.template,report_name:investor_wallet_platform_base.email_template_share_transfer_coopcity_demo
-#: model:mail.template,report_name:investor_wallet_platform_base.email_template_share_transfer_coopiteasy_demo
 #: model:mail.template,report_name:investor_wallet_platform_base.email_template_share_update
-#: model:mail.template,report_name:investor_wallet_platform_base.email_template_share_update_coopcity_demo
-#: model:mail.template,report_name:investor_wallet_platform_base.email_template_share_update_coopiteasy_demo
 msgid "Certificat ${(object.cooperator_register_number or '')}"
 msgstr ""
 
@@ -1118,36 +997,6 @@ msgid "Health"
 msgstr ""
 
 #. module: investor_wallet_platform_base
-#: model_terms:res.partner,internal_rules_approval_text:investor_wallet_platform_base.res_partner_manager_iwp_demo
-#: model_terms:res.partner,internal_rules_approval_text:investor_wallet_platform_base.res_partner_structure_coopcity_demo
-#: model_terms:res.partner,internal_rules_approval_text:investor_wallet_platform_base.res_partner_structure_coopiteasy_demo
-#: model_terms:res.partner,internal_rules_approval_text:investor_wallet_platform_base.res_partner_user_iwp_demo
-#: model_terms:res.users,internal_rules_approval_text:investor_wallet_platform_base.res_users_manager_iwp_demo
-#: model_terms:res.users,internal_rules_approval_text:investor_wallet_platform_base.res_users_user_iwp_demo
-msgid "I approve internal rules."
-msgstr ""
-
-#. module: investor_wallet_platform_base
-#: model_terms:res.partner,data_policy_approval_text:investor_wallet_platform_base.res_partner_manager_iwp_demo
-#: model_terms:res.partner,data_policy_approval_text:investor_wallet_platform_base.res_partner_structure_coopcity_demo
-#: model_terms:res.partner,data_policy_approval_text:investor_wallet_platform_base.res_partner_structure_coopiteasy_demo
-#: model_terms:res.partner,data_policy_approval_text:investor_wallet_platform_base.res_partner_user_iwp_demo
-#: model_terms:res.users,data_policy_approval_text:investor_wallet_platform_base.res_users_manager_iwp_demo
-#: model_terms:res.users,data_policy_approval_text:investor_wallet_platform_base.res_users_user_iwp_demo
-msgid "I approve the data policy."
-msgstr ""
-
-#. module: investor_wallet_platform_base
-#: model_terms:res.partner,financial_risk_approval_text:investor_wallet_platform_base.res_partner_manager_iwp_demo
-#: model_terms:res.partner,financial_risk_approval_text:investor_wallet_platform_base.res_partner_structure_coopcity_demo
-#: model_terms:res.partner,financial_risk_approval_text:investor_wallet_platform_base.res_partner_structure_coopiteasy_demo
-#: model_terms:res.partner,financial_risk_approval_text:investor_wallet_platform_base.res_partner_user_iwp_demo
-#: model_terms:res.users,financial_risk_approval_text:investor_wallet_platform_base.res_users_manager_iwp_demo
-#: model_terms:res.users,financial_risk_approval_text:investor_wallet_platform_base.res_users_user_iwp_demo
-msgid "I aware of financial risk."
-msgstr ""
-
-#. module: investor_wallet_platform_base
 #: model:ir.model.fields,field_description:investor_wallet_platform_base.field_activity_area__id
 #: model:ir.model.fields,field_description:investor_wallet_platform_base.field_coop_membership__id
 msgid "ID"
@@ -1333,8 +1182,6 @@ msgstr ""
 
 #. module: investor_wallet_platform_base
 #: model:mail.template,subject:investor_wallet_platform_base.loan_subscription_received
-#: model:mail.template,subject:investor_wallet_platform_base.mail_loan_subscription_received_coopcity_demo
-#: model:mail.template,subject:investor_wallet_platform_base.mail_loan_subscription_received_coopiteasy_demo
 msgid "Loan subscription received (Ref ${object.loan_issue_id.name or 'n/a'})"
 msgstr ""
 
@@ -1540,16 +1387,7 @@ msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
 msgstr ""
 
 #. module: investor_wallet_platform_base
-#: model:product.template,name:investor_wallet_platform_base.product_template_share_type_coopcity_1_demo
-msgid "Part A - Sympathizer"
-msgstr ""
-
-#. module: investor_wallet_platform_base
-#: model:mail.template,subject:investor_wallet_platform_base.email_template_certificat_coopcity_demo
-#: model:mail.template,subject:investor_wallet_platform_base.email_template_certificat_coopiteasy_demo
 #: model:mail.template,subject:investor_wallet_platform_base.email_template_certificat_increase
-#: model:mail.template,subject:investor_wallet_platform_base.email_template_certificat_increase_coopcity_demo
-#: model:mail.template,subject:investor_wallet_platform_base.email_template_certificat_increase_coopiteasy_demo
 msgid "Payment Received Confirmation"
 msgstr ""
 
@@ -1725,8 +1563,6 @@ msgstr ""
 
 #. module: investor_wallet_platform_base
 #: model:mail.template,subject:investor_wallet_platform_base.email_template_share_transfer
-#: model:mail.template,subject:investor_wallet_platform_base.email_template_share_transfer_coopcity_demo
-#: model:mail.template,subject:investor_wallet_platform_base.email_template_share_transfer_coopiteasy_demo
 msgid "Share transfer"
 msgstr ""
 
@@ -1740,8 +1576,6 @@ msgstr ""
 
 #. module: investor_wallet_platform_base
 #: model:mail.template,subject:investor_wallet_platform_base.email_template_share_update
-#: model:mail.template,subject:investor_wallet_platform_base.email_template_share_update_coopcity_demo
-#: model:mail.template,subject:investor_wallet_platform_base.email_template_share_update_coopiteasy_demo
 msgid "Share update"
 msgstr ""
 
@@ -1847,10 +1681,6 @@ msgstr ""
 #. module: investor_wallet_platform_base
 #: model:mail.template,subject:investor_wallet_platform_base.email_template_confirmation
 #: model:mail.template,subject:investor_wallet_platform_base.email_template_confirmation_company
-#: model:mail.template,subject:investor_wallet_platform_base.email_template_confirmation_company_coopcity_demo
-#: model:mail.template,subject:investor_wallet_platform_base.email_template_confirmation_company_coopiteasy_demo
-#: model:mail.template,subject:investor_wallet_platform_base.email_template_confirmation_coopcity_demo
-#: model:mail.template,subject:investor_wallet_platform_base.email_template_confirmation_coopiteasy_demo
 msgid "Subscription request confirmation"
 msgstr ""
 
@@ -1981,11 +1811,6 @@ msgid "Unit Price"
 msgstr ""
 
 #. module: investor_wallet_platform_base
-#: model:product.template,uom_name:investor_wallet_platform_base.product_template_share_type_coopcity_1_demo
-msgid "Unit(s)"
-msgstr ""
-
-#. module: investor_wallet_platform_base
 #: model:ir.model.fields,help:investor_wallet_platform_base.field_res_partner__candidate_structure_ids
 #: model:ir.model.fields,help:investor_wallet_platform_base.field_res_partner__loan_structure_ids
 #: model:ir.model.fields,help:investor_wallet_platform_base.field_res_partner__membership_structure_ids
@@ -2109,11 +1934,6 @@ msgid "activity areas"
 msgstr ""
 
 #. module: investor_wallet_platform_base
-#: model:loan.issue,name:investor_wallet_platform_base.loan_issue_2_demo
-msgid "coopcity loan issue"
-msgstr ""
-
-#. module: investor_wallet_platform_base
 #: model:ir.model.fields,field_description:investor_wallet_platform_base.field_res_partner__display_on_website
 #: model:ir.model.fields,field_description:investor_wallet_platform_base.field_res_users__display_on_website
 msgid "display on website"
@@ -2123,10 +1943,5 @@ msgstr ""
 #: model:ir.model.fields,field_description:investor_wallet_platform_base.field_res_partner__is_renewable_energy
 #: model:ir.model.fields,field_description:investor_wallet_platform_base.field_res_users__is_renewable_energy
 msgid "is renewable energy"
-msgstr ""
-
-#. module: investor_wallet_platform_base
-#: model:product.template,weight_uom_name:investor_wallet_platform_base.product_template_share_type_coopcity_1_demo
-msgid "kg"
 msgstr ""
 
