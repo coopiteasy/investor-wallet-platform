@@ -43,7 +43,7 @@
                     <group attrs="{'invisible': [('is_share','=',False)]}">
                         <group>
                             <field name="lst_price" readonly="True" />
-                            <field name="book_value" readonly="True" />
+                            <field name="book_value_txt" readonly="True" />
                             <field name="subscription_start_text" readonly="True" />
                             <field name="subscription_end_text" readonly="True" />
                             <field name="subscription_length" readonly="True" />
@@ -68,11 +68,7 @@
                     options="{'currency_field': 'currency_id', 'field_digits': True}"
                     attrs="{'readonly': [('product_variant_count', '&gt;', 1)]}"
                 />
-                    <field
-                    name="book_value"
-                    widget='monetary'
-                    options="{'currency_field': 'currency_id', 'field_digits': True}"
-                />
+                    <field name="book_value_txt" />
                 </field>
                 <field name="short_name" position="after">
                     <field name="default_code" />

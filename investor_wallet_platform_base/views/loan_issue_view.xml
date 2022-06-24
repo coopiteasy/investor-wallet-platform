@@ -57,11 +57,7 @@
                             <field name="fees" />
                         </group>
                         <group>
-                            <field
-                                name="book_value"
-                                widget='monetary'
-                                options="{'currency_field': 'currency_id', 'field_digits': True}"
-                            />
+                            <field name="book_value" />
                             <field name="info_note_url" />
                             <field name="advantages" />
                             <field name="oversubscription_policy" />
