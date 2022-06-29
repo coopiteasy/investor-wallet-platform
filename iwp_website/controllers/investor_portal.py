@@ -1,5 +1,5 @@
 # Copyright 2018 Odoo SA <http://odoo.com>
-# Copyright 2019-     Coop IT Easy SCRLfs <http://coopiteasy.be>
+# Copyright 2019-     Coop IT Easy SC <http://coopiteasy.be>
 #     - Rémy Taymans <remy@coopiteasy.be>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
