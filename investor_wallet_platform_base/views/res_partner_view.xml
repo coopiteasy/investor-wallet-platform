@@ -15,10 +15,7 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="cooperator.view_partner_form" />
         <field name="arch" type="xml">
-            <button id="action_view_update_partner_info" position="attributes">
-                <attribute name="invisible">True</attribute>
-            </button>
-            <button id="action_view_update_partner_info" position="after">
+            <button id="action_view_create_subscription_button" position="after">
                 <button
                     name="validation_request"
                     type="object"
