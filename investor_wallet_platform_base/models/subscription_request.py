@@ -57,6 +57,7 @@ class SubscriptionRequest(models.Model):
         subscription_request.send_new_subscription_request_notification_email(
             is_company=False
         )
+        subscription_request._compute_display_national_number()
         return subscription_request
 
     @api.model
@@ -67,6 +68,7 @@ class SubscriptionRequest(models.Model):
         subscription_request.send_new_subscription_request_notification_email(
             is_company=False
         )
+        subscription_request._compute_display_national_number()
         return subscription_request
 
     def get_journal(self):
@@ -106,3 +108,15 @@ class SubscriptionRequest(models.Model):
             }
             member_obj.create(vals)
         return True
+
+    def _check_national_number_required(self):
+        # overwrite method to check national number based on structure config
+        return self.structure.national_number_required
+
+    @api.depends("structure")
+    def _compute_display_national_number(self):
+        super()._compute_display_national_number()
+
+    @api.onchange("structure")
+    def _switch_display_national_number(self):
+        self._compute_display_national_number()

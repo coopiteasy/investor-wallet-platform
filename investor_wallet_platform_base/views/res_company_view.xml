@@ -30,4 +30,17 @@ License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
            </field>
        </field>
     </record>
+
+    <record model="ir.ui.view" id="view_company_form">
+        <field name="name">res.company.form.easymy.coop</field>
+        <field
+            name="inherit_id"
+            ref="l10n_be_cooperator_national_number.view_company_form"
+        />
+        <field name="model">res.company</field>
+        <field name="arch" type="xml">
+             <!--Configuration is done by platform structure, not by company -->
+            <field name="require_national_number" invisible="True" />
+        </field>
+    </record>
 </odoo>
