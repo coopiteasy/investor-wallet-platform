@@ -130,6 +130,11 @@ class WebsiteSubscriptionRequest(http.Controller):
             "ordered_parts": form.cleaned_data["quantity"],
             "structure": struct.id,
         }
+        if (
+            struct.national_number_required
+            and not user.commercial_partner_id.is_company
+        ):
+            vals["national_number"] = form.cleaned_data["national_number"]
         if user.commercial_partner_id.bank_ids:
             vals["iban"] = (user.commercial_partner_id.bank_ids[0].acc_number,)
         if user.member:
