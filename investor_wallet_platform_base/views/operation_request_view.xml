@@ -18,6 +18,11 @@
             <field name="user_id" position="after">
                 <field name="structure" widget="selection" />
             </field>
+            <field name="partner_id" position="attributes">
+                <attribute name="domain">
+                    [('membership_structure_ids', 'in', [structure])]
+                </attribute>
+            </field>
         </field>
     </record>
 </odoo>

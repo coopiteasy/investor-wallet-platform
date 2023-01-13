@@ -17,6 +17,12 @@ class OperationRequest(models.Model):
         domain=[("is_platform_structure", "=", True)],
         default=default_structure,
     )
+    partner_id = fields.Many2one(
+        "res.partner",
+        string="Cooperator",
+        domain=False,  # domain is moved on the view
+        required=True,
+    )
 
     def _get_share_transfer_mail_template(self):
         return self.env["mail.template"].get_email_template_by_key(
