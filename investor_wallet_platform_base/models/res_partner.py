@@ -295,6 +295,16 @@ class ResPartner(models.Model):
             ):
                 partner.can_subscribe = True
 
+    @api.model
+    def search_read(self, domain=None, fields=None, offset=0, limit=None, order=None):
+        """Filter the res.partner that are member of the logged in user structure."""
+        if self.env.context.get("restrict_to_user_structure"):
+            domain = domain or []
+            domain += [
+                ("membership_structure_ids", "in", self.default_structure().ids)
+            ]
+        return super().search_read(domain, fields, offset, limit, order)
+
     @api.multi
     def generate_sequence(self):
         self.ensure_one()

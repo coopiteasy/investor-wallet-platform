@@ -404,6 +404,7 @@
         model="ir.actions.act_window"
     >
         <field name="domain">[]</field>
+        <field name="context">{'restrict_to_user_structure': 1}</field>
     </record>
 
     <record id="view_res_partner_loaner_filter" model="ir.ui.view">
