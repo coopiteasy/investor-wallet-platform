@@ -10,7 +10,6 @@
     "depends": [
         "cooperator",
         "easy_my_coop_loan",
-        "cooperator_api",
         "partner_changeset",
     ],
     "author": "Coop IT Easy SC",
