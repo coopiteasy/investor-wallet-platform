@@ -33,7 +33,9 @@
         <field name="groups_id" eval="[(6, 0, [ref('group_platform_wallet_user') ])]" />
         <field name="arch" type="xml">
             <field name="partner_id" position="attributes">
-                <attribute name="domain">[]</attribute>
+                <attribute name="domain">
+                    [('membership_structure_ids', '!=', False)]
+                </attribute>
             </field>
         </field>
     </record>
