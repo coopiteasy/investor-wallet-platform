@@ -16,7 +16,7 @@
         <field name="inherit_id" ref="cooperator.subscription_request_view_form" />
         <field name="arch" type="xml">
             <field name="company_name" position="before">
-                <field name="structure" widget="selection" />
+                <field name="structure" options="{'no_create':True}" />
             </field>
         </field>
     </record>
