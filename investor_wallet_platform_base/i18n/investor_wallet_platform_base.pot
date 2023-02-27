@@ -806,6 +806,7 @@ msgstr ""
 
 #. module: investor_wallet_platform_base
 #: model:ir.model.fields,field_description:investor_wallet_platform_base.field_coop_membership__partner_id
+#: model:ir.model.fields,field_description:investor_wallet_platform_base.field_operation_request__partner_id
 msgid "Cooperator"
 msgstr ""
 
@@ -1765,7 +1766,7 @@ msgid "There is no structure defined on this subscription request."
 msgstr ""
 
 #. module: investor_wallet_platform_base
-#: code:addons/investor_wallet_platform_base/models/operation_request.py:68
+#: code:addons/investor_wallet_platform_base/models/operation_request.py:74
 #, python-format
 msgid "This operation can't be executed if the cooperator is not an effective member"
 msgstr ""
@@ -1922,13 +1923,13 @@ msgid "Yes"
 msgstr ""
 
 #. module: investor_wallet_platform_base
-#: code:addons/investor_wallet_platform_base/models/res_partner.py:339
+#: code:addons/investor_wallet_platform_base/models/res_partner.py:354
 #, python-format
 msgid "You cannot initialize an already initialized structure"
 msgstr ""
 
 #. module: investor_wallet_platform_base
-#: code:addons/investor_wallet_platform_base/models/res_partner.py:369
+#: code:addons/investor_wallet_platform_base/models/res_partner.py:384
 #, python-format
 msgid "You need first to define a mail server out for %s"
 msgstr ""
