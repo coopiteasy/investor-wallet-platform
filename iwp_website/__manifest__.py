@@ -4,7 +4,7 @@
 {
     "name": "Investor Wallet Platform Website",
     "summary": """Website element for Investor Wallet Platform""",
-    "version": "12.0.0.12.2",
+    "version": "12.0.0.13.0",
     "license": "AGPL-3",
     "author": "Coop IT Easy SC",
     "website": "https://coopiteasy.be",
