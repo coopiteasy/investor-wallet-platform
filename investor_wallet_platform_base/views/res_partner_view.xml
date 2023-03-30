@@ -307,6 +307,7 @@
                                 <field name="data_policy_approval_text" />
                                 <field name="internal_rules_approval_text" />
                                 <field name="financial_risk_approval_text" />
+                                <field name="national_number_required" />
                             </group>
                         </page>
                     </page>

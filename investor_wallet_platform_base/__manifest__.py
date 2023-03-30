@@ -11,6 +11,7 @@
         "cooperator",
         "easy_my_coop_loan",
         "partner_changeset",
+        "l10n_be_cooperator_national_number",
     ],
     "author": "Coop IT Easy SC",
     "category": "Cooperative management",

@@ -161,6 +161,7 @@ class ResPartner(models.Model):
         default="I aware of financial risk.",
         help="Text to display aside the checkbox to approve financial risk.",
     )
+    national_number_required = fields.Boolean("National Number Required")
 
     structure_ids = fields.Many2many(
         comodel_name="res.partner",

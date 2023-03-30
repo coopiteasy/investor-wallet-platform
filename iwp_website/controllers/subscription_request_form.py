@@ -56,6 +56,13 @@ class SubscriptionRequestForm(Form):
             required=True,
             template="iwp_website.checkbox_field",
         )
+        partner = self.context.get("user").commercial_partner_id
+        if context["struct"].national_number_required and not partner.is_company:
+            self.fields["national_number"] = Field(
+                label=_("National Number"),
+                required=True,
+                template="iwp_website.input_field",
+            )
 
     def clean(self):
         """Check that user does not buy to much shares."""
