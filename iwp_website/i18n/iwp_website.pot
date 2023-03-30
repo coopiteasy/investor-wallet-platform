@@ -340,6 +340,12 @@ msgid "Name"
 msgstr ""
 
 #. module: iwp_website
+#: code:addons/iwp_website/controllers/subscription_request_form.py:62
+#, python-format
+msgid "National Number"
+msgstr ""
+
+#. module: iwp_website
 #: model_terms:ir.ui.view,arch_db:iwp_website.subscribe_to_structure
 msgid "New Subscription"
 msgstr ""
@@ -384,7 +390,7 @@ msgid "Phone"
 msgstr ""
 
 #. module: iwp_website
-#: code:addons/iwp_website/controllers/subscription_request_form.py:79
+#: code:addons/iwp_website/controllers/subscription_request_form.py:86
 #, python-format
 msgid "Please fill in your profile before continuing."
 msgstr ""
@@ -619,7 +625,7 @@ msgid "Wallet"
 msgstr ""
 
 #. module: iwp_website
-#: code:addons/iwp_website/controllers/subscription_request_form.py:98
+#: code:addons/iwp_website/controllers/subscription_request_form.py:105
 #, python-format
 msgid "You cannot buy so much shares. The maximum amount is %d."
 msgstr ""
@@ -643,13 +649,13 @@ msgstr ""
 
 #. module: iwp_website
 #: code:addons/iwp_website/controllers/loan_issue_form.py:75
-#: code:addons/iwp_website/controllers/subscription_request_form.py:91
+#: code:addons/iwp_website/controllers/subscription_request_form.py:98
 #, python-format
 msgid "You have reached the maximum amount that can be taken for this structure."
 msgstr ""
 
 #. module: iwp_website
-#: code:addons/iwp_website/controllers/subscription_request_form.py:106
+#: code:addons/iwp_website/controllers/subscription_request_form.py:113
 #, python-format
 msgid "You have to buy more shares. Minimum amount is %d."
 msgstr ""
