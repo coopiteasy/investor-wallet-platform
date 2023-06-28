@@ -143,7 +143,9 @@ class ResPartner(models.Model):
     mail_serveur_out = fields.Many2one("ir.mail_server", string="Mail serveur out")
     industry_char_list = fields.Char(compute="_compute_industry_char_list")
     can_subscribe = fields.Boolean(
-        string="Can be subscribed ?", compute="_compute_can_subscribe_products"
+        string="Can be subscribed ?",
+        compute="_compute_can_subscribe_products",
+        store=True,
     )
     total_outstanding_amount = fields.Monetary(string="Total Outsanding Amount")
     data_policy_approval_text = fields.Html(
@@ -285,16 +287,24 @@ class ResPartner(models.Model):
             partner.industry_char_list = partner.industry_id.mapped("full_name")
 
     @api.multi
+    @api.depends(
+        "share_type_ids.display_on_website",
+        "share_type_ids.state",
+        "loan_issue_ids.display_on_website",
+        "loan_issue_ids.state",
+    )
     def _compute_can_subscribe_products(self):
         for partner in self:
             if partner.share_type_ids.filtered(
                 lambda r: r.display_on_website and r.state != "close"
             ):
                 partner.can_subscribe = True
-            if partner.loan_issue_ids.filtered(
+            elif partner.loan_issue_ids.filtered(
                 lambda r: r.display_on_website and r.state != "closed"
             ):
                 partner.can_subscribe = True
+            else:
+                partner.can_subscribe = False
 
     @api.model
     def search_read(self, domain=None, fields=None, offset=0, limit=None, order=None):
