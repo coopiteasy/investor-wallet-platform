@@ -1929,13 +1929,13 @@ msgid "Yes"
 msgstr ""
 
 #. module: investor_wallet_platform_base
-#: code:addons/investor_wallet_platform_base/models/res_partner.py:355
+#: code:addons/investor_wallet_platform_base/models/res_partner.py:365
 #, python-format
 msgid "You cannot initialize an already initialized structure"
 msgstr ""
 
 #. module: investor_wallet_platform_base
-#: code:addons/investor_wallet_platform_base/models/res_partner.py:385
+#: code:addons/investor_wallet_platform_base/models/res_partner.py:395
 #, python-format
 msgid "You need first to define a mail server out for %s"
 msgstr ""
